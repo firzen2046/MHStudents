@@ -79,6 +79,25 @@ const activities = [
       "參觀當地文化景點",
       "撰寫交流心得"
     ]
+  },
+  {
+    id: 5,
+    title: "閉幕禮暨團後分享會",
+    date: "2025年8月",
+    icon: Calendar,
+    color: "rose",
+    participants: "100人",
+    description: "在閉幕禮舉辦體驗團參加者交流分享會，嘉許所有活動參與者，頒發嘉許證書。",
+    details: [
+      "開場前展覽及市集",
+      "展出兩地升學資訊",
+      "開場儀式",
+      "嘉許環節 - 嘉許支持及贊助單位",
+      "體驗團參加者分享環節",
+      "頒發嘉許證書",
+      "致謝環節",
+      "大合照"
+    ]
   }
 ];
 
@@ -105,7 +124,7 @@ export default function Activities() {
               活動詳情
             </h1>
             <p className="text-xl text-purple-200 max-w-2xl mx-auto">
-              四大重點活動，促進香港與內地青年深入交流
+              五大重點活動，促進香港與內地青年深入交流
             </p>
           </motion.div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { 
@@ -13,9 +13,21 @@ import {
   Map,
   School,
   BookOpen,
-  Phone
+  Phone,
+  Languages
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+// 创建语言上下文
+export const LanguageContext = createContext();
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    return { lang: 'zh_TW', setLang: () => {} };
+  }
+  return context;
+};
 
 const navItems = [
   { name: '主頁', page: 'Home', icon: Home },
@@ -31,15 +43,48 @@ const navItems = [
 
 export default function Layout({ children, currentPageName }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [lang, setLang] = useState('zh_TW');
   const location = useLocation();
 
   const isActive = (pageName) => {
     return currentPageName === pageName;
   };
 
+  const navLabels = {
+    zh_TW: {
+      home: '主頁',
+      activities: '活動詳情',
+      registration: '報名',
+      studyInfo: '升學資訊',
+      cantonese: '廣東話',
+      exchange: '交流園地',
+      hkPlaces: '香港好去處',
+      mainlandUni: '內地大學',
+      subjects: '學科推介',
+      more: '更多',
+      registerNow: '立即報名'
+    },
+    zh_CN: {
+      home: '主页',
+      activities: '活动详情',
+      registration: '报名',
+      studyInfo: '升学资讯',
+      cantonese: '广东话',
+      exchange: '交流园地',
+      hkPlaces: '香港好去处',
+      mainlandUni: '内地大学',
+      subjects: '学科推介',
+      more: '更多',
+      registerNow: '立即报名'
+    }
+  };
+
+  const t = (key) => navLabels[lang][key] || navLabels.zh_TW[key];
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
+    <LanguageContext.Provider value={{ lang, setLang }}>
+      <div className="min-h-screen bg-gray-50">
+        {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -58,40 +103,47 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
-              {navItems.slice(0, 6).map((item) => (
-                <Link
-                  key={item.page}
-                  to={createPageUrl(item.page)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    isActive(item.page)
-                      ? 'bg-purple-100 text-purple-700'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              <Link to={createPageUrl('Home')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('Home') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('home')}</Link>
+              <Link to={createPageUrl('Activities')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('Activities') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('activities')}</Link>
+              <Link to={createPageUrl('Registration')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('Registration') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('registration')}</Link>
+              <Link to={createPageUrl('StudyInfo')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('StudyInfo') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('studyInfo')}</Link>
+              <Link to={createPageUrl('CantoneseLearn')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('CantoneseLearn') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('cantonese')}</Link>
+              <Link to={createPageUrl('Exchange')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('Exchange') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('exchange')}</Link>
               
               {/* More dropdown */}
               <div className="relative group">
                 <button className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
-                  更多 ▾
+                  {t('more')} ▾
                 </button>
                 <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                  {navItems.slice(6).map((item) => (
-                    <Link
-                      key={item.page}
-                      to={createPageUrl(item.page)}
-                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors first:rounded-t-xl last:rounded-b-xl ${
-                        isActive(item.page)
-                          ? 'bg-purple-50 text-purple-700'
-                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                      }`}
-                    >
-                      <item.icon className="w-4 h-4" />
-                      {item.name}
-                    </Link>
-                  ))}
+                  <Link to={createPageUrl('HKPlaces')} className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors first:rounded-t-xl ${isActive('HKPlaces') ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}>
+                    <Map className="w-4 h-4" />
+                    {t('hkPlaces')}
+                  </Link>
+                  <Link to={createPageUrl('MainlandUni')} className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${isActive('MainlandUni') ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}>
+                    <School className="w-4 h-4" />
+                    {t('mainlandUni')}
+                  </Link>
+                  <Link to={createPageUrl('Subjects')} className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors last:rounded-b-xl ${isActive('Subjects') ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}>
+                    <BookOpen className="w-4 h-4" />
+                    {t('subjects')}
+                  </Link>
+                </div>
+              </div>
+
+              {/* Language Switcher */}
+              <div className="relative group ml-2">
+                <button className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 transition-all flex items-center gap-2">
+                  <Languages className="w-4 h-4" />
+                  {lang === 'zh_TW' ? '繁' : '简'}
+                </button>
+                <div className="absolute top-full right-0 mt-2 w-32 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <button onClick={() => setLang('zh_TW')} className={`w-full text-left px-4 py-3 text-sm transition-colors first:rounded-t-xl ${lang === 'zh_TW' ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`}>
+                    繁體中文
+                  </button>
+                  <button onClick={() => setLang('zh_CN')} className={`w-full text-left px-4 py-3 text-sm transition-colors last:rounded-b-xl ${lang === 'zh_CN' ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`}>
+                    简体中文
+                  </button>
                 </div>
               </div>
             </div>
@@ -100,7 +152,7 @@ export default function Layout({ children, currentPageName }) {
             <div className="hidden lg:block">
               <Link to={createPageUrl('Registration')}>
                 <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2.5 rounded-xl font-medium hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg shadow-purple-500/25">
-                  立即報名
+                  {t('registerNow')}
                 </button>
               </Link>
             </div>
@@ -180,7 +232,7 @@ export default function Layout({ children, currentPageName }) {
               </div>
               <div className="flex items-center gap-3 mb-6">
                 <img 
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/8e8e83540_image.png"
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/f13a0c078_NOJLIMITED.png"
                   alt="JCI Peninsula"
                   className="h-12 w-auto"
                 />
@@ -244,6 +296,7 @@ export default function Layout({ children, currentPageName }) {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </LanguageContext.Provider>
   );
 }

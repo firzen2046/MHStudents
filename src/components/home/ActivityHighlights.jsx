@@ -40,6 +40,15 @@ const activities = [
     color: "from-amber-500 to-amber-600",
     participants: "30人",
     description: "五日四夜或四日三夜體驗團，讓香港中學生親身感受內地大學生活"
+  },
+  {
+    id: 5,
+    title: "閉幕禮暨團後分享會",
+    date: "2025年8月",
+    icon: Calendar,
+    color: "from-rose-500 to-rose-600",
+    participants: "100人",
+    description: "體驗團參加者交流分享，嘉許活動參與者，頒發嘉許證書"
   }
 ];
 
@@ -55,7 +64,7 @@ export default function ActivityHighlights() {
         >
           <span className="text-purple-600 font-medium mb-4 block">精彩活動</span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            四大重點活動
+            五大重點活動
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             透過多元化活動促進香港與內地青年深入交流

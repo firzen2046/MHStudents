@@ -118,6 +118,15 @@ export default function Registration() {
                     <p className="text-gray-600 text-sm">內地大學體驗交流團</p>
                   </div>
                 </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900">2025年8月</p>
+                    <p className="text-gray-600 text-sm">閉幕禮暨團後分享會</p>
+                  </div>
+                </div>
               </div>
 
               <a 
@@ -191,6 +200,15 @@ export default function Registration() {
                   <div>
                     <p className="font-medium text-gray-900">2025年7月上旬</p>
                     <p className="text-gray-600 text-sm">內地大學體驗交流團</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900">2025年8月</p>
+                    <p className="text-gray-600 text-sm">閉幕禮暨團後分享會</p>
                   </div>
                 </div>
               </div>

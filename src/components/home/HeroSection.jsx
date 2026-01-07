@@ -55,7 +55,7 @@ export default function HeroSection() {
                 </Button>
               </Link>
               <Link to={createPageUrl("Activities")}>
-                <Button size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl backdrop-blur-sm">
+                <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-6 text-lg rounded-xl shadow-lg">
                   了解活動
                 </Button>
               </Link>
@@ -76,7 +76,7 @@ export default function HeroSection() {
                   <GraduationCap className="w-6 h-6 text-amber-200" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">4</p>
+                  <p className="text-2xl font-bold text-white">5</p>
                   <p className="text-sm text-purple-200/70">主要活動</p>
                 </div>
               </div>
