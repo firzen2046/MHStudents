@@ -114,8 +114,8 @@ export default function Registration() {
                     <CheckCircle2 className="w-4 h-4 text-purple-600" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">2025年7月份</p>
-                    <p className="text-gray-600 text-sm">內地大學體驗交流團（待定）</p>
+                    <p className="font-medium text-gray-900">2025年7月上旬</p>
+                    <p className="text-gray-600 text-sm">內地大學體驗交流團</p>
                   </div>
                 </div>
               </div>
@@ -189,8 +189,8 @@ export default function Registration() {
                     <CheckCircle2 className="w-4 h-4 text-amber-600" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">2025年8月份</p>
-                    <p className="text-gray-600 text-sm">閉幕禮：頒發嘉許證書</p>
+                    <p className="font-medium text-gray-900">2025年7月上旬</p>
+                    <p className="text-gray-600 text-sm">內地大學體驗交流團</p>
                   </div>
                 </div>
               </div>
@@ -220,7 +220,7 @@ export default function Registration() {
           <div className="bg-purple-50 rounded-2xl p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-4">完成計劃的參加者</h3>
             <p className="text-gray-600 mb-4">
-              將會在8月份的結幕禮頒發嘉許證書
+              將會獲得嘉許證書
             </p>
             <p className="text-gray-500 text-sm">
               如有任何查詢，請聯絡馮先生：5409 6712 或電郵至 rio_fung@hkpjc.org

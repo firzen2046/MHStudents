@@ -45,9 +45,11 @@ export default function Layout({ children, currentPageName }) {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">JCI</span>
-              </div>
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
+                alt="中港同窗築夢同行"
+                className="h-12 w-auto"
+              />
               <div className="hidden sm:block">
                 <p className="font-bold text-gray-900 text-lg leading-tight">中港同窗</p>
                 <p className="text-xs text-gray-500">築夢同行</p>
@@ -166,13 +168,22 @@ export default function Layout({ children, currentPageName }) {
             {/* Logo & Description */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">JCI</span>
-                </div>
+                <img 
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
+                  alt="中港同窗築夢同行"
+                  className="h-16 w-auto"
+                />
                 <div>
                   <p className="font-bold text-xl">中港同窗 築夢同行</p>
-                  <p className="text-gray-400 text-sm">JCI Peninsula</p>
+                  <p className="text-gray-400 text-sm">主辦：半島青年商會</p>
                 </div>
+              </div>
+              <div className="flex items-center gap-3 mb-6">
+                <img 
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/8e8e83540_image.png"
+                  alt="JCI Peninsula"
+                  className="h-12 w-auto"
+                />
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">
                 促進香港與內地青年交流，讓中學生體驗內地教育，幫助港漂學生融入香港生活，共同建立持續的文化交流橋樑。

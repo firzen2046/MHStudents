@@ -76,7 +76,7 @@ export default function HeroSection() {
                   <GraduationCap className="w-6 h-6 text-amber-200" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">5</p>
+                  <p className="text-2xl font-bold text-white">4</p>
                   <p className="text-sm text-purple-200/70">主要活動</p>
                 </div>
               </div>
@@ -92,8 +92,8 @@ export default function HeroSection() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-amber-500 rounded-3xl blur-2xl opacity-30 transform rotate-6" />
               <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_6896c27d91757c5073014da9/3b206c2c9_unnamed1.png"
-                alt="中港同窗大使"
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
+                alt="中港同窗築夢同行"
                 className="relative rounded-3xl shadow-2xl w-full max-w-lg mx-auto"
               />
             </div>

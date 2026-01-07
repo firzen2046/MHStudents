@@ -7,48 +7,39 @@ import { motion } from "framer-motion";
 const activities = [
   {
     id: 1,
-    title: "工作計劃開幕禮",
-    date: "2026年3月/4月",
-    icon: Presentation,
+    title: "認識日",
+    date: "2026年3月",
+    icon: Users,
     color: "from-purple-500 to-purple-600",
     participants: "100人",
-    description: "月會與開幕典禮同步舉行，設有扭蛋配對遊戲、港漂生活分享、潮語大電視等環節"
+    description: "認識彼此，結伴同行 - 透過配對活動讓中學生與港漂學生建立聯繫"
   },
   {
     id: 2,
-    title: "雙向留學講座",
-    date: "2025年3月或4月",
-    icon: Users,
+    title: "學習日",
+    date: "2026年4月",
+    icon: Presentation,
     color: "from-blue-500 to-blue-600",
-    participants: "300-1000人",
-    description: "上半場為中三中四學生介紹內地留學資訊，下半場港漂生分享來港留學經驗"
+    participants: "100人",
+    description: "互相學習，你授與廣東話，他授與國內留學經驗及心得"
   },
   {
     id: 3,
-    title: "內地大學體驗團",
-    date: "2025年4月或12月",
-    icon: MapPin,
+    title: "義工日",
+    date: "2025年5月",
+    icon: Award,
     color: "from-emerald-500 to-emerald-600",
-    participants: "30人",
-    description: "五日四夜或四日三夜體驗團，讓香港中學生親身感受內地大學生活"
+    participants: "100人",
+    description: "服務社會，訓練自己 - 參與社區服務，培養社會責任感"
   },
   {
     id: 4,
-    title: "中港同窗獎學金",
-    date: "2025年7月至8月",
-    icon: Award,
+    title: "內地大學體驗團",
+    date: "2025年7月上旬",
+    icon: MapPin,
     color: "from-amber-500 to-amber-600",
     participants: "30人",
-    description: "為港漂學生和內地升學港生提供獎學金，嘉許成績優異及義工服務表現"
-  },
-  {
-    id: 5,
-    title: "活動閉幕禮",
-    date: "2025年8月",
-    icon: Calendar,
-    color: "from-rose-500 to-rose-600",
-    participants: "200人",
-    description: "交流分享會、獎學金頒獎、兩地升學資訊展覽及創業市集"
+    description: "五日四夜或四日三夜體驗團，讓香港中學生親身感受內地大學生活"
   }
 ];
 
@@ -64,7 +55,7 @@ export default function ActivityHighlights() {
         >
           <span className="text-purple-600 font-medium mb-4 block">精彩活動</span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            五大重點活動
+            四大重點活動
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             透過多元化活動促進香港與內地青年深入交流

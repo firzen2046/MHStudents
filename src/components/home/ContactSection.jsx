@@ -27,15 +27,28 @@ export default function ContactSection() {
           className="max-w-2xl mx-auto"
         >
           <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-100">
-            <div className="flex items-center gap-4 mb-6">
-              <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_6896c27d91757c5073014da9/3b206c2c9_unnamed1.png"
-                alt="JCI Peninsula"
-                className="w-16 h-16 rounded-xl object-cover"
-              />
-              <div>
-                <h3 className="text-xl font-bold text-gray-900">JCI Peninsula</h3>
-                <p className="text-gray-600">國際青年商會半島會</p>
+            <div className="flex flex-col gap-4 mb-6">
+              <div className="flex items-center gap-4">
+                <img 
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
+                  alt="中港同窗築夢同行"
+                  className="h-16 w-auto"
+                />
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">中港同窗 築夢同行</h3>
+                  <p className="text-gray-600">促進中港青年交流</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 pt-4 border-t border-purple-200">
+                <img 
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/8e8e83540_image.png"
+                  alt="JCI Peninsula"
+                  className="h-12 w-auto"
+                />
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900">半島青年商會</h4>
+                  <p className="text-gray-500 text-sm">JCI Peninsula</p>
+                </div>
               </div>
             </div>
 
