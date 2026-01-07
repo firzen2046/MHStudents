@@ -6,52 +6,52 @@ import { motion } from "framer-motion";
 
 const quickLinks = [
   {
-    title: "兩地升學資訊",
-    description: "香港及內地大學升學指南",
+    title: "內地大學數據庫",
+    description: "搜尋20+所內地大學",
+    icon: School,
+    page: "MainlandUniDatabase",
+    color: "bg-rose-500",
+    gradient: "from-rose-50 to-rose-100"
+  },
+  {
+    title: "升學途徑",
+    description: "DSE免試、聯招考試資訊",
     icon: GraduationCap,
-    page: "StudyInfo",
-    color: "bg-purple-500",
-    gradient: "from-purple-50 to-purple-100"
+    page: "AdmissionPathways",
+    color: "bg-indigo-500",
+    gradient: "from-indigo-50 to-indigo-100"
+  },
+  {
+    title: "資助與獎學金",
+    description: "各類升學資助計劃",
+    icon: BookOpen,
+    page: "Scholarships",
+    color: "bg-amber-500",
+    gradient: "from-amber-50 to-amber-100"
+  },
+  {
+    title: "港漂支援機構",
+    description: "各類支援組織及計劃",
+    icon: Compass,
+    page: "SupportOrganizations",
+    color: "bg-blue-500",
+    gradient: "from-blue-50 to-blue-100"
+  },
+  {
+    title: "港漂生活資訊",
+    description: "住宿、交通、飲食指南",
+    icon: Map,
+    page: "LivingInfo",
+    color: "bg-teal-500",
+    gradient: "from-teal-50 to-teal-100"
   },
   {
     title: "廣東話學習",
     description: "有趣遊戲輕鬆學廣東話",
     icon: MessageCircle,
     page: "CantoneseLearn",
-    color: "bg-amber-500",
-    gradient: "from-amber-50 to-amber-100"
-  },
-  {
-    title: "中港交流園地",
-    description: "遊戲與資訊促進文化交流",
-    icon: Compass,
-    page: "Exchange",
-    color: "bg-blue-500",
-    gradient: "from-blue-50 to-blue-100"
-  },
-  {
-    title: "香港好去處",
-    description: "探索香港必去景點",
-    icon: Map,
-    page: "HKPlaces",
-    color: "bg-emerald-500",
-    gradient: "from-emerald-50 to-emerald-100"
-  },
-  {
-    title: "內地大學導覽",
-    description: "熱門內地大學介紹",
-    icon: School,
-    page: "MainlandUni",
-    color: "bg-rose-500",
-    gradient: "from-rose-50 to-rose-100"
-  },
-  {
-    title: "學科推介",
-    description: "熱門學科及就業前景",
-    icon: BookOpen,
-    page: "Subjects",
-    color: "bg-indigo-500",
-    gradient: "from-indigo-50 to-indigo-100"
+    color: "bg-purple-500",
+    gradient: "from-purple-50 to-purple-100"
   }
 ];
 

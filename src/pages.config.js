@@ -10,6 +10,8 @@ import Subjects from './pages/Subjects';
 import MainlandUniDatabase from './pages/MainlandUniDatabase';
 import AdmissionPathways from './pages/AdmissionPathways';
 import Scholarships from './pages/Scholarships';
+import SupportOrganizations from './pages/SupportOrganizations';
+import LivingInfo from './pages/LivingInfo';
 import __Layout from './Layout.jsx';
 
 
@@ -26,6 +28,8 @@ export const PAGES = {
     "MainlandUniDatabase": MainlandUniDatabase,
     "AdmissionPathways": AdmissionPathways,
     "Scholarships": Scholarships,
+    "SupportOrganizations": SupportOrganizations,
+    "LivingInfo": LivingInfo,
 }
 
 export const pagesConfig = {
