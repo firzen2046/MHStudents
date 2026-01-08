@@ -1,35 +1,37 @@
 import Activities from './pages/Activities';
+import AdmissionPathways from './pages/AdmissionPathways';
 import CantoneseLearn from './pages/CantoneseLearn';
 import Exchange from './pages/Exchange';
 import HKPlaces from './pages/HKPlaces';
 import Home from './pages/Home';
+import LivingInfo from './pages/LivingInfo';
 import MainlandUni from './pages/MainlandUni';
+import MainlandUniDatabase from './pages/MainlandUniDatabase';
 import Registration from './pages/Registration';
+import Scholarships from './pages/Scholarships';
 import StudyInfo from './pages/StudyInfo';
 import Subjects from './pages/Subjects';
-import MainlandUniDatabase from './pages/MainlandUniDatabase';
-import AdmissionPathways from './pages/AdmissionPathways';
-import Scholarships from './pages/Scholarships';
 import SupportOrganizations from './pages/SupportOrganizations';
-import LivingInfo from './pages/LivingInfo';
+import StudyPlanner from './pages/StudyPlanner';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
     "Activities": Activities,
+    "AdmissionPathways": AdmissionPathways,
     "CantoneseLearn": CantoneseLearn,
     "Exchange": Exchange,
     "HKPlaces": HKPlaces,
     "Home": Home,
+    "LivingInfo": LivingInfo,
     "MainlandUni": MainlandUni,
+    "MainlandUniDatabase": MainlandUniDatabase,
     "Registration": Registration,
+    "Scholarships": Scholarships,
     "StudyInfo": StudyInfo,
     "Subjects": Subjects,
-    "MainlandUniDatabase": MainlandUniDatabase,
-    "AdmissionPathways": AdmissionPathways,
-    "Scholarships": Scholarships,
     "SupportOrganizations": SupportOrganizations,
-    "LivingInfo": LivingInfo,
+    "StudyPlanner": StudyPlanner,
 }
 
 export const pagesConfig = {

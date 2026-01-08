@@ -42,17 +42,18 @@ const navGroups = {
     { name: '內地大學數據庫', page: 'MainlandUniDatabase', icon: School },
     { name: '升學途徑', page: 'AdmissionPathways', icon: GraduationCap },
     { name: '資助與獎學金', page: 'Scholarships', icon: Award },
+    { name: '學科推介', page: 'Subjects', icon: BookOpen },
+    { name: '升學規劃工具', page: 'StudyPlanner', icon: Award },
     { name: '香港大學', page: 'StudyInfo', icon: BookOpen }
   ],
   gangpiao: [
     { name: '支援機構', page: 'SupportOrganizations', icon: Users },
-    { name: '生活資訊', page: 'LivingInfo', icon: Home }
+    { name: '生活資訊', page: 'LivingInfo', icon: Home },
+    { name: '香港好去處', page: 'HKPlaces', icon: Map }
   ],
   learning: [
     { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
-    { name: '中港交流', page: 'Exchange', icon: Globe },
-    { name: '學科推介', page: 'Subjects', icon: BookOpen },
-    { name: '香港好去處', page: 'HKPlaces', icon: Map }
+    { name: '中港交流', page: 'Exchange', icon: Globe }
   ]
 };
 
@@ -397,6 +398,7 @@ export default function Layout({ children, currentPageName }) {
                 <li><Link to={createPageUrl('MainlandUniDatabase')} className="text-gray-400 hover:text-white transition-colors">內地大學</Link></li>
                 <li><Link to={createPageUrl('AdmissionPathways')} className="text-gray-400 hover:text-white transition-colors">升學途徑</Link></li>
                 <li><Link to={createPageUrl('Scholarships')} className="text-gray-400 hover:text-white transition-colors">資助獎學金</Link></li>
+                <li><Link to={createPageUrl('StudyPlanner')} className="text-gray-400 hover:text-white transition-colors">升學規劃</Link></li>
               </ul>
             </div>
 
@@ -406,12 +408,12 @@ export default function Layout({ children, currentPageName }) {
               <ul className="space-y-3">
                 <li><Link to={createPageUrl('SupportOrganizations')} className="text-gray-400 hover:text-white transition-colors">支援機構</Link></li>
                 <li><Link to={createPageUrl('LivingInfo')} className="text-gray-400 hover:text-white transition-colors">生活資訊</Link></li>
+                <li><Link to={createPageUrl('HKPlaces')} className="text-gray-400 hover:text-white transition-colors">香港好去處</Link></li>
               </ul>
               <h3 className="font-semibold text-lg mb-4 mt-6">學習資源</h3>
               <ul className="space-y-3">
                 <li><Link to={createPageUrl('CantoneseLearn')} className="text-gray-400 hover:text-white transition-colors">廣東話學習</Link></li>
                 <li><Link to={createPageUrl('Exchange')} className="text-gray-400 hover:text-white transition-colors">中港交流</Link></li>
-                <li><Link to={createPageUrl('HKPlaces')} className="text-gray-400 hover:text-white transition-colors">香港好去處</Link></li>
               </ul>
             </div>
           </div>

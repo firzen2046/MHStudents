@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { motion } from "framer-motion";
 
-// 扩充的大学数据库
+// 扩充的大学数据库 - 包含主要一本、二本大学
 const universities = [
-  // 一本大学
+  // C9联盟 + 985工程一本大学
   { name: "北京大學", tier: "一本", province: "北京", ranking: 1, type: "综合", dseMin: "3-3-3-3", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
   { name: "清華大學", tier: "一本", province: "北京", ranking: 2, type: "理工", dseMin: "3-3-3-3", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
   { name: "復旦大學", tier: "一本", province: "上海", ranking: 3, type: "综合", dseMin: "3-3-2-2", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
@@ -29,32 +29,93 @@ const universities = [
   { name: "中國人民大學", tier: "一本", province: "北京", ranking: 18, type: "文法", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
   { name: "北京航空航天大學", tier: "一本", province: "北京", ranking: 19, type: "理工", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
   { name: "廈門大學", tier: "一本", province: "福建", ranking: 20, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "山東大學", tier: "一本", province: "山東", ranking: 21, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "吉林大學", tier: "一本", province: "吉林", ranking: 22, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "華南理工大學", tier: "一本", province: "廣東", ranking: 23, type: "理工", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "湖南大學", tier: "一本", province: "湖南", ranking: 24, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  { name: "重慶大學", tier: "一本", province: "重慶", ranking: 25, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "東南大學", tier: "一本", province: "江蘇", ranking: 26, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "北京理工大學", tier: "一本", province: "北京", ranking: 27, type: "理工", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "中南大學", tier: "一本", province: "湖南", ranking: 28, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "西北工業大學", tier: "一本", province: "陝西", ranking: 29, type: "理工", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "大連理工大學", tier: "一本", province: "遼寧", ranking: 30, type: "理工", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "華東師範大學", tier: "一本", province: "上海", ranking: 31, type: "师范", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  { name: "電子科技大學", tier: "一本", province: "四川", ranking: 32, type: "理工", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "蘭州大學", tier: "一本", province: "甘肅", ranking: 33, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "東北大學", tier: "一本", province: "遼寧", ranking: 34, type: "理工", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "中國農業大學", tier: "一本", province: "北京", ranking: 35, type: "农林", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "中國海洋大學", tier: "一本", province: "山東", ranking: 36, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "西北農林科技大學", tier: "一本", province: "陝西", ranking: 37, type: "农林", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "中央民族大學", tier: "一本", province: "北京", ranking: 38, type: "民族", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
   
-  // 二本大学（优质）
-  { name: "暨南大學", tier: "二本", province: "廣東", ranking: 53, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
-  { name: "華南理工大學", tier: "二本", province: "廣東", ranking: 25, type: "理工", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  // 211工程及重点一本大学
+  { name: "南京師範大學", tier: "一本", province: "江蘇", ranking: 40, type: "师范", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "蘇州大學", tier: "一本", province: "江蘇", ranking: 42, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "鄭州大學", tier: "一本", province: "河南", ranking: 43, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "西南大學", tier: "一本", province: "重慶", ranking: 45, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "北京交通大學", tier: "一本", province: "北京", ranking: 46, type: "理工", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  { name: "暨南大學", tier: "一本", province: "廣東", ranking: 48, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "西南交通大學", tier: "一本", province: "四川", ranking: 50, type: "理工", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "湖南師範大學", tier: "一本", province: "湖南", ranking: 52, type: "师范", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "南昌大學", tier: "一本", province: "江西", ranking: 54, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "華中師範大學", tier: "一本", province: "湖北", ranking: 55, type: "师范", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  { name: "上海大學", tier: "一本", province: "上海", ranking: 58, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "北京科技大學", tier: "一本", province: "北京", ranking: 60, type: "理工", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "華東理工大學", tier: "一本", province: "上海", ranking: 62, type: "理工", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "南京航空航天大學", tier: "一本", province: "江蘇", ranking: 64, type: "理工", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "雲南大學", tier: "一本", province: "雲南", ranking: 65, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  
+  // 优质二本大学
   { name: "深圳大學", tier: "二本", province: "廣東", ranking: 70, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
-  { name: "華僑大學", tier: "二本", province: "福建", ranking: 100, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
-  { name: "廣東外語外貿大學", tier: "二本", province: "廣東", ranking: 110, type: "语言", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
-  { name: "北京語言大學", tier: "二本", province: "北京", ranking: 120, type: "语言", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "寧波大學", tier: "二本", province: "浙江", ranking: 72, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
   { name: "華南師範大學", tier: "二本", province: "廣東", ranking: 75, type: "师范", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "首都師範大學", tier: "二本", province: "北京", ranking: 80, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "浙江工業大學", tier: "二本", province: "浙江", ranking: 85, type: "理工", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "揚州大學", tier: "二本", province: "江蘇", ranking: 89, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "江蘇大學", tier: "二本", province: "江蘇", ranking: 92, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "浙江師範大學", tier: "二本", province: "浙江", ranking: 95, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  { name: "華僑大學", tier: "二本", province: "福建", ranking: 100, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "福建師範大學", tier: "二本", province: "福建", ranking: 106, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "廣東外語外貿大學", tier: "二本", province: "廣東", ranking: 110, type: "语言", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "上海師範大學", tier: "二本", province: "上海", ranking: 111, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "杭州師範大學", tier: "二本", province: "浙江", ranking: 115, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "北京語言大學", tier: "二本", province: "北京", ranking: 118, type: "语言", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "天津師範大學", tier: "二本", province: "天津", ranking: 125, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  { name: "山東師範大學", tier: "二本", province: "山東", ranking: 130, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "河南大學", tier: "二本", province: "河南", ranking: 135, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "安徽師範大學", tier: "二本", province: "安徽", ranking: 140, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
   { name: "廣州大學", tier: "二本", province: "廣東", ranking: 145, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
-  { name: "集美大學", tier: "二本", province: "福建", ranking: 207, type: "综合", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "重慶郵電大學", tier: "二本", province: "重慶", ranking: 150, type: "理工", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "南京郵電大學", tier: "二本", province: "江蘇", ranking: 155, type: "理工", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "浙江工商大學", tier: "二本", province: "浙江", ranking: 160, type: "财经", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  { name: "四川師範大學", tier: "二本", province: "四川", ranking: 165, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "江西師範大學", tier: "二本", province: "江西", ranking: 170, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "廣西大學", tier: "二本", province: "廣西", ranking: 175, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "汕頭大學", tier: "二本", province: "廣東", ranking: 180, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "海南大學", tier: "二本", province: "海南", ranking: 185, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "寧夏大學", tier: "二本", province: "寧夏", ranking: 190, type: "综合", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "貴州大學", tier: "二本", province: "貴州", ranking: 195, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  { name: "青海大學", tier: "二本", province: "青海", ranking: 200, type: "综合", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "集美大學", tier: "二本", province: "福建", ranking: 207, type: "综合", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "廣東工業大學", tier: "二本", province: "廣東", ranking: 210, type: "理工", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "廣東財經大學", tier: "二本", province: "廣東", ranking: 220, type: "财经", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "廣州醫科大學", tier: "二本", province: "廣東", ranking: 225, type: "医药", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
   { name: "廣東海洋大學", tier: "二本", province: "廣東", ranking: 234, type: "农林", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
   { name: "北京聯合大學", tier: "二本", province: "北京", ranking: 250, type: "综合", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
-  { name: "上海師範大學", tier: "二本", province: "上海", ranking: 111, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
-  { name: "浙江工業大學", tier: "二本", province: "浙江", ranking: 85, type: "理工", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
-  { name: "南京師範大學", tier: "二本", province: "江蘇", ranking: 40, type: "师范", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
-  { name: "蘇州大學", tier: "二本", province: "江蘇", ranking: 42, type: "综合", dseMin: "2-2-2-2", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
-  { name: "湖南師範大學", tier: "二本", province: "湖南", ranking: 52, type: "师范", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
-  { name: "福建師範大學", tier: "二本", province: "福建", ranking: 106, type: "师范", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
-  { name: "雲南大學", tier: "二本", province: "雲南", ranking: 65, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
-  { name: "寧波大學", tier: "二本", province: "浙江", ranking: 75, type: "综合", dseMin: "2-2-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
-  { name: "揚州大學", tier: "二本", province: "江蘇", ranking: 89, type: "综合", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "上海理工大學", tier: "二本", province: "上海", ranking: 255, type: "理工", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "上海海事大學", tier: "二本", province: "上海", ranking: 260, type: "理工", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "天津工業大學", tier: "二本", province: "天津", ranking: 265, type: "理工", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
+  { name: "天津科技大學", tier: "二本", province: "天津", ranking: 270, type: "理工", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=400" },
+  { name: "天津理工大學", tier: "二本", province: "天津", ranking: 275, type: "理工", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400" },
+  { name: "成都理工大學", tier: "二本", province: "四川", ranking: 280, type: "理工", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400" },
+  { name: "西南石油大學", tier: "二本", province: "四川", ranking: 285, type: "理工", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1567449303078-57ad995bd329?w=400" },
+  { name: "長沙理工大學", tier: "二本", province: "湖南", ranking: 290, type: "理工", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400" },
+  { name: "武漢科技大學", tier: "二本", province: "湖北", ranking: 295, type: "理工", dseMin: "2-1-1-1", image: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=400" },
+  { name: "青島大學", tier: "二本", province: "山東", ranking: 300, type: "综合", dseMin: "1-1-1-1", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400" },
 ];
 
-const provinces = ["全部", "北京", "上海", "廣東", "江蘇", "浙江", "福建", "湖北", "四川", "陝西", "天津", "安徽", "湖南", "雲南", "黑龍江"];
-const types = ["全部", "综合", "理工", "师范", "语言", "文法", "农林"];
+const provinces = ["全部", "北京", "上海", "廣東", "江蘇", "浙江", "福建", "湖北", "四川", "陝西", "天津", "安徽", "湖南", "雲南", "黑龍江", "山東", "吉林", "重慶", "遼寧", "甘肅", "河南", "江西", "廣西", "海南", "寧夏", "貴州", "青海"];
+const types = ["全部", "综合", "理工", "师范", "语言", "文法", "农林", "财经", "医药", "民族"];
 
 export default function MainlandUniDatabase() {
   const [searchTerm, setSearchTerm] = useState("");
