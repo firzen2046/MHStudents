@@ -1,7 +1,6 @@
 import React from 'react';
 import { Calendar, Users, Award, MapPin, Presentation, Clock, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 const activities = [
   {
