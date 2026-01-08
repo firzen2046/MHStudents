@@ -42,8 +42,7 @@ const navGroups = {
     { name: '內地大學數據庫', page: 'MainlandUniDatabase', icon: School },
     { name: '升學途徑', page: 'AdmissionPathways', icon: GraduationCap },
     { name: '資助與獎學金', page: 'Scholarships', icon: Award },
-    { name: '學科推介', page: 'Subjects', icon: BookOpen },
-    { name: '升學規劃工具', page: 'StudyPlanner', icon: Award },
+    { name: '升學規劃工具', page: 'StudyPlanner', icon: GraduationCap },
     { name: '香港大學', page: 'StudyInfo', icon: BookOpen }
   ],
   gangpiao: [
@@ -57,7 +56,7 @@ const navGroups = {
   ]
 };
 
-export default function Layout({ children, currentPageName }) {
+function Layout({ children, currentPageName }) {
   const [isOpen, setIsOpen] = useState(false);
   const [lang, setLang] = useState('zh_TW');
   const location = useLocation();
@@ -432,3 +431,5 @@ export default function Layout({ children, currentPageName }) {
     </LanguageContext.Provider>
   );
 }
+
+export default Layout;
