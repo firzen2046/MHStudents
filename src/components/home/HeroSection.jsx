@@ -32,19 +32,19 @@ export default function HeroSection() {
             <div className="flex items-center gap-2 mb-6">
               <span className="px-4 py-2 bg-amber-500/20 backdrop-blur-sm rounded-full text-amber-300 text-sm font-medium border border-amber-500/30">
                 <Sparkles className="w-4 h-4 inline mr-2" />
-                2025年1月至8月
+                港漂夥伴計劃 · 費用全免
               </span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              中港同窗
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">
-                築夢同行
+              聽見・漂行
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500 text-4xl lg:text-5xl mt-2">
+                港漂夥伴計劃
               </span>
             </h1>
             
             <p className="text-xl text-purple-100/80 mb-8 leading-relaxed max-w-xl">
-              促進香港與內地青年交流，讓中學生體驗內地教育，幫助港漂學生融入香港生活，共同建立持續的文化交流橋樑。
+              語言障礙、文化差異、社交侷限……你不是一個人在漂。我們透過遊戲破冰、結伴同行、文化學習，幫助港漂找回歸屬感，打破文化隔閡，共建美好青年圈子。
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
@@ -54,11 +54,11 @@ export default function HeroSection() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link to={createPageUrl("Activities")}>
+              <a href="https://canva.link/ad1yi1or4uyfebe" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-6 text-lg rounded-xl shadow-lg">
-                  了解活動
+                  了解計劃詳情
                 </Button>
-              </Link>
+              </a>
             </div>
 
             <div className="flex items-center gap-8">
@@ -67,8 +67,8 @@ export default function HeroSection() {
                   <Users className="w-6 h-6 text-purple-200" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">1330+</p>
-                  <p className="text-sm text-purple-200/70">預計參與人數</p>
+                  <p className="text-2xl font-bold text-white">18-40歲</p>
+                  <p className="text-sm text-purple-200/70">開放對象</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -76,8 +76,8 @@ export default function HeroSection() {
                   <GraduationCap className="w-6 h-6 text-amber-200" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">5</p>
-                  <p className="text-sm text-purple-200/70">主要活動</p>
+                  <p className="text-2xl font-bold text-white">全免費用</p>
+                  <p className="text-sm text-purple-200/70">免費參與</p>
                 </div>
               </div>
             </div>

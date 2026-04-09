@@ -5,97 +5,81 @@ import { motion } from "framer-motion";
 const activities = [
   {
     id: 1,
-    title: "認識日",
-    date: "2026年3月",
+    title: "破冰啟航活動",
+    date: "2026年3月22日",
     icon: Users,
     color: "purple",
-    participants: "100人",
-    description: "認識彼此，結伴同行。透過配對活動讓中學生與港漂學生建立聯繫，開展交流之旅的第一步。",
+    participants: "港漂青年",
+    description: "首次破冰活動，透過遊戲互動認識彼此，建立第一個本地朋友圈。於香港漂波中，「聽見・漂行」鄧伴你踏出第一步。",
     details: [
-      "進場簽到及配對活動",
-      "打開盲盒，尋找配隊的組別",
-      "破冰遊戲，互相認識",
-      "港漂生活分享環節",
-      "小組討論與交流",
-      "建立聯絡群組",
+      "進場簽到及破冰遊戲",
+      "自我介紹互動環節",
+      "香港本地青年和港漂互動",
+      "建立港漂小組微信群",
+      "分享在港生活的苦興與小技巧",
       "合照留念"
     ]
   },
   {
     id: 2,
-    title: "學習日",
-    date: "2026年4月",
+    title: "粵語學習工作坊",
+    date: "計劃期間",
     icon: Presentation,
     color: "blue",
-    participants: "100人",
-    description: "互相學習，你授與廣東話，他授與國內留學經驗及心得。透過雙向教學，促進文化交流。",
+    participants: "港漂青年",
+    description: "許多港漂因語言障礙而不敢軽易開口說粵語。我們的工作坊通過趣味遊戲與實際演練，幫助您勇敢開口！",
     details: [
-      "廣東話學習工作坊 - 港漂生學習日常用語",
-      "內地升學經驗分享 - 港漂生分享升學心得",
-      "文化交流活動",
-      "小組互動學習",
-      "潮語大電視遊戲",
-      "學習成果分享"
+      "粵語日常用語學習",
+      "淡語大電視趣味遊戲",
+      "香港本地青年擔導粵語對話",
+      "日常生活情境演練",
+      "文化差異與用語習慣分享"
     ]
   },
   {
     id: 3,
-    title: "義工日",
-    date: "2025年5月",
+    title: "社區服務體驗",
+    date: "計劃期間",
     icon: Award,
     color: "emerald",
-    participants: "100人",
-    description: "服務社會，訓練自己。透過社區服務活動，培養社會責任感，同時增進彼此了解。",
+    participants: "港漂青年",
+    description: "深入社區，體驗香港本地文化，幫助有需要的居民，展現港漂的气思與能外。",
     details: [
       "社區服務活動",
+      "與本地居民面對面交流",
       "長者探訪或環保活動",
       "團隊合作任務",
-      "服務技能培訓",
-      "義工服務實踐",
-      "服務反思分享",
-      "頒發義工服務證書"
+      "服務反思分享"
     ]
   },
   {
     id: 4,
-    title: "內地大學體驗團",
-    date: "2025年7月上旬",
+    title: "本地青年交流活動",
+    date: "計劃期間",
     icon: MapPin,
     color: "amber",
-    participants: "30人",
-    description: "五日四夜或四日三夜的內地大學體驗團活動，讓香港中學生親身感受內地大學生活，了解內地升學機會。",
-    timeline: [
-      { month: "3月", event: "報名及面試" },
-      { month: "4月", event: "團前簡介會及講座" },
-      { month: "7月上旬", event: "內地大學體驗交流團（4-5日）" },
-      { month: "8月", event: "團後分享會" }
-    ],
+    participants: "港漂 + 本地青年",
+    description: "與香港本地青年面對面交流，打破文化隔閡，建立真實的跨文化友課關係。",
     details: [
-      "參觀內地頂尖大學校園",
-      "體驗大學課堂",
-      "與內地大學生交流",
-      "了解內地升學途徑",
-      "參觀當地文化景點",
-      "撰寫交流心得"
+      "本地青年和港漂組對互動",
+      "共同參加香港特色活動",
+      "分享各自文化背景與生活經驗",
+      "建立持續朋友關係"
     ]
   },
   {
     id: 5,
-    title: "閉幕禮暨團後分享會",
-    date: "2025年8月",
+    title: "中港兩地回饋項目暨領證書顓贈禮",
+    date: "計劃期間",
     icon: Calendar,
     color: "rose",
-    participants: "100人",
-    description: "在閉幕禮舉辦體驗團參加者交流分享會，嘉許所有活動參與者，頒發嘉許證書。",
+    participants: "港漂青年",
+    description: "參與跨境交流項目，獲頒活動策劃證書，成為更有影響力的青年領袖。",
     details: [
-      "開場前展覽及市集",
-      "展出兩地升學資訊",
-      "開場儀式",
-      "嘉許環節 - 嘉許支持及贊助單位",
-      "體驗團參加者分享環節",
-      "頒發嘉許證書",
-      "致謝環節",
-      "大合照"
+      "參與跨境交流項目",
+      "計劃和執行活動",
+      "獲頒活動策劃證書",
+      "門註与與分享活動心得"
     ]
   }
 ];
@@ -118,12 +102,12 @@ export default function Activities() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <span className="text-purple-300 font-medium mb-4 block">精彩活動</span>
+            <span className="text-purple-300 font-medium mb-4 block">計劃活動</span>
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              活動詳情
+              聽見・漂行 — 活動詳情
             </h1>
             <p className="text-xl text-purple-200 max-w-2xl mx-auto">
-              五大重點活動，促進香港與內地青年深入交流
+              從破冰到深度連結，幫助港漂找回归屬感
             </p>
           </motion.div>
         </div>

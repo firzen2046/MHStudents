@@ -127,8 +127,8 @@ function Layout({ children, currentPageName }) {
                 className="h-12 w-auto"
               />
               <div className="hidden sm:block">
-                <p className="font-bold text-gray-900 text-lg leading-tight">中港同窗</p>
-                <p className="text-xs text-gray-500">築夢同行</p>
+                <p className="font-bold text-gray-900 text-lg leading-tight">聽見・漂行</p>
+                <p className="text-xs text-gray-500">港漂夥伴計劃</p>
               </div>
             </Link>
 
@@ -360,15 +360,14 @@ function Layout({ children, currentPageName }) {
                   className="h-16 w-auto"
                 />
                 <div>
-                  <p className="font-bold text-xl">中港同窗 築夢同行</p>
-                  <p className="text-gray-400 text-sm">主辦：半島青年商會</p>
-                </div>
+                  <p className="font-bold text-xl">聽見・漂行 港漂夥伴計劃</p>
               </div>
-              <div className="flex items-center gap-3 mb-6">
-                <img 
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/0340f2ccd_image.png"
-                  alt="JCI Peninsula"
-                  className="h-16 w-auto opacity-80"
+            </div>
+            <div className="flex items-center gap-3 mb-6">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/0340f2ccd_image.png"
+                alt="JCI Peninsula"
+                className="h-16 w-auto opacity-80"
                 />
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">

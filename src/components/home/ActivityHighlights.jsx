@@ -7,48 +7,48 @@ import { motion } from "framer-motion";
 const activities = [
   {
     id: 1,
-    title: "認識日",
-    date: "2026年3月",
+    title: "破冰啟航活動",
+    date: "2026年3月22日",
     icon: Users,
     color: "from-purple-500 to-purple-600",
-    participants: "100人",
-    description: "認識彼此，結伴同行 - 透過配對活動讓中學生與港漂學生建立聯繫"
+    participants: "港漂青年",
+    description: "首次破冰活動，透過遊戲互動認識彼此，打開心扉，建立第一個本地朋友圈"
   },
   {
     id: 2,
-    title: "學習日",
-    date: "2026年4月",
+    title: "粵語學習工作坊",
+    date: "計劃期間",
     icon: Presentation,
     color: "from-blue-500 to-blue-600",
-    participants: "100人",
-    description: "互相學習，你授與廣東話，他授與國內留學經驗及心得"
+    participants: "港漂青年",
+    description: "輕鬆有趣地學習粵語日常用語，突破語言障礙，勇敢開口說廣東話"
   },
   {
     id: 3,
-    title: "義工日",
-    date: "2025年5月",
+    title: "社區服務體驗",
+    date: "計劃期間",
     icon: Award,
     color: "from-emerald-500 to-emerald-600",
-    participants: "100人",
-    description: "服務社會，訓練自己 - 參與社區服務，培養社會責任感"
+    participants: "港漂青年",
+    description: "參與本地社區服務，深入了解香港文化，拓展本地人際網絡"
   },
   {
     id: 4,
-    title: "內地大學體驗團",
-    date: "2025年7月上旬",
+    title: "本地青年交流活動",
+    date: "計劃期間",
     icon: MapPin,
     color: "from-amber-500 to-amber-600",
-    participants: "30人",
-    description: "五日四夜或四日三夜體驗團，讓香港中學生親身感受內地大學生活"
+    participants: "港漂 + 本地青年",
+    description: "與香港本地青年互動交流，打破文化隔閡，擴大真實社交圈"
   },
   {
     id: 5,
-    title: "閉幕禮暨團後分享會",
-    date: "2025年8月",
+    title: "中港兩地回饋項目",
+    date: "計劃期間",
     icon: Calendar,
     color: "from-rose-500 to-rose-600",
-    participants: "100人",
-    description: "體驗團參加者交流分享，嘉許活動參與者，頒發嘉許證書"
+    participants: "港漂青年",
+    description: "參與跨境交流項目，獲頒活動策劃證書，成為更有影響力的青年領袖"
   }
 ];
 
@@ -62,12 +62,12 @@ export default function ActivityHighlights() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-purple-600 font-medium mb-4 block">精彩活動</span>
+          <span className="text-purple-600 font-medium mb-4 block">計劃活動</span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            五大重點活動
+            五大核心體驗
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            透過多元化活動促進香港與內地青年深入交流
+            從破冰到深度連結，一步步幫助港漂找回歸屬感
           </p>
         </motion.div>
 

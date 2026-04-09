@@ -20,10 +20,10 @@ export default function RegistrationCTA() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            立即報名參加
+            立即加入「聽見・漂行」
           </h2>
           <p className="text-xl text-purple-200 max-w-2xl mx-auto">
-            成為中港同窗大使，與港漂大學生組合，互相學習，共同體驗
+            對象：18-40歲青年 · 費用全免 · 與我們一起用真誠的交流填補內心的空缺
           </p>
         </motion.div>
 
@@ -37,26 +37,26 @@ export default function RegistrationCTA() {
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
               <GraduationCap className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">中學生報名</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">港漂夥伴報名</h3>
             <p className="text-purple-200 mb-6">
-              有意在內地升讀大學的香港中學生，歡迎報名參加交流大使計劃
+              在港居住的內地青年（18-40歲），希望擴大社交圈、融入香港生活
             </p>
             <ul className="text-purple-100 space-y-2 mb-8">
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                認識日：結伴同行
+                3月22日破冰活動：認識第一批本地朋友
               </li>
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                學習日：互相學習廣東話
+                粵語學習工作坊：勇敢開口說廣東話
               </li>
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                義工日：服務社會
+                社區服務：深入了解香港文化
               </li>
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                內地大學體驗交流團
+                獲頒活動策劃證書
               </li>
             </ul>
             <a 
@@ -65,7 +65,7 @@ export default function RegistrationCTA() {
               rel="noopener noreferrer"
             >
               <Button className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-6 text-lg rounded-xl">
-                中學生報名
+                立即報名
                 <ExternalLink className="ml-2 w-5 h-5" />
               </Button>
             </a>
@@ -80,35 +80,35 @@ export default function RegistrationCTA() {
             <div className="w-16 h-16 bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mb-6">
               <Users className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">港漂生報名</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">了解計劃詳情</h3>
             <p className="text-purple-200 mb-6">
-              各位港漂大學生，歡迎加入交流大使計劃，協助他人融入香港社會
+              想深入了解「聽見・漂行」計劃的完整內容、時間表及參與方式
             </p>
             <ul className="text-purple-100 space-y-2 mb-8">
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                認識日：結伴同行
+                計劃完整時間表及內容
               </li>
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                學習日：分享留學經驗
+                如何幫助港漂克服困境
               </li>
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                義工日：服務社會
+                活動策劃證書詳情
               </li>
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                閉幕禮：頒發嘉許證書
+                主辦機構：半島青年商會
               </li>
             </ul>
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLScjBEJEe2v98yjUFmGgyf654aCUSm8vNur5i4iswCm5Cm3g5g/viewform?usp=dialog"
+              href="https://canva.link/ad1yi1or4uyfebe"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button className="w-full bg-white text-purple-900 hover:bg-gray-100 py-6 text-lg rounded-xl">
-                港漂生報名
+                查看計劃詳情
                 <ExternalLink className="ml-2 w-5 h-5" />
               </Button>
             </a>
@@ -122,7 +122,7 @@ export default function RegistrationCTA() {
           className="text-center mt-12"
         >
           <p className="text-purple-200">
-            截止報名日期：<span className="text-amber-400 font-semibold">2026年2月28日</span>
+            對象：<span className="text-amber-400 font-semibold">18-40歲青年</span>
           </p>
           <p className="text-purple-300 mt-2">
             費用：<span className="text-white font-semibold">全免</span>
