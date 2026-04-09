@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, GraduationCap, Users, CheckCircle2, Calendar, Gift } from "lucide-react";
+import { ExternalLink, GraduationCap, Users, CheckCircle2, Calendar, Gift, Presentation, Award, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -201,6 +201,48 @@ export default function Registration() {
                   </motion.div>
                   </div>
 
+                  {/* 4 Activity Series Cards */}
+                  <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="max-w-5xl mx-auto mt-16"
+                  >
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">四大系列活動</h2>
+                  <p className="text-center text-gray-500 mb-10">報名後即可參與以下所有活動，全程免費</p>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {[
+                      { icon: Users, color: 'purple', title: '破冰啟航活動', date: '2026年3月22日', participants: '港漂青年', desc: '首次破冰活動，透過遊戲互動認識彼此，建立第一個本地朋友圈。' },
+                      { icon: Presentation, color: 'blue', title: '粵語學習工作坊', date: '計劃期間', participants: '港漂青年', desc: '輕鬆有趣地學習粵語日常用語，突破語言障礙，勇敢開口說廣東話。' },
+                      { icon: Award, color: 'emerald', title: '社區服務體驗', date: '計劃期間', participants: '港漂青年', desc: '參與本地社區服務，深入了解香港文化，拓展本地人際網絡。' },
+                      { icon: MapPin, color: 'amber', title: '本地青年交流活動', date: '計劃期間', participants: '港漂 + 本地青年', desc: '與香港本地青年互動交流，打破文化隔閡，擴大真實社交圈。' },
+                      { icon: Calendar, color: 'rose', title: '中港兩地回饋項目', date: '計劃期間', participants: '港漂青年', desc: '參與跨境交流項目，獲頒活動策劃證書，成為更有影響力的青年領袖。' },
+                    ].map((act, i) => {
+                      const colorMap = {
+                        purple: 'bg-purple-100 text-purple-600',
+                        blue: 'bg-blue-100 text-blue-600',
+                        emerald: 'bg-emerald-100 text-emerald-600',
+                        amber: 'bg-amber-100 text-amber-600',
+                        rose: 'bg-rose-100 text-rose-600',
+                      };
+                      return (
+                        <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                          className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+                          <div className={`w-12 h-12 ${colorMap[act.color]} rounded-xl flex items-center justify-center mb-4`}>
+                            <act.icon className="w-6 h-6" />
+                          </div>
+                          <div className="flex gap-2 mb-3">
+                            <span className="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full">{act.date}</span>
+                            <span className="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full">{act.participants}</span>
+                          </div>
+                          <h3 className="font-bold text-gray-900 mb-2">{act.title}</h3>
+                          <p className="text-gray-500 text-sm">{act.desc}</p>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                  </motion.div>
+
                   {/* Additional Info */}
                   <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -214,7 +256,7 @@ export default function Registration() {
                   完成計劃的參加者將獲得<strong>活動策劃證書</strong>，成為更有影響力的青年領袖。
                   </p>
                   <p className="text-gray-500 text-sm">
-                  如有任何查詢，請聯絡馮先生：5409 6712 或電郵至 rio_fung@hkpjc.org
+                  如有任何查詢，請聯絡駮先生：5409 6712 或電郵至 rio_fung@hkpjc.org
                   </p>
                   </div>
                   </motion.div>

@@ -82,6 +82,36 @@ const scenarios = [
     ],
     keywords: ["唔該", "係咪", "幾耐", "多謝"]
   },
+  {
+    id: 5,
+    title: "搭訕追女仔",
+    icon: "💌",
+    description: "在咖啡店搭訕本地女生，用廣東話表達好感",
+    dialogue: [
+      { role: "你", text: "唔該，你張凳有冇人坐呀？", translation: "請問，你旁邊那個位置有人坐嗎？" },
+      { role: "女生", text: "冇㗎，你坐囉。", translation: "沒有的，你坐吧。" },
+      { role: "你", text: "多謝！你係咪喺附近返工㗎？", translation: "謝謝！你是在附近上班的嗎？" },
+      { role: "女生", text: "係呀，你呢？感覺你唔係本地人喎。", translation: "是啊，你呢？感覺你不像本地人。" },
+      { role: "你", text: "係，我係內地嚟㗎，最近先嚟香港。可唔可以加你微信，有機會請你食嘢？", translation: "是的，我從內地來的，最近才來香港。可以加你微信嗎，有機會請你吃飯？" },
+      { role: "女生", text: "哈哈，你好大膽喎。好呀，加我喇。", translation: "哈哈，你很大膽啊。好吧，加我吧。" },
+    ],
+    keywords: ["有冇人坐", "係咪", "唔係本地人", "請你食嘢"]
+  },
+  {
+    id: 6,
+    title: "情侶嘈交",
+    icon: "💢",
+    description: "港漂男友與本地女友發生口角，學習如何用廣東話化解誤會",
+    dialogue: [
+      { role: "女友", text: "你又唔覆我訊息！成日咁㗎你！", translation: "你又不回我訊息！你老是這樣！" },
+      { role: "你", text: "唔係㗎，我啱啱開完會，冇得睇手機。", translation: "不是的，我剛剛開完會，沒辦法看手機。" },
+      { role: "女友", text: "你成日都係呢個藉口！", translation: "你老是這個藉口！" },
+      { role: "你", text: "我係真係唔係故意㗎，你聽我解釋先得唔得？", translation: "我真的不是故意的，你先聽我解釋好嗎？" },
+      { role: "女友", text: "咁你解釋囉……", translation: "那你解釋吧……" },
+      { role: "你", text: "我係真係好掛住你，之後我會即時覆你㗎，對唔住。", translation: "我真的很想你，之後我會即時回覆你的，對不起。" },
+    ],
+    keywords: ["覆訊息", "唔係故意", "聽我解釋", "對唔住"]
+  },
 ];
 
 // Videos with dubbed versions - using YouTube search-friendly links
@@ -89,8 +119,8 @@ const videos = [
   {
     title: "粵語日常對話 - 打招呼篇",
     desc: "學習日常問候語，包括早晨、再見、點呀等基本用語",
-    withAudio: "https://www.youtube.com/results?search_query=%E5%B9%BC%E5%85%92%E7%B2%B5%E8%AA%9E%E6%97%A5%E5%B8%B8%E5%B0%8D%E8%A9%B1",
-    noAudio: "https://www.youtube.com/results?search_query=%E7%B2%B5%E8%AA%9E%E5%AD%B8%E7%BF%92+%E6%8E%A5%E8%88%8C",
+    withAudio: "https://www.youtube.com/watch?v=KCrXgy8qtjM",
+    noAudio: "https://www.youtube.com/watch?v=dbE5e4ckNpE",
     category: "基礎",
     duration: "5-10分鐘",
     icon: "👋"
@@ -98,8 +128,8 @@ const videos = [
   {
     title: "粵語購物對話",
     desc: "茶餐廳、超市、街市的常用廣東話，包含議價、點餐技巧",
-    withAudio: "https://www.youtube.com/results?search_query=%E7%B2%B5%E8%AA%9E%E8%B3%BC%E7%89%A9%E5%B0%8D%E8%A9%B1",
-    noAudio: "https://www.youtube.com/results?search_query=%E7%B2%B5%E8%AA%9E+%E8%8C%B6%E9%A4%90%E5%BB%B3+%E9%BB%9E%E9%A4%90",
+    withAudio: "https://www.youtube.com/watch?v=MnVqvGVDe2M",
+    noAudio: "https://www.youtube.com/watch?v=3R0I4hKv4Yk",
     category: "生活",
     duration: "8-15分鐘",
     icon: "🛒"
@@ -107,8 +137,8 @@ const videos = [
   {
     title: "香港文化與語言",
     desc: "透過香港流行文化、電影學習地道廣東話及文化背景",
-    withAudio: "https://www.youtube.com/results?search_query=%E9%A6%99%E6%B8%AF%E6%96%87%E5%8C%96%E8%AA%9E%E8%A8%80%E5%8F%A3%E8%AA%9E",
-    noAudio: "https://www.youtube.com/results?search_query=%E7%B2%B5%E8%AA%9E+cantopop+%E6%AD%8C%E8%A9%9E",
+    withAudio: "https://www.youtube.com/watch?v=RMFWFOL8RTk",
+    noAudio: "https://www.youtube.com/watch?v=_qv7PJaFOQw",
     category: "文化",
     duration: "10-20分鐘",
     icon: "🎬"
@@ -116,8 +146,8 @@ const videos = [
   {
     title: "粵語數字及時間",
     desc: "學習廣東話的數字、時間、日期表達方式",
-    withAudio: "https://www.youtube.com/results?search_query=%E7%B2%B5%E8%AA%9E%E6%95%B8%E5%AD%97%E6%99%82%E9%96%93%E5%AD%B8%E7%BF%92",
-    noAudio: "https://www.youtube.com/results?search_query=%E5%AD%B8%E7%B2%B5%E8%AA%9E+%E6%95%B8%E5%AD%97",
+    withAudio: "https://www.youtube.com/watch?v=YOmRFSaLOlQ",
+    noAudio: "https://www.youtube.com/watch?v=EjfNFmUQ5iU",
     category: "基礎",
     duration: "5-10分鐘",
     icon: "🔢"
@@ -125,8 +155,8 @@ const videos = [
   {
     title: "職場廣東話",
     desc: "工作場合的常用廣東話，包括開會、電話、日常溝通",
-    withAudio: "https://www.youtube.com/results?search_query=%E8%81%B7%E5%A0%B4%E7%B2%B5%E8%AA%9E%E5%B0%8D%E8%A9%B1",
-    noAudio: "https://www.youtube.com/results?search_query=%E7%B2%B5%E8%AA%9E+business+%E5%95%86%E5%8B%99",
+    withAudio: "https://www.youtube.com/watch?v=u22opbkM6no",
+    noAudio: "https://www.youtube.com/watch?v=5tR6sWnEkqA",
     category: "職場",
     duration: "10-15分鐘",
     icon: "💼"
@@ -134,8 +164,8 @@ const videos = [
   {
     title: "Cantopop 歌詞學廣東話",
     desc: "透過香港流行歌曲學習廣東話發音和詞彙，輕鬆愉快",
-    withAudio: "https://www.youtube.com/results?search_query=cantopop+%E7%B2%B5%E8%AA%9E%E6%8C%87%E5%AF%BC",
-    noAudio: "https://www.youtube.com/results?search_query=%E7%B2%B5%E8%AA%9E%E6%AD%8C+karaoke+%E4%B8%AD%E8%A9%9E",
+    withAudio: "https://www.youtube.com/watch?v=Vt5F2h6dfog",
+    noAudio: "https://www.youtube.com/watch?v=MZ5q9jR8EWo",
     category: "娛樂",
     duration: "任意",
     icon: "🎵"

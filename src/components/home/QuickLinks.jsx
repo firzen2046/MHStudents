@@ -1,57 +1,57 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
-import { GraduationCap, MessageCircle, Compass, BookOpen, Map, School } from "lucide-react";
+import { MessageCircle, Briefcase, Home, BookOpen, Map, Heart, CreditCard, Building2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const quickLinks = [
   {
-    title: "內地大學數據庫",
-    description: "搜尋20+所內地大學",
-    icon: School,
-    page: "MainlandUniDatabase",
-    color: "bg-rose-500",
-    gradient: "from-rose-50 to-rose-100"
-  },
-  {
-    title: "升學途徑",
-    description: "DSE免試、聯招考試資訊",
-    icon: GraduationCap,
-    page: "AdmissionPathways",
-    color: "bg-indigo-500",
-    gradient: "from-indigo-50 to-indigo-100"
-  },
-  {
-    title: "資助與獎學金",
-    description: "各類升學資助計劃",
-    icon: BookOpen,
-    page: "Scholarships",
-    color: "bg-amber-500",
-    gradient: "from-amber-50 to-amber-100"
-  },
-  {
-    title: "港漂支援機構",
-    description: "各類支援組織及計劃",
-    icon: Compass,
-    page: "SupportOrganizations",
+    title: "求職指南",
+    description: "求職平台、行業資訊及就業秘訣",
+    icon: Briefcase,
+    page: "JobSearch",
     color: "bg-blue-500",
     gradient: "from-blue-50 to-blue-100"
   },
   {
-    title: "港漂生活資訊",
-    description: "住宿、交通、飲食指南",
-    icon: Map,
-    page: "LivingInfo",
-    color: "bg-teal-500",
-    gradient: "from-teal-50 to-teal-100"
+    title: "住房指南",
+    description: "租房平台、地區選擇及實用建議",
+    icon: Home,
+    page: "Housing",
+    color: "bg-emerald-500",
+    gradient: "from-emerald-50 to-emerald-100"
+  },
+  {
+    title: "教育資源",
+    description: "進修課程、香港大學及子女教育",
+    icon: BookOpen,
+    page: "Education",
+    color: "bg-violet-500",
+    gradient: "from-violet-50 to-violet-100"
+  },
+  {
+    title: "銀行及保險",
+    description: "開戶流程、銀行比較及保險指引",
+    icon: CreditCard,
+    page: "Banking",
+    color: "bg-rose-500",
+    gradient: "from-rose-50 to-rose-100"
   },
   {
     title: "廣東話學習",
-    description: "有趣遊戲輕鬆學廣東話",
+    description: "情景對話、詞彙學習及配音影片",
     icon: MessageCircle,
     page: "CantoneseLearn",
-    color: "bg-purple-500",
-    gradient: "from-purple-50 to-purple-100"
+    color: "bg-amber-500",
+    gradient: "from-amber-50 to-amber-100"
+  },
+  {
+    title: "社群網絡",
+    description: "港漂社群、支援組織及活動資訊",
+    icon: Heart,
+    page: "Community",
+    color: "bg-teal-500",
+    gradient: "from-teal-50 to-teal-100"
   }
 ];
 
@@ -70,7 +70,7 @@ export default function QuickLinks() {
             資源與學習
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            豐富的升學資訊、語言學習及文化交流資源
+            求職、住房、教育、銀行、社群等港漂實用資源
           </p>
         </motion.div>
 

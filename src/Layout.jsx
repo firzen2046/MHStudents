@@ -7,16 +7,17 @@ import {
   Home, 
   Calendar, 
   UserPlus, 
-  GraduationCap, 
   MessageCircle,
   Globe,
   Map,
-  School,
-  BookOpen,
   Phone,
   Languages,
   Users,
-  Award
+  Briefcase,
+  Building2,
+  CreditCard,
+  BookOpen,
+  Heart
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -31,28 +32,27 @@ export const useLanguage = () => {
   return context;
 };
 
-// 新的导航结构 - 分组菜单
+// 导航结构
 const navGroups = {
   main: [
     { name: '主頁', page: 'Home', icon: Home },
     { name: '活動報名', page: 'Registration', icon: UserPlus },
     { name: '活動詳情', page: 'Activities', icon: Calendar }
   ],
-  study: [
-    { name: '內地大學數據庫', page: 'MainlandUniDatabase', icon: School },
-    { name: '升學途徑', page: 'AdmissionPathways', icon: GraduationCap },
-    { name: '資助與獎學金', page: 'Scholarships', icon: Award },
-    { name: '升學規劃工具', page: 'StudyPlanner', icon: GraduationCap },
-    { name: '香港大學', page: 'StudyInfo', icon: BookOpen }
-  ],
-  gangpiao: [
-    { name: '支援機構', page: 'SupportOrganizations', icon: Users },
-    { name: '生活資訊', page: 'LivingInfo', icon: Home },
-    { name: '香港好去處', page: 'HKPlaces', icon: Map }
+  resources: [
+    { name: '求職', page: 'JobSearch', icon: Briefcase },
+    { name: '住房', page: 'Housing', icon: Home },
+    { name: '教育', page: 'Education', icon: BookOpen },
+    { name: '銀行及保險服務', page: 'Banking', icon: CreditCard },
+    { name: '商務及企業服務', page: 'Business', icon: Building2 },
+    { name: '社群網絡', page: 'Community', icon: Heart }
   ],
   learning: [
     { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
-    { name: '中港交流', page: 'Exchange', icon: Globe }
+    { name: '香港好去處', page: 'HKPlaces', icon: Map },
+    { name: '中港交流', page: 'Exchange', icon: Globe },
+    { name: '支援機構', page: 'SupportOrganizations', icon: Users },
+    { name: '生活資訊', page: 'LivingInfo', icon: Home }
   ]
 };
 
@@ -137,38 +137,17 @@ function Layout({ children, currentPageName }) {
               <Link to={createPageUrl('Home')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('Home') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('home')}</Link>
               <Link to={createPageUrl('Registration')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('Registration') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('registration')}</Link>
               
-              {/* 升學指南 Dropdown */}
+              {/* 港漂資源 Dropdown */}
               <div className="relative group">
                 <button className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
-                  {t('studyGuide')} ▾
+                  港漂資源 ▾
                 </button>
                 <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                  {navGroups.study.map((item, i) => (
+                  {navGroups.resources.map((item, i) => (
                     <Link
                       key={item.page}
                       to={createPageUrl(item.page)}
-                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === navGroups.study.length - 1 ? 'rounded-b-xl' : ''} ${
-                        isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                      }`}
-                    >
-                      <item.icon className="w-4 h-4" />
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* 港漂資訊 Dropdown */}
-              <div className="relative group">
-                <button className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
-                  {t('gangpiaoInfo')} ▾
-                </button>
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                  {navGroups.gangpiao.map((item, i) => (
-                    <Link
-                      key={item.page}
-                      to={createPageUrl(item.page)}
-                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === navGroups.gangpiao.length - 1 ? 'rounded-b-xl' : ''} ${
+                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === navGroups.resources.length - 1 ? 'rounded-b-xl' : ''} ${
                         isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                       }`}
                     >
@@ -182,7 +161,7 @@ function Layout({ children, currentPageName }) {
               {/* 學習資源 Dropdown */}
               <div className="relative group">
                 <button className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
-                  {t('learning')} ▾
+                  學習資源 ▾
                 </button>
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
                   {navGroups.learning.map((item, i) => (
@@ -261,10 +240,10 @@ function Layout({ children, currentPageName }) {
                   </Link>
                 ))}
 
-                {/* Study Guide Section */}
+                {/* 港漂資源 Section */}
                 <div className="border-t pt-2">
-                  <p className="text-xs text-gray-500 px-4 mb-2">{t('studyGuide')}</p>
-                  {navGroups.study.map((item) => (
+                  <p className="text-xs text-gray-500 px-4 mb-2">港漂資源</p>
+                  {navGroups.resources.map((item) => (
                     <Link
                       key={item.page}
                       to={createPageUrl(item.page)}
@@ -279,27 +258,9 @@ function Layout({ children, currentPageName }) {
                   ))}
                 </div>
 
-                {/* Gangpiao Section */}
+                {/* 學習資源 Section */}
                 <div className="border-t pt-2">
-                  <p className="text-xs text-gray-500 px-4 mb-2">{t('gangpiaoInfo')}</p>
-                  {navGroups.gangpiao.map((item) => (
-                    <Link
-                      key={item.page}
-                      to={createPageUrl(item.page)}
-                      onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${
-                        isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'
-                      }`}
-                    >
-                      <item.icon className="w-4 h-4" />
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-
-                {/* Learning Section */}
-                <div className="border-t pt-2">
-                  <p className="text-xs text-gray-500 px-4 mb-2">{t('learning')}</p>
+                  <p className="text-xs text-gray-500 px-4 mb-2">學習資源</p>
                   {navGroups.learning.map((item) => (
                     <Link
                       key={item.page}
@@ -371,7 +332,7 @@ function Layout({ children, currentPageName }) {
                 />
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">
-                促進香港與內地青年交流，讓中學生體驗內地教育，幫助港漂學生融入香港生活，共同建立持續的文化交流橋樑。
+                幫助在港內地青年（18-40歲）克服語言障礙、文化差異及社交侷限，透過遊戲破冰、結伴同行，共建美好港漂圈子。
               </p>
               <div className="flex items-center gap-6">
                 <a href="tel:54096712" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
@@ -391,24 +352,20 @@ function Layout({ children, currentPageName }) {
                 <li><Link to={createPageUrl('Registration')} className="text-gray-400 hover:text-white transition-colors">活動報名</Link></li>
                 <li><Link to={createPageUrl('Activities')} className="text-gray-400 hover:text-white transition-colors">活動詳情</Link></li>
               </ul>
-              <h3 className="font-semibold text-lg mb-4 mt-6">升學指南</h3>
+              <h3 className="font-semibold text-lg mb-4 mt-6">港漂資源</h3>
               <ul className="space-y-3">
-                <li><Link to={createPageUrl('MainlandUniDatabase')} className="text-gray-400 hover:text-white transition-colors">內地大學</Link></li>
-                <li><Link to={createPageUrl('AdmissionPathways')} className="text-gray-400 hover:text-white transition-colors">升學途徑</Link></li>
-                <li><Link to={createPageUrl('Scholarships')} className="text-gray-400 hover:text-white transition-colors">資助獎學金</Link></li>
-                <li><Link to={createPageUrl('StudyPlanner')} className="text-gray-400 hover:text-white transition-colors">升學規劃</Link></li>
+                <li><Link to={createPageUrl('JobSearch')} className="text-gray-400 hover:text-white transition-colors">求職</Link></li>
+                <li><Link to={createPageUrl('Housing')} className="text-gray-400 hover:text-white transition-colors">住房</Link></li>
+                <li><Link to={createPageUrl('Education')} className="text-gray-400 hover:text-white transition-colors">教育</Link></li>
+                <li><Link to={createPageUrl('Banking')} className="text-gray-400 hover:text-white transition-colors">銀行及保險</Link></li>
+                <li><Link to={createPageUrl('Business')} className="text-gray-400 hover:text-white transition-colors">商務服務</Link></li>
+                <li><Link to={createPageUrl('Community')} className="text-gray-400 hover:text-white transition-colors">社群網絡</Link></li>
               </ul>
             </div>
 
             {/* Resources */}
             <div>
-              <h3 className="font-semibold text-lg mb-4">港漂資訊</h3>
-              <ul className="space-y-3">
-                <li><Link to={createPageUrl('SupportOrganizations')} className="text-gray-400 hover:text-white transition-colors">支援機構</Link></li>
-                <li><Link to={createPageUrl('LivingInfo')} className="text-gray-400 hover:text-white transition-colors">生活資訊</Link></li>
-                <li><Link to={createPageUrl('HKPlaces')} className="text-gray-400 hover:text-white transition-colors">香港好去處</Link></li>
-              </ul>
-              <h3 className="font-semibold text-lg mb-4 mt-6">學習資源</h3>
+              <h3 className="font-semibold text-lg mb-4">學習資源</h3>
               <ul className="space-y-3">
                 <li><Link to={createPageUrl('CantoneseLearn')} className="text-gray-400 hover:text-white transition-colors">廣東話學習</Link></li>
                 <li><Link to={createPageUrl('Exchange')} className="text-gray-400 hover:text-white transition-colors">中港交流</Link></li>
@@ -421,7 +378,7 @@ function Layout({ children, currentPageName }) {
               © 2025 JCI Peninsula. 版權所有。
             </p>
             <p className="text-gray-500 text-sm">
-              「中港同窗 築夢同行」工作計劃
+              「聽見・漂行」港漂夥伴計劃
             </p>
           </div>
         </div>
