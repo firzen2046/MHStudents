@@ -1,12 +1,12 @@
 import React, { useState, createContext, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { 
-  Menu, 
-  X, 
-  Home, 
-  Calendar, 
-  UserPlus, 
+import {
+  Menu,
+  X,
+  Home,
+  Calendar,
+  UserPlus,
   MessageCircle,
   Globe,
   Map,
@@ -17,8 +17,8 @@ import {
   Building2,
   CreditCard,
   BookOpen,
-  Heart
-} from 'lucide-react';
+  Heart } from
+'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // 创建语言上下文
@@ -35,25 +35,25 @@ export const useLanguage = () => {
 // 导航结构
 const navGroups = {
   main: [
-    { name: '主頁', page: 'Home', icon: Home },
-    { name: '活動報名', page: 'Registration', icon: UserPlus },
-    { name: '活動詳情', page: 'Activities', icon: Calendar }
-  ],
+  { name: '主頁', page: 'Home', icon: Home },
+  { name: '活動報名', page: 'Registration', icon: UserPlus },
+  { name: '活動詳情', page: 'Activities', icon: Calendar }],
+
   resources: [
-    { name: '求職', page: 'JobSearch', icon: Briefcase },
-    { name: '住房', page: 'Housing', icon: Home },
-    { name: '教育', page: 'Education', icon: BookOpen },
-    { name: '銀行及保險服務', page: 'Banking', icon: CreditCard },
-    { name: '商務及企業服務', page: 'Business', icon: Building2 },
-    { name: '社群網絡', page: 'Community', icon: Heart }
-  ],
+  { name: '求職', page: 'JobSearch', icon: Briefcase },
+  { name: '住房', page: 'Housing', icon: Home },
+  { name: '教育', page: 'Education', icon: BookOpen },
+  { name: '銀行及保險服務', page: 'Banking', icon: CreditCard },
+  { name: '商務及企業服務', page: 'Business', icon: Building2 },
+  { name: '社群網絡', page: 'Community', icon: Heart }],
+
   learning: [
-    { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
-    { name: '香港好去處', page: 'HKPlaces', icon: Map },
-    { name: '中港交流', page: 'Exchange', icon: Globe },
-    { name: '支援機構', page: 'SupportOrganizations', icon: Users },
-    { name: '生活資訊', page: 'LivingInfo', icon: Home }
-  ]
+  { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
+  { name: '香港好去處', page: 'HKPlaces', icon: Map },
+  { name: '中港交流', page: 'Exchange', icon: Globe },
+  { name: '支援機構', page: 'SupportOrganizations', icon: Users },
+  { name: '生活資訊', page: 'LivingInfo', icon: Home }]
+
 };
 
 function Layout({ children, currentPageName }) {
@@ -121,11 +121,11 @@ function Layout({ children, currentPageName }) {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-3">
-              <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
-                alt="中港同窗築夢同行"
-                className="h-12 w-auto"
-              />
+              <img src="https://media.base44.com/images/public/695e4e0ab89cc0629600e4ef/cd06f3213___________3_.png"
+
+                alt="中港同窗築夢同行" className="h-12 w-auto" />
+
+                
               <div className="hidden sm:block">
                 <p className="font-bold text-gray-900 text-lg leading-tight">聽見・漂行</p>
                 <p className="text-xs text-gray-500">港漂夥伴計劃</p>
@@ -143,18 +143,18 @@ function Layout({ children, currentPageName }) {
                   港漂資源 ▾
                 </button>
                 <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                  {navGroups.resources.map((item, i) => (
+                  {navGroups.resources.map((item, i) =>
                     <Link
                       key={item.page}
                       to={createPageUrl(item.page)}
                       className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === navGroups.resources.length - 1 ? 'rounded-b-xl' : ''} ${
-                        isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                      }`}
-                    >
+                      isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`
+                      }>
+                      
                       <item.icon className="w-4 h-4" />
                       {item.name}
                     </Link>
-                  ))}
+                    )}
                 </div>
               </div>
 
@@ -164,18 +164,18 @@ function Layout({ children, currentPageName }) {
                   學習資源 ▾
                 </button>
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                  {navGroups.learning.map((item, i) => (
+                  {navGroups.learning.map((item, i) =>
                     <Link
                       key={item.page}
                       to={createPageUrl(item.page)}
                       className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === navGroups.learning.length - 1 ? 'rounded-b-xl' : ''} ${
-                        isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                      }`}
-                    >
+                      isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`
+                      }>
+                      
                       <item.icon className="w-4 h-4" />
                       {item.name}
                     </Link>
-                  ))}
+                    )}
                 </div>
               </div>
 
@@ -207,9 +207,9 @@ function Layout({ children, currentPageName }) {
 
             {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-            >
+                onClick={() => setIsOpen(!isOpen)}
+                className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -217,63 +217,63 @@ function Layout({ children, currentPageName }) {
 
         {/* Mobile Navigation */}
         <AnimatePresence>
-          {isOpen && (
+          {isOpen &&
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-gray-100 bg-white"
-            >
+              className="lg:hidden border-t border-gray-100 bg-white">
+              
               <div className="container mx-auto px-6 py-4 space-y-4">
                 {/* Main Links */}
-                {navGroups.main.map((item) => (
-                  <Link
-                    key={item.page}
-                    to={createPageUrl(item.page)}
-                    onClick={() => setIsOpen(false)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                      isActive(item.page) ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
+                {navGroups.main.map((item) =>
+                <Link
+                  key={item.page}
+                  to={createPageUrl(item.page)}
+                  onClick={() => setIsOpen(false)}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                  isActive(item.page) ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`
+                  }>
+                  
                     <item.icon className="w-5 h-5" />
                     {item.name}
                   </Link>
-                ))}
+                )}
 
                 {/* 港漂資源 Section */}
                 <div className="border-t pt-2">
                   <p className="text-xs text-gray-500 px-4 mb-2">港漂資源</p>
-                  {navGroups.resources.map((item) => (
-                    <Link
-                      key={item.page}
-                      to={createPageUrl(item.page)}
-                      onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${
-                        isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'
-                      }`}
-                    >
+                  {navGroups.resources.map((item) =>
+                  <Link
+                    key={item.page}
+                    to={createPageUrl(item.page)}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${
+                    isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`
+                    }>
+                    
                       <item.icon className="w-4 h-4" />
                       {item.name}
                     </Link>
-                  ))}
+                  )}
                 </div>
 
                 {/* 學習資源 Section */}
                 <div className="border-t pt-2">
                   <p className="text-xs text-gray-500 px-4 mb-2">學習資源</p>
-                  {navGroups.learning.map((item) => (
-                    <Link
-                      key={item.page}
-                      to={createPageUrl(item.page)}
-                      onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${
-                        isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'
-                      }`}
-                    >
+                  {navGroups.learning.map((item) =>
+                  <Link
+                    key={item.page}
+                    to={createPageUrl(item.page)}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${
+                    isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`
+                    }>
+                    
                       <item.icon className="w-4 h-4" />
                       {item.name}
                     </Link>
-                  ))}
+                  )}
                 </div>
 
                 {/* Language Switcher */}
@@ -282,24 +282,24 @@ function Layout({ children, currentPageName }) {
                     <button
                       onClick={() => setLang('zh_TW')}
                       className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${
-                        lang === 'zh_TW' ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'
-                      }`}
-                    >
+                      lang === 'zh_TW' ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'}`
+                      }>
+                      
                       繁體中文
                     </button>
                     <button
                       onClick={() => setLang('zh_CN')}
                       className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${
-                        lang === 'zh_CN' ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'
-                      }`}
-                    >
+                      lang === 'zh_CN' ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'}`
+                      }>
+                      
                       简体中文
                     </button>
                   </div>
                 </div>
               </div>
             </motion.div>
-          )}
+            }
         </AnimatePresence>
       </nav>
 
@@ -315,21 +315,21 @@ function Layout({ children, currentPageName }) {
             {/* Logo & Description */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <img 
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
-                  alt="中港同窗築夢同行"
-                  className="h-16 w-auto"
-                />
+                <img
+                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
+                    alt="中港同窗築夢同行"
+                    className="h-16 w-auto" />
+                  
                 <div>
                   <p className="font-bold text-xl">聽見・漂行 港漂夥伴計劃</p>
               </div>
             </div>
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/0340f2ccd_image.png"
-                alt="JCI Peninsula"
-                className="h-16 w-auto opacity-80"
-                />
+              <img
+                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/0340f2ccd_image.png"
+                    alt="JCI Peninsula"
+                    className="h-16 w-auto opacity-80" />
+                  
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">
                 幫助在港內地青年（18-40歲）克服語言障礙、文化差異及社交侷限，透過遊戲破冰、結伴同行，共建美好港漂圈子。
@@ -384,8 +384,8 @@ function Layout({ children, currentPageName }) {
         </div>
       </footer>
       </div>
-    </LanguageContext.Provider>
-  );
+    </LanguageContext.Provider>);
+
 }
 
 export default Layout;
