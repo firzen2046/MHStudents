@@ -121,10 +121,10 @@ function Layout({ children, currentPageName }) {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-3">
-              <img src="https://media.base44.com/images/public/695e4e0ab89cc0629600e4ef/cd06f3213___________3_.png"
-
-                alt="中港同窗築夢同行" className="h-12 w-auto" />
-
+              <img
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
+                  alt="中港同窗築夢同行"
+                  className="h-12 w-auto" />
                 
               <div className="hidden sm:block">
                 <p className="font-bold text-gray-900 text-lg leading-tight">聽見・漂行</p>
@@ -315,10 +315,10 @@ function Layout({ children, currentPageName }) {
             {/* Logo & Description */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <img
-                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
-                    alt="中港同窗築夢同行"
-                    className="h-16 w-auto" />
+                <img src="https://media.base44.com/images/public/695e4e0ab89cc0629600e4ef/cd06f3213___________3_.png"
+
+                  alt="中港同窗築夢同行" className="h-16 w-auto" />
+
                   
                 <div>
                   <p className="font-bold text-xl">聽見・漂行 港漂夥伴計劃</p>

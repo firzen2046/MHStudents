@@ -10,8 +10,8 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+          className="text-center mb-12">
+          
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             聯絡我們
           </h2>
@@ -24,27 +24,27 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-2xl mx-auto"
-        >
+          className="max-w-2xl mx-auto">
+          
           <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-100">
             <div className="flex flex-col gap-4 mb-6">
               <div className="flex items-center gap-4">
-                <img 
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/815a70c4c_image.png"
-                  alt="中港同窗築夢同行"
-                  className="h-16 w-auto"
-                />
+                <img src="https://media.base44.com/images/public/695e4e0ab89cc0629600e4ef/cd06f3213___________3_.png"
+
+                alt="中港同窗築夢同行" className="h-16 w-auto" />
+                
+                
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">中港同窗 築夢同行</h3>
+                  <h3 className="text-xl font-bold text-gray-900">「聽見．漂行」</h3>
                   <p className="text-gray-600">促進中港青年交流</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 pt-4 border-t border-purple-200">
-                <img 
+                <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/8e8e83540_image.png"
                   alt="JCI Peninsula"
-                  className="h-12 w-auto"
-                />
+                  className="h-12 w-auto" />
+                
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900">半島青年商會</h4>
                   <p className="text-gray-500 text-sm">JCI Peninsula</p>
@@ -88,6 +88,6 @@ export default function ContactSection() {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
