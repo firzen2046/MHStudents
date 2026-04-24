@@ -7,26 +7,26 @@ import { motion } from "framer-motion";
 const activities = [
 {
   id: 1,
-  title: "認識日",
-  date: "2026年3月",
+  title: "「聽見．伙伴」",
+  date: "2026年3月22日",
   icon: Users,
   color: "from-purple-500 to-purple-600",
   participants: "100人",
-  description: "認識彼此，結伴同行 - 透過配對活動讓中學生與港漂學生建立聯繫"
+  description: "認識彼此，結伴同行 - 透過配對活動讓港青與港漂建立聯繫"
 },
 {
   id: 2,
-  title: "學習日",
-  date: "2026年4月",
+  title: "「聽見．香港」",
+  date: "2026年4月26日",
   icon: Presentation,
   color: "from-blue-500 to-blue-600",
   participants: "100人",
-  description: "互相學習，你授與廣東話，他授與國內留學經驗及心得"
+  description: "教授廣東話，及進行城市定向，認識香港"
 },
 {
   id: 3,
-  title: "義工日",
-  date: "2025年5月",
+  title: "「聽見．社區」",
+  date: "2025年5月2日",
   icon: Award,
   color: "from-emerald-500 to-emerald-600",
   participants: "100人",
@@ -34,21 +34,21 @@ const activities = [
 },
 {
   id: 4,
-  title: "內地大學體驗團",
-  date: "2025年7月上旬",
+  title: "「聽見．未來」科技遊暨閉幕禮",
+  date: "2025年6月20日",
   icon: MapPin,
   color: "from-amber-500 to-amber-600",
   participants: "30人",
-  description: "五日四夜或四日三夜體驗團，讓香港中學生親身感受內地大學生活"
+  description: "探訪深圳最新的科技，同時在內地舉辦閉幕禮，嘉許活動參與者，頒發嘉許證書。"
 },
 {
   id: 5,
-  title: "閉幕禮暨團後分享會",
+  title: "「聽見．分享」月會",
   date: "2025年8月",
   icon: Calendar,
   color: "from-rose-500 to-rose-600",
   participants: "100人",
-  description: "體驗團參加者交流分享，嘉許活動參與者，頒發嘉許證書"
+  description: "新老港漂分享各自的經歷與感悟。他們談論著初來乍到時的迷茫與挑戰，也交流著如何在這座繁華都市中尋找歸屬感、建立新生活的寶貴經驗。"
 }];
 
 
