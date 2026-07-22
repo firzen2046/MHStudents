@@ -13,6 +13,7 @@ import InteractiveMap from './pages/InteractiveMap';
 import JobSearch from './pages/JobSearch';
 import LivingInfo from './pages/LivingInfo';
 import PeerMatch from './pages/PeerMatch';
+import PreLandingHousing from './pages/PreLandingHousing';
 import Registration from './pages/Registration';
 import SupportOrganizations from './pages/SupportOrganizations';
 import VisaPolicy from './pages/VisaPolicy';
@@ -39,6 +40,7 @@ export const PAGES = {
     "JobSearch": JobSearch,
     "LivingInfo": LivingInfo,
     "PeerMatch": PeerMatch,
+    "PreLandingHousing": PreLandingHousing,
     "Registration": Registration,
     "SupportOrganizations": SupportOrganizations,
     "VisaPolicy": VisaPolicy,

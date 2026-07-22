@@ -49,6 +49,7 @@ const navGroups = {
   resources: [
   { name: '求職', page: 'JobSearch', icon: Briefcase },
   { name: '住房', page: 'Housing', icon: Home },
+  { name: '遙距租房', page: 'PreLandingHousing', icon: Home },
   { name: '教育', page: 'Education', icon: BookOpen },
   { name: '銀行及保險服務', page: 'Banking', icon: CreditCard },
   { name: '商務及企業服務', page: 'Business', icon: Building2 },
@@ -382,6 +383,7 @@ function Layout({ children, currentPageName }) {
               <ul className="space-y-3">
                 <li><Link to={createPageUrl('JobSearch')} className="text-gray-400 hover:text-white transition-colors">求職</Link></li>
                 <li><Link to={createPageUrl('Housing')} className="text-gray-400 hover:text-white transition-colors">住房</Link></li>
+                <li><Link to={createPageUrl('PreLandingHousing')} className="text-gray-400 hover:text-white transition-colors">遙距租房指南</Link></li>
                 <li><Link to={createPageUrl('Education')} className="text-gray-400 hover:text-white transition-colors">教育</Link></li>
                 <li><Link to={createPageUrl('Banking')} className="text-gray-400 hover:text-white transition-colors">銀行及保險</Link></li>
                 <li><Link to={createPageUrl('Business')} className="text-gray-400 hover:text-white transition-colors">商務服務</Link></li>
