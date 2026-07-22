@@ -4,15 +4,27 @@ import ActivityHighlights from "@/components/home/ActivityHighlights";
 import QuickLinks from "@/components/home/QuickLinks";
 import RegistrationCTA from "@/components/home/RegistrationCTA";
 import ContactSection from "@/components/home/ContactSection";
+import WeatherWidget from "@/components/home/WeatherWidget";
+import IconGrid from "@/components/home/IconGrid";
 import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      {/* 即時天氣資訊 */}
+      <section className="pt-4">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <WeatherWidget />
+        </div>
+      </section>
+
+      {/* 圖標矩陣導航（金剛區） */}
+      <IconGrid />
+
       <HeroSection />
       
       {/* Organizer Logos Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

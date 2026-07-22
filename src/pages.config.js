@@ -12,6 +12,10 @@ import JobSearch from './pages/JobSearch';
 import LivingInfo from './pages/LivingInfo';
 import Registration from './pages/Registration';
 import SupportOrganizations from './pages/SupportOrganizations';
+import Transport from './pages/Transport';
+import Food from './pages/Food';
+import Forum from './pages/Forum';
+import Profile from './pages/Profile';
 import __Layout from './Layout.jsx';
 
 
@@ -30,6 +34,10 @@ export const PAGES = {
     "LivingInfo": LivingInfo,
     "Registration": Registration,
     "SupportOrganizations": SupportOrganizations,
+    "Transport": Transport,
+    "Food": Food,
+    "Forum": Forum,
+    "Profile": Profile,
 }
 
 export const pagesConfig = {

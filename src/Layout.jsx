@@ -17,9 +17,13 @@ import {
   Building2,
   CreditCard,
   BookOpen,
-  Heart } from
-'lucide-react';
+  Heart,
+  Moon,
+  Sun } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from '@/lib/ThemeContext';
+import BottomNav from '@/components/BottomNav';
+import BackToTop from '@/components/BackToTop';
 
 // 创建语言上下文
 export const LanguageContext = createContext();
@@ -59,6 +63,7 @@ const navGroups = {
 function Layout({ children, currentPageName }) {
   const [isOpen, setIsOpen] = useState(false);
   const [lang, setLang] = useState('zh_TW');
+  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
 
   const isActive = (pageName) => {
@@ -114,9 +119,9 @@ function Layout({ children, currentPageName }) {
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors">
         {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
@@ -178,6 +183,14 @@ function Layout({ children, currentPageName }) {
                     )}
                 </div>
               </div>
+
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-all flex items-center gap-2"
+              >
+                {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              </button>
 
               {/* Language Switcher */}
               <div className="relative group ml-2">
@@ -276,8 +289,14 @@ function Layout({ children, currentPageName }) {
                   )}
                 </div>
 
-                {/* Language Switcher */}
+                {/* Theme & Language Switcher */}
                 <div className="border-t pt-2">
+                  <button
+                    onClick={toggleTheme}
+                    className="w-full flex items-center justify-center gap-2 py-2 mb-2 mx-4 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+                  >
+                    {theme === 'dark' ? <><Sun className="w-4 h-4" /> 淺色模式</> : <><Moon className="w-4 h-4" /> 深色模式</>}
+                  </button>
                   <div className="flex gap-2 px-4">
                     <button
                       onClick={() => setLang('zh_TW')}
@@ -304,7 +323,7 @@ function Layout({ children, currentPageName }) {
       </nav>
 
       {/* Main Content */}
-      <main>
+      <main className="pb-16 lg:pb-0">
         {children}
       </main>
 
@@ -383,6 +402,11 @@ function Layout({ children, currentPageName }) {
           </div>
         </div>
       </footer>
+
+      {/* Fixed Bottom Navigation */}
+      <BottomNav />
+      {/* Back to Top Button */}
+      <BackToTop />
       </div>
     </LanguageContext.Provider>);
 
