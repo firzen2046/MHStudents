@@ -43,32 +43,32 @@ export const useLanguage = () => {
 // 導航結構
 const navGroups = {
   beginner: [
-    { name: '赴港清單', page: 'ArrivalChecklist', icon: ClipboardCheck },
-    { name: '簽證與政策', page: 'VisaPolicy', icon: FileText },
-    { name: '遙距租房', page: 'PreLandingHousing', icon: Home },
-    { name: '新手答疑', page: 'PreArrivalQA', icon: HelpCircle },
-    { name: '找室友/搭檔', page: 'PeerMatch', icon: UserPlusIcon },
-  ],
+  { name: '赴港清單', page: 'ArrivalChecklist', icon: ClipboardCheck },
+  { name: '簽證與政策', page: 'VisaPolicy', icon: FileText },
+  { name: '遙距租房', page: 'PreLandingHousing', icon: Home },
+  { name: '新手答疑', page: 'PreArrivalQA', icon: HelpCircle },
+  { name: '找室友/搭檔', page: 'PeerMatch', icon: UserPlusIcon }],
+
   living: [
-    { name: '生活百科', page: 'LivingInfo', icon: Home },
-    { name: '住房資訊', page: 'Housing', icon: Home },
-    { name: '職場與求職', page: 'JobSearch', icon: Briefcase },
-    { name: '教育進修', page: 'Education', icon: BookOpen },
-    { name: '銀行及保險', page: 'Banking', icon: CreditCard },
-    { name: '商務與企業', page: 'Business', icon: Building2 },
-    { name: '支援機構', page: 'SupportOrganizations', icon: Users },
-  ],
+  { name: '生活百科', page: 'LivingInfo', icon: Home },
+  { name: '住房資訊', page: 'Housing', icon: Home },
+  { name: '職場與求職', page: 'JobSearch', icon: Briefcase },
+  { name: '教育進修', page: 'Education', icon: BookOpen },
+  { name: '銀行及保險', page: 'Banking', icon: CreditCard },
+  { name: '商務與企業', page: 'Business', icon: Building2 },
+  { name: '支援機構', page: 'SupportOrganizations', icon: Users }],
+
   review: [
-    { name: '活動大廳', page: 'Activities', icon: Calendar },
-  ],
+  { name: '活動大廳', page: 'Activities', icon: Calendar }],
+
   cantonese: [
-    { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
-    { name: '兩地潮語', page: 'Exchange', icon: Globe },
-  ],
+  { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
+  { name: '兩地潮語', page: 'Exchange', icon: Globe }],
+
   explore: [
-    { name: '社區論壇', page: 'Community', icon: Heart },
-    { name: '城市互動地圖', page: 'InteractiveMap', icon: Map },
-  ],
+  { name: '社區論壇', page: 'Community', icon: Heart },
+  { name: '城市互動地圖', page: 'InteractiveMap', icon: Map }]
+
 };
 
 function Layout({ children, currentPageName }) {
@@ -156,28 +156,28 @@ function Layout({ children, currentPageName }) {
                 { label: '在港生活', items: navGroups.living },
                 { label: '活動回顧', items: navGroups.review },
                 { label: '粵語學習', items: navGroups.cantonese },
-                { label: '探索', items: navGroups.explore },
-              ].map((group) => (
+                { label: '探索', items: navGroups.explore }].
+                map((group) =>
                 <div key={group.label} className="relative group">
                   <button className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
                     {group.label} ▾
                   </button>
                   <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-100 dark:border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                    {group.items.map((item, i) => (
-                      <Link key={item.page} to={createPageUrl(item.page)} className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === group.items.length - 1 ? 'rounded-b-xl' : ''} ${isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'}`}>
+                    {group.items.map((item, i) =>
+                    <Link key={item.page} to={createPageUrl(item.page)} className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === group.items.length - 1 ? 'rounded-b-xl' : ''} ${isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'}`}>
                         <item.icon className="w-4 h-4" />
                         {item.name}
                       </Link>
-                    ))}
+                    )}
                   </div>
                 </div>
-              ))}
+                )}
 
               {/* Theme Toggle */}
               <button
-                onClick={toggleTheme}
-                className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-all flex items-center gap-2"
-              >
+                  onClick={toggleTheme}
+                  className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-all flex items-center gap-2">
+                  
                 {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
               </button>
 
@@ -231,29 +231,29 @@ function Layout({ children, currentPageName }) {
                   <Home className="w-5 h-5" /> 主頁
                 </Link>
                 {[
-                  { label: '新手必看', items: navGroups.beginner },
-                  { label: '在港生活', items: navGroups.living },
-                  { label: '活動回顧', items: navGroups.review },
-                  { label: '粵語學習', items: navGroups.cantonese },
-                  { label: '探索', items: navGroups.explore },
-                ].map((group) => (
-                  <div key={group.label} className="border-t pt-2">
+                { label: '新手必看', items: navGroups.beginner },
+                { label: '在港生活', items: navGroups.living },
+                { label: '活動回顧', items: navGroups.review },
+                { label: '粵語學習', items: navGroups.cantonese },
+                { label: '探索', items: navGroups.explore }].
+                map((group) =>
+                <div key={group.label} className="border-t pt-2">
                     <p className="text-xs text-gray-500 px-4 mb-2">{group.label}</p>
-                    {group.items.map((item) => (
-                      <Link key={item.page} to={createPageUrl(item.page)} onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`}>
+                    {group.items.map((item) =>
+                  <Link key={item.page} to={createPageUrl(item.page)} onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`}>
                         <item.icon className="w-4 h-4" />
                         {item.name}
                       </Link>
-                    ))}
+                  )}
                   </div>
-                ))}
+                )}
 
                 {/* Theme & Language Switcher */}
                 <div className="border-t pt-2">
                   <button
                     onClick={toggleTheme}
-                    className="w-full flex items-center justify-center gap-2 py-2 mb-2 mx-4 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
-                  >
+                    className="w-full flex items-center justify-center gap-2 py-2 mb-2 mx-4 rounded-lg text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+                    
                     {theme === 'dark' ? <><Sun className="w-4 h-4" /> 淺色模式</> : <><Moon className="w-4 h-4" /> 深色模式</>}
                   </button>
                   <div className="flex gap-2 px-4">
@@ -306,7 +306,7 @@ function Layout({ children, currentPageName }) {
               <img
                     src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/0340f2ccd_image.png"
                     alt="JCI Peninsula"
-                    className="h-16 w-auto opacity-80" />
+                    className="h-16 w-auto opacity-80 hidden" />
                   
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">
