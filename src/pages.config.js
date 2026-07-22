@@ -1,4 +1,5 @@
 import Activities from './pages/Activities';
+import ArrivalChecklist from './pages/ArrivalChecklist';
 import Banking from './pages/Banking';
 import Business from './pages/Business';
 import CantoneseLearn from './pages/CantoneseLearn';
@@ -23,6 +24,7 @@ import __Layout from './Layout.jsx';
 
 export const PAGES = {
     "Activities": Activities,
+    "ArrivalChecklist": ArrivalChecklist,
     "Banking": Banking,
     "Business": Business,
     "CantoneseLearn": CantoneseLearn,

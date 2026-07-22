@@ -20,7 +20,8 @@ import {
   Heart,
   Moon,
   Sun,
-  FileText } from 'lucide-react';
+  FileText,
+  ClipboardCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '@/lib/ThemeContext';
 import BottomNav from '@/components/BottomNav';
@@ -51,6 +52,7 @@ const navGroups = {
   { name: '銀行及保險服務', page: 'Banking', icon: CreditCard },
   { name: '商務及企業服務', page: 'Business', icon: Building2 },
   { name: '簽證與政策', page: 'VisaPolicy', icon: FileText },
+  { name: '赴港清單', page: 'ArrivalChecklist', icon: ClipboardCheck },
   { name: '社群網絡', page: 'Community', icon: Heart }],
 
   learning: [
@@ -383,6 +385,7 @@ function Layout({ children, currentPageName }) {
                 <li><Link to={createPageUrl('Business')} className="text-gray-400 hover:text-white transition-colors">商務服務</Link></li>
                 <li><Link to={createPageUrl('Community')} className="text-gray-400 hover:text-white transition-colors">社群網絡</Link></li>
                 <li><Link to={createPageUrl('VisaPolicy')} className="text-gray-400 hover:text-white transition-colors">簽證與政策</Link></li>
+                <li><Link to={createPageUrl('ArrivalChecklist')} className="text-gray-400 hover:text-white transition-colors">赴港清單</Link></li>
               </ul>
             </div>
 
