@@ -58,12 +58,16 @@ const navGroups = {
     { name: '商務與企業', page: 'Business', icon: Building2 },
     { name: '支援機構', page: 'SupportOrganizations', icon: Users },
   ],
-  explore: [
+  review: [
     { name: '活動大廳', page: 'Activities', icon: Calendar },
+  ],
+  cantonese: [
+    { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
+    { name: '兩地潮語', page: 'Exchange', icon: Globe },
+  ],
+  explore: [
     { name: '社區論壇', page: 'Community', icon: Heart },
     { name: '城市互動地圖', page: 'InteractiveMap', icon: Map },
-    { name: '中港交流', page: 'Exchange', icon: Globe },
-    { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
   ],
 };
 
@@ -150,7 +154,9 @@ function Layout({ children, currentPageName }) {
               {[
                 { label: '新手必看', items: navGroups.beginner },
                 { label: '在港生活', items: navGroups.living },
-                { label: '探索與社交', items: navGroups.explore },
+                { label: '活動回顧', items: navGroups.review },
+                { label: '粵語學習', items: navGroups.cantonese },
+                { label: '探索', items: navGroups.explore },
               ].map((group) => (
                 <div key={group.label} className="relative group">
                   <button className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
@@ -227,7 +233,9 @@ function Layout({ children, currentPageName }) {
                 {[
                   { label: '新手必看', items: navGroups.beginner },
                   { label: '在港生活', items: navGroups.living },
-                  { label: '探索與社交', items: navGroups.explore },
+                  { label: '活動回顧', items: navGroups.review },
+                  { label: '粵語學習', items: navGroups.cantonese },
+                  { label: '探索', items: navGroups.explore },
                 ].map((group) => (
                   <div key={group.label} className="border-t pt-2">
                     <p className="text-xs text-gray-500 px-4 mb-2">{group.label}</p>
