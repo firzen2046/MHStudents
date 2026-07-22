@@ -91,7 +91,7 @@ export default function HeroSection() {
             
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-amber-500 rounded-3xl blur-2xl opacity-30 transform rotate-6" />
-              <img src="https://media.base44.com/images/public/695e4e0ab89cc0629600e4ef/cd06f3213___________3_.png"
+              <img src="https://media.base44.com/images/public/695e4e0ab89cc0629600e4ef/2e8f59adc_Gemini_Generated_Image_clw4k4clw4k4clw4.png"
 
               alt="中港同窗築夢同行" className="relative rounded-3xl shadow-2xl w-full max-w-lg mx-auto" />
 
