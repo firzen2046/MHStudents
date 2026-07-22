@@ -56,6 +56,7 @@ const navGroups = {
   learning: [
   { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
   { name: '香港好去處', page: 'HKPlaces', icon: Map },
+  { name: '互動地圖', page: 'InteractiveMap', icon: Map },
   { name: '中港交流', page: 'Exchange', icon: Globe },
   { name: '支援機構', page: 'SupportOrganizations', icon: Users },
   { name: '生活資訊', page: 'LivingInfo', icon: Home }]
@@ -390,6 +391,7 @@ function Layout({ children, currentPageName }) {
               <h3 className="font-semibold text-lg mb-4">學習資源</h3>
               <ul className="space-y-3">
                 <li><Link to={createPageUrl('CantoneseLearn')} className="text-gray-400 hover:text-white transition-colors">廣東話學習</Link></li>
+                <li><Link to={createPageUrl('InteractiveMap')} className="text-gray-400 hover:text-white transition-colors">互動地圖</Link></li>
                 <li><Link to={createPageUrl('Exchange')} className="text-gray-400 hover:text-white transition-colors">中港交流</Link></li>
               </ul>
             </div>

@@ -1,0 +1,65 @@
+{
+  "name": "ScheduleActivity",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "\u793e\u4ea4",
+        "\u5b78\u7fd2",
+        "\u904b\u52d5",
+        "\u6587\u5316",
+        "\u5176\u4ed6"
+      ],
+      "default": "\u793e\u4ea4"
+    },
+    "location_name": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lng": {
+      "type": "number"
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "weekly",
+        "bi-weekly"
+      ],
+      "default": "weekly"
+    },
+    "day_of_week": {
+      "type": "number",
+      "default": 6
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "time": {
+      "type": "string"
+    },
+    "max_participants": {
+      "type": "number",
+      "default": 20
+    }
+  },
+  "required": [
+    "title",
+    "location_name",
+    "lat",
+    "lng"
+  ]
+}

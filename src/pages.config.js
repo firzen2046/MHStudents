@@ -8,6 +8,7 @@ import Exchange from './pages/Exchange';
 import HKPlaces from './pages/HKPlaces';
 import Home from './pages/Home';
 import Housing from './pages/Housing';
+import InteractiveMap from './pages/InteractiveMap';
 import JobSearch from './pages/JobSearch';
 import LivingInfo from './pages/LivingInfo';
 import Registration from './pages/Registration';
@@ -31,6 +32,7 @@ export const PAGES = {
     "HKPlaces": HKPlaces,
     "Home": Home,
     "Housing": Housing,
+    "InteractiveMap": InteractiveMap,
     "JobSearch": JobSearch,
     "LivingInfo": LivingInfo,
     "Registration": Registration,

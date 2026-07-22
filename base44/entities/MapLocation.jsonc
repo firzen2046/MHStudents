@@ -1,0 +1,38 @@
+{
+  "name": "MapLocation",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "\u666f\u9ede",
+        "\u7f8e\u98df",
+        "\u8cfc\u7269",
+        "\u6587\u5316",
+        "\u4ea4\u901a",
+        "\u6236\u5916"
+      ],
+      "default": "\u666f\u9ede"
+    },
+    "district": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lng": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "lat",
+    "lng"
+  ]
+}
