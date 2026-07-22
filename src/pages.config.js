@@ -12,6 +12,7 @@ import JobSearch from './pages/JobSearch';
 import LivingInfo from './pages/LivingInfo';
 import Registration from './pages/Registration';
 import SupportOrganizations from './pages/SupportOrganizations';
+import VisaPolicy from './pages/VisaPolicy';
 import Transport from './pages/Transport';
 import Food from './pages/Food';
 import Forum from './pages/Forum';
@@ -34,6 +35,7 @@ export const PAGES = {
     "LivingInfo": LivingInfo,
     "Registration": Registration,
     "SupportOrganizations": SupportOrganizations,
+    "VisaPolicy": VisaPolicy,
     "Transport": Transport,
     "Food": Food,
     "Forum": Forum,

@@ -141,6 +141,46 @@ const essentialTips = [
   }
 ];
 
+const pitfallGuide = [
+  {
+    category: "租房防騙",
+    icon: Home,
+    pitfalls: [
+      { title: "假房源詐騙", desc: "網上房源價格異常低、要求先付定金再睇樓，極可能是騙局。務必實地看房並核實業主身份。", tip: "堅持先睇樓後付款，核實業主身份證及物業資料" },
+      { title: "二房東轉租風險", desc: "租客未經業主同意擅自轉租，可能被業主收回單位。簽約前要求查看業主授權書。", tip: "要求直接與業主簽約，核實租約真偽" },
+      { title: "合約陷阱", desc: "口頭承諾未寫入合約、隱藏收費條款（如地產代理費、維修費分擔）。務必逐條閱讀合約。", tip: "所有口頭承諾須白紙黑字寫入合約" },
+      { title: "訂金陷阱", desc: "部分業主或代理以「多人爭租」為由催促交訂金，交錢後卻以各種理由不退還。", tip: "訂金收據須寫明用途及退款條件" },
+    ]
+  },
+  {
+    category: "醫療就診",
+    icon: Heart,
+    pitfalls: [
+      { title: "急症室輪候時間長", desc: "公立醫院急症室非緊急個案可輪候4-8小時。非緊急情況建議看私家診所或門診。", tip: "普通門診可到地區診所或24小時診所就診" },
+      { title: "不了解醫療保險保障範圍", desc: "很多港漂不清楚自己購買的醫療保險保障範圍，就診後才發現無法理賠。", tip: "就診前先了解保險保障範圍，保留所有單據" },
+      { title: "語言溝通障礙", desc: "部分公立醫院醫護以英語/粵語溝通為主，普通話溝通可能有困難。", tip: "可要求普通話翻譯服務，或帶懂粵語的朋友同行" },
+      { title: "藥物配藥差異", desc: "香港與內地藥物名稱和劑量可能不同，攜帶內地藥物入境需留意海關規定。", tip: "帶同內地病歷和藥物清單就診，方便醫生判斷" },
+    ]
+  },
+  {
+    category: "求職陷阱",
+    icon: AlertCircle,
+    pitfalls: [
+      { title: "求職中介收費騙局", desc: "正規求職中介不向求職者收費。如中介要求繳交「介紹費」「培訓費」，需提高警覺。", tip: "正規中介向僱主收費，不向求職者收費" },
+      { title: "虛假職位招聘", desc: "網上高薪低要求、要求預先繳費的職位多為騙局。核實公司背景和職位真實性。", tip: "面試前先查核公司註冊資料和網上評價" },
+      { title: "合約條款不清晰", desc: "簽約前未仔細閱讀傭金條款、試用期條款和離職通知期，後續可能產生糾紛。", tip: "合約須明確列明薪酬、工時、假期及終止條款" },
+    ]
+  },
+  {
+    category: "消費陷阱",
+    icon: ShoppingBag,
+    pitfalls: [
+      { title: "預繳式消費風險", desc: "健身房會籍、美容療程等預繳式消費，店鋪結業後難以追回款項。盡量選擇月費或短期合約。", tip: "避免大額預繳，選擇月費或按次收費" },
+      { title: "網購退款爭議", desc: "跨境網購遇到假貨或貨不對辦時，退款流程複雜。建議使用有保障的支付方式。", tip: "使用信用卡支付可申請退款保障" },
+    ]
+  }
+];
+
 export default function LivingInfo() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -159,11 +199,12 @@ export default function LivingInfo() {
 
       <div className="container mx-auto px-6 py-16">
         <Tabs defaultValue="housing" className="w-full">
-          <TabsList className="grid w-full max-w-3xl mx-auto grid-cols-4 mb-12">
+          <TabsList className="grid w-full max-w-3xl mx-auto grid-cols-5 mb-12">
             <TabsTrigger value="housing">住宿</TabsTrigger>
             <TabsTrigger value="transport">交通</TabsTrigger>
             <TabsTrigger value="food">飲食</TabsTrigger>
-            <TabsTrigger value="essentials">生活必備</TabsTrigger>
+            <TabsTrigger value="essentials">必備</TabsTrigger>
+            <TabsTrigger value="pitfalls">避坑</TabsTrigger>
           </TabsList>
 
           {/* 住宿 */}
@@ -449,6 +490,38 @@ export default function LivingInfo() {
                   </div>
                 </CardContent>
               </Card>
+            </motion.div>
+          </TabsContent>
+
+          {/* 生活避坑指南 */}
+          <TabsContent value="pitfalls">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">生活避坑指南</h2>
+              <p className="text-gray-500 mb-8">港漂實戰經驗分享，避開常見生活陷阱</p>
+              <div className="space-y-10">
+                {pitfallGuide.map((section) => (
+                  <div key={section.category}>
+                    <div className="flex items-center gap-2 mb-5">
+                      <section.icon className="w-5 h-5 text-teal-600" />
+                      <h3 className="text-xl font-bold text-gray-900">{section.category}</h3>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {section.pitfalls.map((p, i) => (
+                        <Card key={i} className="border-l-4 border-l-rose-400">
+                          <CardContent className="p-5">
+                            <h4 className="font-bold text-gray-900 mb-2">{p.title}</h4>
+                            <p className="text-sm text-gray-600 mb-3">{p.desc}</p>
+                            <div className="bg-emerald-50 rounded-lg p-3 flex items-start gap-2">
+                              <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                              <p className="text-sm text-emerald-800">{p.tip}</p>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </TabsContent>
         </Tabs>

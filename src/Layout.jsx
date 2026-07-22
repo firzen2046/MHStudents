@@ -19,7 +19,8 @@ import {
   BookOpen,
   Heart,
   Moon,
-  Sun } from 'lucide-react';
+  Sun,
+  FileText } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '@/lib/ThemeContext';
 import BottomNav from '@/components/BottomNav';
@@ -49,6 +50,7 @@ const navGroups = {
   { name: '教育', page: 'Education', icon: BookOpen },
   { name: '銀行及保險服務', page: 'Banking', icon: CreditCard },
   { name: '商務及企業服務', page: 'Business', icon: Building2 },
+  { name: '簽證與政策', page: 'VisaPolicy', icon: FileText },
   { name: '社群網絡', page: 'Community', icon: Heart }],
 
   learning: [
@@ -379,6 +381,7 @@ function Layout({ children, currentPageName }) {
                 <li><Link to={createPageUrl('Banking')} className="text-gray-400 hover:text-white transition-colors">銀行及保險</Link></li>
                 <li><Link to={createPageUrl('Business')} className="text-gray-400 hover:text-white transition-colors">商務服務</Link></li>
                 <li><Link to={createPageUrl('Community')} className="text-gray-400 hover:text-white transition-colors">社群網絡</Link></li>
+                <li><Link to={createPageUrl('VisaPolicy')} className="text-gray-400 hover:text-white transition-colors">簽證與政策</Link></li>
               </ul>
             </div>
 
