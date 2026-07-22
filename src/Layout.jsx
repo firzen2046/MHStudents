@@ -303,10 +303,10 @@ function Layout({ children, currentPageName }) {
               </div>
             </div>
             <div className="flex items-center gap-3 mb-6">
-              <img
-                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/0340f2ccd_image.png"
-                    alt="JCI Peninsula"
-                    className="h-16 w-auto opacity-80 hidden" />
+              
+
+
+                  
                   
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">
