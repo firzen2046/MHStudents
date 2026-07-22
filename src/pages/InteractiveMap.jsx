@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Loader2, X, MapPin } from 'lucide-react';
 import MapView from '@/components/map/MapView';
 import ScheduleList from '@/components/map/ScheduleList';
+import LocationDirectory from '@/components/map/LocationDirectory';
 
 const categories = ['全部', '景點', '美食', '購物', '文化', '交通', '戶外'];
 
@@ -102,6 +103,14 @@ export default function InteractiveMap() {
                 </span>
               ))}
             </div>
+
+            <LocationDirectory
+              locations={filteredLocations}
+              onSelect={(location) => {
+                setSelectedLocation(location);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            />
 
             <div id="schedule">
               {selectedLocation && (

@@ -40,34 +40,31 @@ export const useLanguage = () => {
   return context;
 };
 
-// 导航结构
+// 導航結構
 const navGroups = {
-  main: [
-  { name: '主頁', page: 'Home', icon: Home },
-  { name: '活動報名', page: 'Registration', icon: UserPlus },
-  { name: '活動詳情', page: 'Activities', icon: Calendar }],
-
-  resources: [
-  { name: '求職', page: 'JobSearch', icon: Briefcase },
-  { name: '住房', page: 'Housing', icon: Home },
-  { name: '遙距租房', page: 'PreLandingHousing', icon: Home },
-  { name: '教育', page: 'Education', icon: BookOpen },
-  { name: '銀行及保險服務', page: 'Banking', icon: CreditCard },
-  { name: '商務及企業服務', page: 'Business', icon: Building2 },
-  { name: '簽證與政策', page: 'VisaPolicy', icon: FileText },
-  { name: '赴港清單', page: 'ArrivalChecklist', icon: ClipboardCheck },
-  { name: '找室友/搭檔', page: 'PeerMatch', icon: UserPlusIcon },
-  { name: '新手答疑', page: 'PreArrivalQA', icon: HelpCircle },
-  { name: '社群網絡', page: 'Community', icon: Heart }],
-
-  learning: [
-  { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
-  { name: '香港好去處', page: 'HKPlaces', icon: Map },
-  { name: '互動地圖', page: 'InteractiveMap', icon: Map },
-  { name: '中港交流', page: 'Exchange', icon: Globe },
-  { name: '支援機構', page: 'SupportOrganizations', icon: Users },
-  { name: '生活資訊', page: 'LivingInfo', icon: Home }]
-
+  beginner: [
+    { name: '赴港清單', page: 'ArrivalChecklist', icon: ClipboardCheck },
+    { name: '簽證與政策', page: 'VisaPolicy', icon: FileText },
+    { name: '遙距租房', page: 'PreLandingHousing', icon: Home },
+    { name: '新手答疑', page: 'PreArrivalQA', icon: HelpCircle },
+    { name: '找室友/搭檔', page: 'PeerMatch', icon: UserPlusIcon },
+  ],
+  living: [
+    { name: '生活百科', page: 'LivingInfo', icon: Home },
+    { name: '住房資訊', page: 'Housing', icon: Home },
+    { name: '職場與求職', page: 'JobSearch', icon: Briefcase },
+    { name: '教育進修', page: 'Education', icon: BookOpen },
+    { name: '銀行及保險', page: 'Banking', icon: CreditCard },
+    { name: '商務與企業', page: 'Business', icon: Building2 },
+    { name: '支援機構', page: 'SupportOrganizations', icon: Users },
+  ],
+  explore: [
+    { name: '活動大廳', page: 'Activities', icon: Calendar },
+    { name: '社區論壇', page: 'Community', icon: Heart },
+    { name: '城市互動地圖', page: 'InteractiveMap', icon: Map },
+    { name: '中港交流', page: 'Exchange', icon: Globe },
+    { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle },
+  ],
 };
 
 function Layout({ children, currentPageName }) {
@@ -149,50 +146,26 @@ function Layout({ children, currentPageName }) {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
-              <Link to={createPageUrl('Home')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('Home') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('home')}</Link>
-              <Link to={createPageUrl('Registration')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('Registration') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>{t('registration')}</Link>
-              
-              {/* 港漂資源 Dropdown */}
-              <div className="relative group">
-                <button className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
-                  港漂資源 ▾
-                </button>
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                  {navGroups.resources.map((item, i) =>
-                    <Link
-                      key={item.page}
-                      to={createPageUrl(item.page)}
-                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === navGroups.resources.length - 1 ? 'rounded-b-xl' : ''} ${
-                      isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`
-                      }>
-                      
-                      <item.icon className="w-4 h-4" />
-                      {item.name}
-                    </Link>
-                    )}
+              <Link to={createPageUrl('Home')} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('Home') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}`}>主頁</Link>
+              {[
+                { label: '新手必看', items: navGroups.beginner },
+                { label: '在港生活', items: navGroups.living },
+                { label: '探索與社交', items: navGroups.explore },
+              ].map((group) => (
+                <div key={group.label} className="relative group">
+                  <button className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
+                    {group.label} ▾
+                  </button>
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-100 dark:border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                    {group.items.map((item, i) => (
+                      <Link key={item.page} to={createPageUrl(item.page)} className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === group.items.length - 1 ? 'rounded-b-xl' : ''} ${isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'}`}>
+                        <item.icon className="w-4 h-4" />
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              {/* 學習資源 Dropdown */}
-              <div className="relative group">
-                <button className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all">
-                  學習資源 ▾
-                </button>
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                  {navGroups.learning.map((item, i) =>
-                    <Link
-                      key={item.page}
-                      to={createPageUrl(item.page)}
-                      className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors ${i === 0 ? 'rounded-t-xl' : ''} ${i === navGroups.learning.length - 1 ? 'rounded-b-xl' : ''} ${
-                      isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`
-                      }>
-                      
-                      <item.icon className="w-4 h-4" />
-                      {item.name}
-                    </Link>
-                    )}
-                </div>
-              </div>
+              ))}
 
               {/* Theme Toggle */}
               <button
@@ -248,56 +221,24 @@ function Layout({ children, currentPageName }) {
               className="lg:hidden border-t border-gray-100 bg-white">
               
               <div className="container mx-auto px-6 py-4 space-y-4">
-                {/* Main Links */}
-                {navGroups.main.map((item) =>
-                <Link
-                  key={item.page}
-                  to={createPageUrl(item.page)}
-                  onClick={() => setIsOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                  isActive(item.page) ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`
-                  }>
-                  
-                    <item.icon className="w-5 h-5" />
-                    {item.name}
-                  </Link>
-                )}
-
-                {/* 港漂資源 Section */}
-                <div className="border-t pt-2">
-                  <p className="text-xs text-gray-500 px-4 mb-2">港漂資源</p>
-                  {navGroups.resources.map((item) =>
-                  <Link
-                    key={item.page}
-                    to={createPageUrl(item.page)}
-                    onClick={() => setIsOpen(false)}
-                    className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${
-                    isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`
-                    }>
-                    
-                      <item.icon className="w-4 h-4" />
-                      {item.name}
-                    </Link>
-                  )}
-                </div>
-
-                {/* 學習資源 Section */}
-                <div className="border-t pt-2">
-                  <p className="text-xs text-gray-500 px-4 mb-2">學習資源</p>
-                  {navGroups.learning.map((item) =>
-                  <Link
-                    key={item.page}
-                    to={createPageUrl(item.page)}
-                    onClick={() => setIsOpen(false)}
-                    className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${
-                    isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`
-                    }>
-                    
-                      <item.icon className="w-4 h-4" />
-                      {item.name}
-                    </Link>
-                  )}
-                </div>
+                <Link to={createPageUrl('Home')} onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${isActive('Home') ? 'bg-purple-100 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`}>
+                  <Home className="w-5 h-5" /> 主頁
+                </Link>
+                {[
+                  { label: '新手必看', items: navGroups.beginner },
+                  { label: '在港生活', items: navGroups.living },
+                  { label: '探索與社交', items: navGroups.explore },
+                ].map((group) => (
+                  <div key={group.label} className="border-t pt-2">
+                    <p className="text-xs text-gray-500 px-4 mb-2">{group.label}</p>
+                    {group.items.map((item) => (
+                      <Link key={item.page} to={createPageUrl(item.page)} onClick={() => setIsOpen(false)} className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all ${isActive(item.page) ? 'bg-purple-50 text-purple-700' : 'text-gray-600 hover:bg-gray-50'}`}>
+                        <item.icon className="w-4 h-4" />
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
 
                 {/* Theme & Language Switcher */}
                 <div className="border-t pt-2">

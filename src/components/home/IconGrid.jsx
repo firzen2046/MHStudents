@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { Bus, Utensils, MessageCircle, Briefcase, Home, BookOpen, Map, Globe } from 'lucide-react';
+import { Bus, Utensils, CloudSun, MessageCircle, Map, CalendarDays, CircleHelp, UsersRound } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const icons = [
   { name: '交通查詢', page: 'Transport', icon: Bus, color: 'from-blue-500 to-cyan-500' },
   { name: '餐飲推薦', page: 'Food', icon: Utensils, color: 'from-orange-500 to-red-500' },
+  { name: '天氣資訊', page: 'Home', icon: CloudSun, color: 'from-sky-400 to-blue-500' },
   { name: '廣東話學習', page: 'CantoneseLearn', icon: MessageCircle, color: 'from-purple-500 to-indigo-500' },
-  { name: '求職', page: 'JobSearch', icon: Briefcase, color: 'from-emerald-500 to-teal-500' },
-  { name: '住房', page: 'Housing', icon: Home, color: 'from-amber-500 to-orange-500' },
-  { name: '教育', page: 'Education', icon: BookOpen, color: 'from-rose-500 to-pink-500' },
-  { name: '香港好去處', page: 'HKPlaces', icon: Map, color: 'from-cyan-500 to-blue-500' },
-  { name: '中港交流', page: 'Exchange', icon: Globe, color: 'from-indigo-500 to-purple-500' },
+  { name: '城市互動地圖', page: 'InteractiveMap', icon: Map, color: 'from-cyan-500 to-blue-500' },
+  { name: '活動大廳', page: 'Activities', icon: CalendarDays, color: 'from-rose-500 to-pink-500' },
+  { name: '新手答疑', page: 'PreArrivalQA', icon: CircleHelp, color: 'from-amber-500 to-orange-500' },
+  { name: '找室友/搭檔', page: 'PeerMatch', icon: UsersRound, color: 'from-emerald-500 to-teal-500' },
 ];
 
 export default function IconGrid() {
