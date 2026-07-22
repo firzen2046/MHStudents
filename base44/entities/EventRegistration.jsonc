@@ -1,0 +1,29 @@
+{
+  "name": "EventRegistration",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "participant_name": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "cancelled"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "event_id",
+    "participant_name",
+    "contact"
+  ]
+}

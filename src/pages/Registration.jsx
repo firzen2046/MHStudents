@@ -1,9 +1,28 @@
-import React from 'react';
-import { ExternalLink, GraduationCap, Users, CheckCircle2, Calendar, Gift, Presentation, Award, MapPin } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { ExternalLink, GraduationCap, Users, CheckCircle2, Calendar, Gift, Presentation, Award, MapPin, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { base44 } from "@/api/base44Client";
+import EventForm from "@/components/events/EventForm";
+import EventCard from "@/components/events/EventCard";
 
 export default function Registration() {
+  const [userEvents, setUserEvents] = useState([]);
+  const [showEventForm, setShowEventForm] = useState(false);
+  const [loadingEvents, setLoadingEvents] = useState(true);
+
+  const loadEvents = async () => {
+    try {
+      const data = await base44.entities.UserEvent.list('-created_date', 20);
+      setUserEvents(data);
+    } catch (e) {
+      console.error(e);
+    }
+    setLoadingEvents(false);
+  };
+
+  useEffect(() => { loadEvents(); }, []);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -260,6 +279,41 @@ export default function Registration() {
                   </p>
                   </div>
                   </motion.div>
+
+                  {/* 社區活動廣場 — 用戶發佈活動 */}
+                  <div className="max-w-5xl mx-auto mt-16">
+                    <div className="flex items-center justify-between mb-6">
+                      <div>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-2">社區活動廣場</h2>
+                        <p className="text-gray-500">發佈你的活動，管理報名名單</p>
+                      </div>
+                      <Button onClick={() => setShowEventForm(!showEventForm)} className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white">
+                        <Plus className="w-4 h-4 mr-2" />
+                        發佈活動
+                      </Button>
+                    </div>
+
+                    {showEventForm && (
+                      <div className="mb-8">
+                        <EventForm onCreated={() => { loadEvents(); setShowEventForm(false); }} />
+                      </div>
+                    )}
+
+                    {loadingEvents ? (
+                      <p className="text-center text-gray-500 py-8">載入中...</p>
+                    ) : userEvents.length === 0 ? (
+                      <div className="bg-white rounded-2xl p-12 text-center shadow-md border border-gray-100">
+                        <p className="text-gray-500 mb-2">暫時沒有社區活動</p>
+                        <p className="text-gray-400 text-sm">點擊「發佈活動」建立第一個活動吧！</p>
+                      </div>
+                    ) : (
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {userEvents.map(ev => (
+                          <EventCard key={ev.id} event={ev} onUpdate={loadEvents} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   </div>
                   </div>
                   );

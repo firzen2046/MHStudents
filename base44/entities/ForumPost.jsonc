@@ -1,0 +1,37 @@
+{
+  "name": "ForumPost",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "\u6c42\u8077",
+        "\u4ea4\u53cb",
+        "\u79df\u623f",
+        "\u751f\u6d3b",
+        "\u5176\u4ed6"
+      ],
+      "default": "\u5176\u4ed6"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0
+    },
+    "author_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "content"
+  ]
+}

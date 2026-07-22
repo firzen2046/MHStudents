@@ -1,0 +1,43 @@
+{
+  "name": "UserEvent",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "event_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "location": {
+      "type": "string"
+    },
+    "capacity": {
+      "type": "number",
+      "default": 0
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "organizer_name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "\u793e\u4ea4",
+        "\u5b78\u7fd2",
+        "\u904b\u52d5",
+        "\u5176\u4ed6"
+      ],
+      "default": "\u5176\u4ed6"
+    }
+  },
+  "required": [
+    "title",
+    "description"
+  ]
+}
