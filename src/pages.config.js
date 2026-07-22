@@ -12,6 +12,7 @@ import Housing from './pages/Housing';
 import InteractiveMap from './pages/InteractiveMap';
 import JobSearch from './pages/JobSearch';
 import LivingInfo from './pages/LivingInfo';
+import PeerMatch from './pages/PeerMatch';
 import Registration from './pages/Registration';
 import SupportOrganizations from './pages/SupportOrganizations';
 import VisaPolicy from './pages/VisaPolicy';
@@ -37,6 +38,7 @@ export const PAGES = {
     "InteractiveMap": InteractiveMap,
     "JobSearch": JobSearch,
     "LivingInfo": LivingInfo,
+    "PeerMatch": PeerMatch,
     "Registration": Registration,
     "SupportOrganizations": SupportOrganizations,
     "VisaPolicy": VisaPolicy,

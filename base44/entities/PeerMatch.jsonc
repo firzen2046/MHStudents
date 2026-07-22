@@ -1,0 +1,50 @@
+{
+  "name": "PeerMatch",
+  "type": "object",
+  "properties": {
+    "user_name": {
+      "type": "string"
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "\u7537",
+        "\u5973",
+        "\u5176\u4ed6"
+      ],
+      "default": "\u5176\u4ed6"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "\u627e\u5ba4\u53cb",
+        "\u627e\u540c\u884c"
+      ],
+      "default": "\u627e\u5ba4\u53cb"
+    },
+    "target_area": {
+      "type": "string"
+    },
+    "budget_min": {
+      "type": "number"
+    },
+    "budget_max": {
+      "type": "number"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_name",
+    "type",
+    "target_area",
+    "bio"
+  ]
+}
