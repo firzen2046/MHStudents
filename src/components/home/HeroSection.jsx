@@ -48,9 +48,9 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <Link to={createPageUrl("Registration")}>
+              <Link to={createPageUrl("Activities")}>
                 <Button size="lg" className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-amber-500/25">
-                  立即報名
+                  計劃回顧
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
