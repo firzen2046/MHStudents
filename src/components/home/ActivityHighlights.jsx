@@ -43,7 +43,7 @@ const activities = [
 },
 {
   id: 5,
-  title: "「聽見．分享」月會",
+  title: "\u300C\u807D\u898B\uFF0E\u56DE\u97FF\u300D\u6708\u6703",
   date: "2025年8月",
   icon: Calendar,
   color: "from-rose-500 to-rose-600",
