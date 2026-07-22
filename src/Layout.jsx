@@ -18,6 +18,7 @@ import {
   CreditCard,
   BookOpen,
   Heart,
+  HelpCircle,
   Moon,
   Sun,
   FileText,
@@ -56,6 +57,7 @@ const navGroups = {
   { name: '簽證與政策', page: 'VisaPolicy', icon: FileText },
   { name: '赴港清單', page: 'ArrivalChecklist', icon: ClipboardCheck },
   { name: '找室友/搭檔', page: 'PeerMatch', icon: UserPlusIcon },
+  { name: '新手答疑', page: 'PreArrivalQA', icon: HelpCircle },
   { name: '社群網絡', page: 'Community', icon: Heart }],
 
   learning: [
