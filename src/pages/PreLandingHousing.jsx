@@ -198,7 +198,6 @@ export default function PreLandingHousing() {
           <div
             ref={carouselRef}
             className="flex gap-5 overflow-x-auto pb-4 scroll-smooth snap-x"
-            style={{ scrollbarWidth: 'thin' }}
           >
             {housingAreas.map((area, i) => (
               <motion.div

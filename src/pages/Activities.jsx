@@ -85,16 +85,16 @@ const activities = [
 ];
 
 const colorClasses = {
-  purple: { bg: "bg-purple-100", text: "text-purple-600", gradient: "from-purple-500 to-purple-600" },
-  blue: { bg: "bg-blue-100", text: "text-blue-600", gradient: "from-blue-500 to-blue-600" },
-  emerald: { bg: "bg-emerald-100", text: "text-emerald-600", gradient: "from-emerald-500 to-emerald-600" },
-  amber: { bg: "bg-amber-100", text: "text-amber-600", gradient: "from-amber-500 to-amber-600" },
-  rose: { bg: "bg-rose-100", text: "text-rose-600", gradient: "from-rose-500 to-rose-600" }
+  purple: { bg: "bg-purple-100 dark:bg-purple-900/30", text: "text-purple-600 dark:text-purple-400", gradient: "from-purple-500 to-purple-600" },
+  blue: { bg: "bg-blue-100 dark:bg-blue-900/30", text: "text-blue-600 dark:text-blue-400", gradient: "from-blue-500 to-blue-600" },
+  emerald: { bg: "bg-emerald-100 dark:bg-emerald-900/30", text: "text-emerald-600 dark:text-emerald-400", gradient: "from-emerald-500 to-emerald-600" },
+  amber: { bg: "bg-amber-100 dark:bg-amber-900/30", text: "text-amber-600 dark:text-amber-400", gradient: "from-amber-500 to-amber-600" },
+  rose: { bg: "bg-rose-100 dark:bg-rose-900/30", text: "text-rose-600 dark:text-rose-400", gradient: "from-rose-500 to-rose-600" }
 };
 
 export default function Activities() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-900 via-purple-800 to-indigo-900 py-20">
         <div className="container mx-auto px-6 text-center">
@@ -125,7 +125,7 @@ export default function Activities() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-3xl shadow-lg overflow-hidden"
+                className="bg-white dark:bg-gray-900 rounded-3xl shadow-lg overflow-hidden"
               >
                 <div className={`bg-gradient-to-r ${colors.gradient} p-6 lg:p-8`}>
                   <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
@@ -153,17 +153,17 @@ export default function Activities() {
                 </div>
 
                 <div className="p-6 lg:p-8">
-                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                  <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
                     {activity.description}
                   </p>
 
                   {activity.details && (
                     <div className="space-y-3">
-                      <h3 className="font-semibold text-gray-900 mb-4">活動環節</h3>
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-4">活動環節</h3>
                       {activity.details.map((detail, i) => (
                         <div key={i} className="flex items-start gap-3">
                           <CheckCircle2 className={`w-5 h-5 ${colors.text} mt-0.5 flex-shrink-0`} />
-                          <span className="text-gray-600">{detail}</span>
+                          <span className="text-gray-600 dark:text-gray-300">{detail}</span>
                         </div>
                       ))}
                     </div>
@@ -171,12 +171,12 @@ export default function Activities() {
 
                   {activity.timeline && (
                     <div className="space-y-4">
-                      <h3 className="font-semibold text-gray-900 mb-4">活動時間表</h3>
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-4">活動時間表</h3>
                       <div className="grid gap-3">
                         {activity.timeline.map((item, i) => (
                           <div key={i} className={`flex items-center gap-4 p-4 ${colors.bg} rounded-xl`}>
                             <span className={`font-bold ${colors.text} min-w-[60px]`}>{item.month}</span>
-                            <span className="text-gray-700">{item.event}</span>
+                            <span className="text-gray-700 dark:text-gray-200">{item.event}</span>
                           </div>
                         ))}
                       </div>
@@ -185,16 +185,16 @@ export default function Activities() {
 
                   {activity.awards && (
                     <div className="space-y-4">
-                      <h3 className="font-semibold text-gray-900 mb-4">獎學金詳情</h3>
+                      <h3 className="font-semibold text-gray-900 dark:text-white mb-4">獎學金詳情</h3>
                       <div className="grid md:grid-cols-2 gap-4">
                         {activity.awards.map((award, i) => (
                           <div key={i} className={`p-4 ${colors.bg} rounded-xl`}>
                             <div className="flex justify-between items-start">
                               <div>
                                 <p className={`font-semibold ${colors.text}`}>{award.name}</p>
-                                <p className="text-gray-600 text-sm mt-1">{award.quota}</p>
+                                <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">{award.quota}</p>
                               </div>
-                              <span className="text-xl font-bold text-gray-900">{award.amount}</span>
+                              <span className="text-xl font-bold text-gray-900 dark:text-white">{award.amount}</span>
                             </div>
                           </div>
                         ))}

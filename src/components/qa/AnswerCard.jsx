@@ -23,17 +23,26 @@ export default function AnswerCard({ answer, rank }) {
   const handleUpvote = async () => {
     if (hasUpvoted || voting) return;
     setVoting(true);
+    const prevUpvotes = upvotes;
+    // Optimistic UI update
+    setUpvotes(prevUpvotes + 1);
+    setHasUpvoted(true);
     const upvoted = JSON.parse(localStorage.getItem('qa_upvoted') || '[]');
     upvoted.push(answer.id);
     localStorage.setItem('qa_upvoted', JSON.stringify(upvoted));
     try {
-      await base44.entities.QAAnswer.update(answer.id, { upvotes: upvotes + 1 });
-      setUpvotes(upvotes + 1);
-      setHasUpvoted(true);
+      await base44.entities.QAAnswer.update(answer.id, { upvotes: prevUpvotes + 1 });
     } catch (e) {
       console.error(e);
-      upvoted.pop();
-      localStorage.setItem('qa_upvoted', JSON.stringify(upvoted));
+      // Revert on failure
+      setUpvotes(prevUpvotes);
+      setHasUpvoted(false);
+      const arr = JSON.parse(localStorage.getItem('qa_upvoted') || '[]');
+      const idx = arr.indexOf(answer.id);
+      if (idx > -1) {
+        arr.splice(idx, 1);
+        localStorage.setItem('qa_upvoted', JSON.stringify(arr));
+      }
     }
     setVoting(false);
   };

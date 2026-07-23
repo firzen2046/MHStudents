@@ -102,7 +102,7 @@ export default function Banking() {
   const [openIns, setOpenIns] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <div className="bg-gradient-to-r from-rose-700 via-rose-600 to-pink-700 py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -118,14 +118,14 @@ export default function Banking() {
       <div className="container mx-auto px-6 py-16">
         {/* Opening Account Steps */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">開戶步驟</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">開戶步驟</h2>
           <div className="max-w-3xl mx-auto">
             {openingSteps.map((s, i) => (
               <div key={i} className="flex gap-4 mb-6">
-                <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-rose-600">{s.step}</div>
-                <div className="bg-white rounded-2xl p-5 shadow-md flex-1 border border-gray-100">
-                  <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
-                  <p className="text-gray-600 text-sm">{s.desc}</p>
+                <div className="w-10 h-10 bg-rose-100 dark:bg-rose-900/30 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-rose-600 dark:text-rose-400">{s.step}</div>
+                <div className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-md flex-1 border border-gray-100 dark:border-gray-800">
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-1">{s.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -134,7 +134,7 @@ export default function Banking() {
 
         {/* Banks */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">主要銀行比較</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">主要銀行比較</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {banks.map((b, i) => (
               <motion.a
@@ -146,18 +146,18 @@ export default function Banking() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`bg-white rounded-2xl p-6 shadow-md border ${b.recommended ? 'border-rose-200' : 'border-gray-100'} hover:shadow-xl transition-all group`}
+                className={`bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md border ${b.recommended ? 'border-rose-200 dark:border-rose-800' : 'border-gray-100 dark:border-gray-800'} hover:shadow-xl transition-all group`}
               >
                 <div className="flex items-start justify-between mb-3">
-                  <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">{b.type}</span>
+                  <span className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full">{b.type}</span>
                   <div className="flex items-center gap-1">
-                    {b.recommended && <span className="text-xs bg-rose-100 text-rose-600 px-2 py-1 rounded-full">推薦</span>}
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-rose-500" />
+                    {b.recommended && <span className="text-xs bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 px-2 py-1 rounded-full">推薦</span>}
+                    <ExternalLink className="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-rose-500" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-3 group-hover:text-rose-600">{b.name}</h3>
-                <div className="text-xs text-gray-500 mb-3">最低存款：<span className="font-medium text-gray-700">{b.minBalance}</span></div>
-                {b.features.map((f, j) => <p key={j} className="text-gray-600 text-xs mb-1">✓ {f}</p>)}
+                <h3 className="font-bold text-gray-900 dark:text-white mb-3 group-hover:text-rose-600 dark:group-hover:text-rose-400">{b.name}</h3>
+                <div className="text-xs text-gray-500 dark:text-gray-400 mb-3">最低存款：<span className="font-medium text-gray-700 dark:text-gray-200">{b.minBalance}</span></div>
+                {b.features.map((f, j) => <p key={j} className="text-gray-600 dark:text-gray-300 text-xs mb-1">✓ {f}</p>)}
               </motion.a>
             ))}
           </div>
@@ -165,30 +165,30 @@ export default function Banking() {
 
         {/* Insurance */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">保險指引</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">保險指引</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {insurance.map((ins, i) => (
-              <div key={i} className="bg-white rounded-2xl shadow-md border border-gray-100 cursor-pointer overflow-hidden"
+              <div key={i} className="bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 cursor-pointer overflow-hidden"
                 onClick={() => setOpenIns(openIns === i ? null : i)}>
                 <div className="flex items-center justify-between p-6">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{ins.icon}</span>
-                    <h3 className="font-semibold text-gray-900">{ins.type}</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">{ins.type}</h3>
                   </div>
-                  {openIns === i ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
+                  {openIns === i ? <ChevronUp className="w-5 h-5 text-gray-400 dark:text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-400 dark:text-gray-500" />}
                 </div>
                 {openIns === i && (
-                  <div className="px-6 pb-6 border-t pt-4 space-y-3">
-                    <p className="text-gray-600">{ins.desc}</p>
+                  <div className="px-6 pb-6 border-t border-gray-100 dark:border-gray-800 pt-4 space-y-3">
+                    <p className="text-gray-600 dark:text-gray-300">{ins.desc}</p>
                     <div>
-                      <p className="text-sm font-medium text-gray-700 mb-1">主要保險公司：</p>
+                      <p className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">主要保險公司：</p>
                       <div className="flex flex-wrap gap-2">
-                        {ins.providers.map(p => <span key={p} className="text-xs bg-rose-50 text-rose-700 px-2 py-1 rounded">{p}</span>)}
+                        {ins.providers.map(p => <span key={p} className="text-xs bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 px-2 py-1 rounded">{p}</span>)}
                       </div>
                     </div>
-                    <div className="flex items-start gap-2 bg-amber-50 rounded-xl p-3">
-                      <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-                      <p className="text-amber-800 text-sm">{ins.tips}</p>
+                    <div className="flex items-start gap-2 bg-amber-50 dark:bg-amber-900/20 rounded-xl p-3">
+                      <AlertCircle className="w-4 h-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                      <p className="text-amber-800 dark:text-amber-300 text-sm">{ins.tips}</p>
                     </div>
                   </div>
                 )}

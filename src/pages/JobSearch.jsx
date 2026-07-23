@@ -35,7 +35,7 @@ export default function JobSearch() {
   const [openTip, setOpenTip] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -51,7 +51,7 @@ export default function JobSearch() {
       <div className="container mx-auto px-6 py-16">
         {/* Job Platforms */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">主要求職平台</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">主要求職平台</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {platforms.map((p, i) => (
               <motion.a
@@ -63,14 +63,14 @@ export default function JobSearch() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all group border border-gray-100"
+                className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all group border border-gray-100 dark:border-gray-800"
               >
                 <div className="flex items-start justify-between mb-4">
                   <span className={`text-xs px-3 py-1 rounded-full bg-${p.color}-100 text-${p.color}-700`}>{p.tag}</span>
-                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                  <ExternalLink className="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-blue-500 transition-colors" />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{p.name}</h3>
-                <p className="text-gray-600 text-sm">{p.desc}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{p.name}</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">{p.desc}</p>
               </motion.a>
             ))}
           </div>
@@ -78,13 +78,13 @@ export default function JobSearch() {
 
         {/* Industries */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">香港熱門行業</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">香港熱門行業</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {industries.map((ind, i) => (
-              <div key={ind.name} className="bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100">
+              <div key={ind.name} className="bg-white dark:bg-gray-900 rounded-2xl p-6 text-center shadow-md border border-gray-100 dark:border-gray-800">
                 <div className="text-3xl mb-3">{ind.icon}</div>
-                <h3 className="font-semibold text-gray-900 text-sm mb-2">{ind.name}</h3>
-                <span className={`text-xs px-2 py-1 rounded-full ${ind.demand === '高' ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
+                <h3 className="font-semibold text-gray-900 dark:text-white text-sm mb-2">{ind.name}</h3>
+                <span className={`text-xs px-2 py-1 rounded-full ${ind.demand === '高' ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300' : 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300'}`}>
                   需求{ind.demand}
                 </span>
               </div>
@@ -94,23 +94,23 @@ export default function JobSearch() {
 
         {/* Tips */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">港漂求職必知</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">港漂求職必知</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {tips.map((tip, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden cursor-pointer"
+                className="bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 overflow-hidden cursor-pointer"
                 onClick={() => setOpenTip(openTip === i ? null : i)}
               >
                 <div className="flex items-center justify-between p-6">
                   <div className="flex items-center gap-4">
                     <span className="text-2xl">{tip.icon}</span>
-                    <h3 className="font-semibold text-gray-900">{tip.title}</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">{tip.title}</h3>
                   </div>
-                  {openTip === i ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
+                  {openTip === i ? <ChevronUp className="w-5 h-5 text-gray-400 dark:text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-400 dark:text-gray-500" />}
                 </div>
                 {openTip === i && (
-                  <div className="px-6 pb-6 text-gray-600 border-t pt-4">
+                  <div className="px-6 pb-6 text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-gray-800 pt-4">
                     {tip.desc}
                   </div>
                 )}
@@ -121,9 +121,9 @@ export default function JobSearch() {
 
         {/* Labour Dept Link */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16 text-center">
-          <div className="bg-blue-50 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">香港勞工處就業服務</h3>
-            <p className="text-gray-600 mb-6">提供免費就業輔導、求職配對及培訓資訊</p>
+          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-8 max-w-2xl mx-auto">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">香港勞工處就業服務</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">提供免費就業輔導、求職配對及培訓資訊</p>
             <a href="https://www.jobs.gov.hk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors">
               前往勞工處互動就業服務網站 <ExternalLink className="w-4 h-4" />
             </a>

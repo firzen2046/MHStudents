@@ -103,3 +103,27 @@
     padding-bottom: env(safe-area-inset-bottom);
   }
 }
+
+@layer base {
+  /* Hide scrollbars globally for a native mobile feel */
+  * {
+    scrollbar-width: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Disable text selection on interactive elements; keep article/detail text selectable */
+  button,
+  a,
+  svg,
+  label,
+  [role="button"],
+  [role="tab"],
+  [role="menuitem"],
+  [role="option"],
+  [contenteditable="false"] {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}

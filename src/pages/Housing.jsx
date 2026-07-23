@@ -66,7 +66,7 @@ export default function Housing() {
   const [openTip, setOpenTip] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <div className="bg-gradient-to-r from-emerald-700 via-emerald-600 to-teal-700 py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -82,7 +82,7 @@ export default function Housing() {
       <div className="container mx-auto px-6 py-16">
         {/* Housing Types */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">住屋類型比較</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">住屋類型比較</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {housingTypes.map((h, i) => (
               <motion.div
@@ -91,23 +91,23 @@ export default function Housing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-md border border-gray-100"
+                className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md border border-gray-100 dark:border-gray-800"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{h.icon}</span>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg">{h.type}</h3>
-                    <span className="text-emerald-600 font-medium text-sm">{h.priceRange}</span>
+                    <h3 className="font-bold text-gray-900 dark:text-white text-lg">{h.type}</h3>
+                    <span className="text-emerald-600 dark:text-emerald-400 font-medium text-sm">{h.priceRange}</span>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-xs font-semibold text-emerald-600 mb-2">✅ 優點</p>
-                    {h.pros.map((p, j) => <p key={j} className="text-gray-600 text-sm mb-1">• {p}</p>)}
+                    <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mb-2">✅ 優點</p>
+                    {h.pros.map((p, j) => <p key={j} className="text-gray-600 dark:text-gray-300 text-sm mb-1">• {p}</p>)}
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-red-500 mb-2">❌ 缺點</p>
-                    {h.cons.map((c, j) => <p key={j} className="text-gray-600 text-sm mb-1">• {c}</p>)}
+                    <p className="text-xs font-semibold text-red-500 dark:text-red-400 mb-2">❌ 缺點</p>
+                    {h.cons.map((c, j) => <p key={j} className="text-gray-600 dark:text-gray-300 text-sm mb-1">• {c}</p>)}
                   </div>
                 </div>
               </motion.div>
@@ -117,16 +117,16 @@ export default function Housing() {
 
         {/* Popular Districts */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">港漂熱門居住區域</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">港漂熱門居住區域</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {districts.map((d, i) => (
-              <div key={d.name} className={`bg-white rounded-2xl p-6 shadow-md border ${d.popular ? 'border-emerald-200' : 'border-gray-100'}`}>
+              <div key={d.name} className={`bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md border ${d.popular ? 'border-emerald-200 dark:border-emerald-800' : 'border-gray-100 dark:border-gray-800'}`}>
                 <div className="flex items-center gap-2 mb-2">
-                  <MapPin className="w-4 h-4 text-emerald-600" />
-                  <h3 className="font-semibold text-gray-900">{d.name}</h3>
-                  {d.popular && <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">熱門</span>}
+                  <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                  <h3 className="font-semibold text-gray-900 dark:text-white">{d.name}</h3>
+                  {d.popular && <span className="text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-full">熱門</span>}
                 </div>
-                <p className="text-gray-600 text-sm">{d.desc}</p>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">{d.desc}</p>
               </div>
             ))}
           </div>
@@ -134,17 +134,17 @@ export default function Housing() {
 
         {/* Platforms */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">租房平台及資源</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">租房平台及資源</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {platforms.map((p, i) => (
               <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
-                className="bg-white rounded-2xl p-5 shadow-md border border-gray-100 hover:shadow-xl transition-all group">
+                className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-md border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group">
                 <div className="flex justify-between items-start mb-3">
-                  <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">{p.tag}</span>
-                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-emerald-500" />
+                  <span className="text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded-full">{p.tag}</span>
+                  <ExternalLink className="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-emerald-500" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-emerald-600">{p.name}</h3>
-                <p className="text-gray-500 text-sm">{p.desc}</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">{p.name}</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">{p.desc}</p>
               </a>
             ))}
           </div>
@@ -152,16 +152,16 @@ export default function Housing() {
 
         {/* FAQ */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">租屋常見問題</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">租屋常見問題</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {tips.map((t, i) => (
-              <div key={i} className="bg-white rounded-2xl shadow-md border border-gray-100 cursor-pointer"
+              <div key={i} className="bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 cursor-pointer"
                 onClick={() => setOpenTip(openTip === i ? null : i)}>
                 <div className="flex items-center justify-between p-6">
-                  <h3 className="font-semibold text-gray-900 pr-4">{t.q}</h3>
-                  {openTip === i ? <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />}
+                  <h3 className="font-semibold text-gray-900 dark:text-white pr-4">{t.q}</h3>
+                  {openTip === i ? <ChevronUp className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 dark:text-gray-500 flex-shrink-0" />}
                 </div>
-                {openTip === i && <div className="px-6 pb-6 text-gray-600 border-t pt-4">{t.a}</div>}
+                {openTip === i && <div className="px-6 pb-6 text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-gray-800 pt-4">{t.a}</div>}
               </div>
             ))}
           </div>

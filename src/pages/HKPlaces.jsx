@@ -146,7 +146,7 @@ export default function HKPlaces() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Header */}
       <div className="bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700 py-20">
         <div className="container mx-auto px-6 text-center">
@@ -175,7 +175,7 @@ export default function HKPlaces() {
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                 selectedCategory === cat
                   ? "bg-emerald-500 text-white"
-                  : "bg-white text-gray-700 hover:bg-emerald-50 shadow-sm"
+                  : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:bg-emerald-50 dark:hover:bg-gray-800 shadow-sm"
               }`}
             >
               {cat}
@@ -207,14 +207,14 @@ export default function HKPlaces() {
                         className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
                           favorites.includes(place.name)
                             ? "bg-red-500 text-white"
-                            : "bg-white/80 text-gray-600 hover:bg-white"
+                            : "bg-white/80 text-gray-600 dark:text-gray-200 hover:bg-white"
                         }`}
                       >
                         <Heart className={`w-5 h-5 ${favorites.includes(place.name) ? "fill-current" : ""}`} />
                       </button>
                     </div>
                     <div className="absolute bottom-4 left-4">
-                      <span className="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-white/90 dark:bg-gray-900/80 text-gray-800 dark:text-gray-100 px-3 py-1 rounded-full text-sm font-medium">
                         {place.category}
                       </span>
                     </div>
@@ -222,8 +222,8 @@ export default function HKPlaces() {
                   <CardContent className="p-6">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-1">{place.name}</h3>
-                        <div className="flex items-center text-gray-500 text-sm">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{place.name}</h3>
+                        <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm">
                           <MapPin className="w-4 h-4 mr-1" />
                           {place.area}
                         </div>
@@ -235,15 +235,15 @@ export default function HKPlaces() {
                       </div>
                     </div>
 
-                    <p className="text-gray-600 text-sm mb-4">{place.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{place.description}</p>
 
                     <div className="space-y-2 text-sm">
-                      <div className="flex items-center gap-2 text-gray-500">
+                      <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
                         <DollarSign className="w-4 h-4" />
                         <span>{place.price}</span>
                       </div>
-                      <div className="p-3 bg-emerald-50 rounded-lg">
-                        <p className="text-emerald-700 text-sm">
+                      <div className="p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg">
+                        <p className="text-emerald-700 dark:text-emerald-300 text-sm">
                           💡 {place.tips}
                         </p>
                       </div>

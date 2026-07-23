@@ -296,7 +296,7 @@ function Layout({ children, currentPageName }) {
       </nav>
 
       {/* Main Content */}
-      <main className="pb-16 lg:pb-0">
+      <main className="pb-[calc(4rem+env(safe-area-inset-bottom))] lg:pb-0">
         {children}
       </main>
 

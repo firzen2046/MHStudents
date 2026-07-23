@@ -31,7 +31,7 @@ const schools = [
 
 export default function Education() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <div className="bg-gradient-to-r from-violet-700 via-purple-600 to-indigo-700 py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -47,7 +47,7 @@ export default function Education() {
       <div className="container mx-auto px-6 py-16">
         {/* Universities */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">香港八所大學</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">香港八所大學</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {universities.map((u, i) => (
               <motion.a
@@ -59,14 +59,14 @@ export default function Education() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="bg-white rounded-2xl p-5 shadow-md border border-gray-100 hover:shadow-xl transition-all group"
+                className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-md border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-full">{u.type}</span>
-                  <span className="text-xs text-gray-400 font-medium">QS {u.qs}</span>
+                  <span className="text-xs bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 px-2 py-1 rounded-full">{u.type}</span>
+                  <span className="text-xs text-gray-400 dark:text-gray-500 font-medium">QS {u.qs}</span>
                 </div>
-                <h3 className="font-bold text-gray-900 text-sm group-hover:text-violet-600 transition-colors mb-1">{u.name}</h3>
-                <p className="text-gray-500 text-xs">{u.area}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white text-sm group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors mb-1">{u.name}</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-xs">{u.area}</p>
               </motion.a>
             ))}
           </div>
@@ -74,18 +74,18 @@ export default function Education() {
 
         {/* Programs */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">進修及培訓課程</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">進修及培訓課程</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.map((p, i) => (
               <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
-                className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-xl transition-all group">
+                className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group">
                 <div className="flex justify-between items-start mb-3">
-                  <span className={`text-xs px-2 py-1 rounded-full ${p.tag === '資助' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700'}`}>{p.tag}</span>
-                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-violet-500" />
+                  <span className={`text-xs px-2 py-1 rounded-full ${p.tag === '資助' ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300' : 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'}`}>{p.tag}</span>
+                  <ExternalLink className="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-violet-500" />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-1 group-hover:text-violet-600">{p.name}</h3>
-                <p className="text-violet-600 text-xs mb-2">{p.org}</p>
-                <p className="text-gray-600 text-sm">{p.desc}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-1 group-hover:text-violet-600 dark:group-hover:text-violet-400">{p.name}</h3>
+                <p className="text-violet-600 dark:text-violet-400 text-xs mb-2">{p.org}</p>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">{p.desc}</p>
               </a>
             ))}
           </div>
@@ -93,17 +93,17 @@ export default function Education() {
 
         {/* Children Education */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">子女教育指引</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">子女教育指引</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {schools.map((s, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+              <div key={i} className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md border border-gray-100 dark:border-gray-800">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-violet-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <School className="w-5 h-5 text-violet-600" />
+                  <div className="w-10 h-10 bg-violet-100 dark:bg-violet-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <School className="w-5 h-5 text-violet-600 dark:text-violet-400" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-2">{s.level}</h3>
-                    <p className="text-gray-600">{s.info}</p>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">{s.level}</h3>
+                    <p className="text-gray-600 dark:text-gray-300">{s.info}</p>
                   </div>
                 </div>
               </div>

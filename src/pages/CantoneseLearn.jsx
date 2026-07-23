@@ -25,7 +25,6 @@ const phrases = [
   { cantonese: "打牙骹", pinyin: "daa2 ngaa4 gaau3", mandarin: "聊天", english: "Chat/Gossip", category: "潮語" },
 ];
 
-// Situational scenarios
 const scenarios = [
   {
     id: 1,
@@ -114,7 +113,6 @@ const scenarios = [
   },
 ];
 
-// Videos with dubbed versions - using YouTube search-friendly links
 const videos = [
   {
     title: "粵語日常對話 - 打招呼篇",
@@ -186,7 +184,7 @@ const quizQuestions = [
 ];
 
 export default function CantoneseLearn() {
-  const [activeTab, setActiveTab] = useState("vocabulary"); // vocabulary | scenarios | videos | quiz
+  const [activeTab, setActiveTab] = useState("vocabulary");
   const [selectedCategory, setSelectedCategory] = useState("全部");
   const [selectedScenario, setSelectedScenario] = useState(null);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -230,7 +228,7 @@ export default function CantoneseLearn() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <div className="bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -253,7 +251,7 @@ export default function CantoneseLearn() {
               className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all ${
                 activeTab === tab.id
                   ? "bg-amber-500 text-white shadow-lg"
-                  : "bg-white text-gray-600 hover:bg-amber-50 border border-gray-200"
+                  : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 hover:bg-amber-50 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700"
               }`}
             >
               <tab.icon className="w-4 h-4" />
@@ -269,7 +267,7 @@ export default function CantoneseLearn() {
               {categories.map((cat) => (
                 <button key={cat} onClick={() => setSelectedCategory(cat)}
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                    selectedCategory === cat ? "bg-amber-500 text-white" : "bg-white text-gray-700 hover:bg-amber-50 border border-gray-200"
+                    selectedCategory === cat ? "bg-amber-500 text-white" : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700"
                   }`}>{cat}</button>
               ))}
             </div>
@@ -277,21 +275,21 @@ export default function CantoneseLearn() {
               <AnimatePresence mode="wait">
                 {filteredPhrases.map((phrase, index) => (
                   <motion.div key={phrase.cantonese} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ delay: index * 0.03 }}>
-                    <Card className="hover:shadow-lg transition-shadow bg-white">
+                    <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-800">
                       <CardContent className="p-6">
                         <div className="flex justify-between items-start mb-4">
-                          <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded">{phrase.category}</span>
+                          <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-1 rounded">{phrase.category}</span>
                         </div>
-                        <h3 className="text-3xl font-bold text-gray-900 mb-2">{phrase.cantonese}</h3>
-                        <p className="text-amber-600 font-medium mb-4">{phrase.pinyin}</p>
-                        <div className="space-y-2 pt-4 border-t">
+                        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{phrase.cantonese}</h3>
+                        <p className="text-amber-600 dark:text-amber-400 font-medium mb-4">{phrase.pinyin}</p>
+                        <div className="space-y-2 pt-4 border-t border-gray-100 dark:border-gray-800">
                           <div className="flex items-center gap-2">
-                            <span className="text-xs text-gray-400 w-16">普通話</span>
-                            <span className="text-gray-700">{phrase.mandarin}</span>
+                            <span className="text-xs text-gray-400 dark:text-gray-500 w-16">普通話</span>
+                            <span className="text-gray-700 dark:text-gray-200">{phrase.mandarin}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className="text-xs text-gray-400 w-16">English</span>
-                            <span className="text-gray-600">{phrase.english}</span>
+                            <span className="text-xs text-gray-400 dark:text-gray-500 w-16">English</span>
+                            <span className="text-gray-600 dark:text-gray-300">{phrase.english}</span>
                           </div>
                         </div>
                       </CardContent>
@@ -308,7 +306,7 @@ export default function CantoneseLearn() {
           <div>
             {!selectedScenario ? (
               <>
-                <p className="text-center text-gray-600 mb-8">選擇一個生活情景，學習實際應用的廣東話對話</p>
+                <p className="text-center text-gray-600 dark:text-gray-300 mb-8">選擇一個生活情景，學習實際應用的廣東話對話</p>
                 <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                   {scenarios.map((s, i) => (
                     <motion.button
@@ -317,14 +315,14 @@ export default function CantoneseLearn() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1 }}
                       onClick={() => setSelectedScenario(s)}
-                      className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-xl hover:border-amber-200 transition-all text-left group"
+                      className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md border border-gray-100 dark:border-gray-800 hover:shadow-xl hover:border-amber-200 dark:hover:border-amber-700 transition-all text-left group"
                     >
                       <span className="text-4xl mb-4 block">{s.icon}</span>
-                      <h3 className="font-bold text-gray-900 text-xl mb-2 group-hover:text-amber-600">{s.title}</h3>
-                      <p className="text-gray-600 text-sm mb-4">{s.description}</p>
+                      <h3 className="font-bold text-gray-900 dark:text-white text-xl mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400">{s.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{s.description}</p>
                       <div className="flex flex-wrap gap-1">
                         {s.keywords.map(k => (
-                          <span key={k} className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded">{k}</span>
+                          <span key={k} className="text-xs bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-1 rounded">{k}</span>
                         ))}
                       </div>
                     </motion.button>
@@ -333,10 +331,10 @@ export default function CantoneseLearn() {
               </>
             ) : (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-2xl mx-auto">
-                <button onClick={() => setSelectedScenario(null)} className="flex items-center gap-2 text-gray-500 hover:text-gray-700 mb-6">
+                <button onClick={() => setSelectedScenario(null)} className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 mb-6">
                   ← 返回情景列表
                 </button>
-                <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+                <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden">
                   <div className="bg-gradient-to-r from-amber-400 to-orange-400 p-6">
                     <span className="text-4xl mb-2 block">{selectedScenario.icon}</span>
                     <h2 className="text-2xl font-bold text-white">{selectedScenario.title}</h2>
@@ -352,27 +350,27 @@ export default function CantoneseLearn() {
                         className={`flex gap-3 ${line.role === "你" ? "flex-row-reverse" : ""}`}
                       >
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 ${
-                          line.role === "你" ? "bg-amber-500 text-white" : "bg-gray-200 text-gray-600"
+                          line.role === "你" ? "bg-amber-500 text-white" : "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-200"
                         }`}>
                           {line.role === "你" ? "我" : line.role[0]}
                         </div>
                         <div className={`max-w-[75%] ${line.role === "你" ? "items-end" : "items-start"} flex flex-col gap-1`}>
-                          <span className="text-xs text-gray-400">{line.role}</span>
+                          <span className="text-xs text-gray-400 dark:text-gray-500">{line.role}</span>
                           <div className={`rounded-2xl px-4 py-3 ${
-                            line.role === "你" ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-900"
+                            line.role === "你" ? "bg-amber-500 text-white" : "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                           }`}>
                             <p className="font-medium text-lg">{line.text}</p>
                           </div>
-                          <p className="text-xs text-gray-500 italic px-1">{line.translation}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 italic px-1">{line.translation}</p>
                         </div>
                       </motion.div>
                     ))}
                   </div>
-                  <div className="p-6 border-t bg-amber-50">
-                    <p className="text-sm font-semibold text-amber-700 mb-2">本情景重點詞彙：</p>
+                  <div className="p-6 border-t border-gray-100 dark:border-gray-800 bg-amber-50 dark:bg-amber-900/20">
+                    <p className="text-sm font-semibold text-amber-700 dark:text-amber-300 mb-2">本情景重點詞彙：</p>
                     <div className="flex flex-wrap gap-2">
                       {selectedScenario.keywords.map(k => (
-                        <span key={k} className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">{k}</span>
+                        <span key={k} className="bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-200 px-3 py-1 rounded-full text-sm font-medium">{k}</span>
                       ))}
                     </div>
                   </div>
@@ -386,9 +384,9 @@ export default function CantoneseLearn() {
         {activeTab === "videos" && (
           <div>
             <div className="text-center mb-8">
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                以下提供廣東話學習影片資源，分為<span className="text-amber-600 font-semibold">「有原聲版」</span>（有聲音示範）及
-                <span className="text-orange-600 font-semibold">「無講野版」</span>（靜音跟讀練習）。
+              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                以下提供廣東話學習影片資源，分為<span className="text-amber-600 dark:text-amber-400 font-semibold">「有原聲版」</span>（有聲音示範）及
+                <span className="text-orange-600 dark:text-orange-400 font-semibold">「無講野版」</span>（靜音跟讀練習）。
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -398,18 +396,18 @@ export default function CantoneseLearn() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden"
+                  className="bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-gray-100 dark:border-gray-800 overflow-hidden"
                 >
                   <div className="bg-gradient-to-r from-amber-400 to-orange-400 p-6 text-center">
                     <span className="text-4xl">{v.icon}</span>
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full">{v.category}</span>
-                      <span className="text-xs text-gray-400">{v.duration}</span>
+                      <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-1 rounded-full">{v.category}</span>
+                      <span className="text-xs text-gray-400 dark:text-gray-500">{v.duration}</span>
                     </div>
-                    <h3 className="font-bold text-gray-900 mb-2">{v.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4">{v.desc}</p>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">{v.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{v.desc}</p>
                     <div className="space-y-2">
                       <a href={v.withAudio} target="_blank" rel="noopener noreferrer"
                         className="flex items-center gap-2 w-full bg-amber-500 text-white px-4 py-2.5 rounded-xl hover:bg-amber-600 transition-colors text-sm font-medium">
@@ -417,7 +415,7 @@ export default function CantoneseLearn() {
                         有原聲版（聽示範）
                       </a>
                       <a href={v.noAudio} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-2 w-full bg-gray-100 text-gray-700 px-4 py-2.5 rounded-xl hover:bg-gray-200 transition-colors text-sm font-medium">
+                        className="flex items-center gap-2 w-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 px-4 py-2.5 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-sm font-medium">
                         <Play className="w-4 h-4" />
                         無講野版（跟讀練習）
                       </a>
@@ -426,9 +424,9 @@ export default function CantoneseLearn() {
                 </motion.div>
               ))}
             </div>
-            <div className="mt-10 bg-amber-50 rounded-2xl p-6 text-center max-w-2xl mx-auto">
-              <p className="text-amber-800 font-medium mb-2">💡 學習小貼士</p>
-              <p className="text-amber-700 text-sm">先用「有原聲版」聆聽正確發音，然後切換至「無講野版」自己跟讀練習，反覆練習可快速提升粵語能力！</p>
+            <div className="mt-10 bg-amber-50 dark:bg-amber-900/20 rounded-2xl p-6 text-center max-w-2xl mx-auto">
+              <p className="text-amber-800 dark:text-amber-300 font-medium mb-2">💡 學習小貼士</p>
+              <p className="text-amber-700 dark:text-amber-300 text-sm">先用「有原聲版」聆聽正確發音，然後切換至「無講野版」自己跟讀練習，反覆練習可快速提升粵語能力！</p>
             </div>
           </div>
         )}
@@ -437,28 +435,28 @@ export default function CantoneseLearn() {
         {activeTab === "quiz" && (
           <div className="max-w-2xl mx-auto">
             {!showResult ? (
-              <motion.div key={currentQuestion} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} className="bg-white rounded-3xl shadow-xl p-8">
+              <motion.div key={currentQuestion} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 border border-gray-100 dark:border-gray-800">
                 <div className="flex justify-between items-center mb-6">
-                  <span className="text-sm text-gray-500">問題 {currentQuestion + 1} / {quizQuestions.length}</span>
-                  <span className="text-sm font-medium text-amber-600">得分：{score}</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">問題 {currentQuestion + 1} / {quizQuestions.length}</span>
+                  <span className="text-sm font-medium text-amber-600 dark:text-amber-400">得分：{score}</span>
                 </div>
-                <div className="w-full bg-gray-100 rounded-full h-2 mb-8">
+                <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2 mb-8">
                   <div className="bg-amber-500 h-2 rounded-full transition-all" style={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }} />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-8">{quizQuestions[currentQuestion].question}</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">{quizQuestions[currentQuestion].question}</h2>
                 <div className="space-y-4">
                   {quizQuestions[currentQuestion].options.map((option, index) => (
                     <button key={index} onClick={() => selectedAnswer === null && handleAnswer(index)} disabled={selectedAnswer !== null}
                       className={`w-full p-4 text-left rounded-xl border-2 transition-all ${
                         selectedAnswer === index
-                          ? isCorrect ? "border-emerald-500 bg-emerald-50" : "border-red-500 bg-red-50"
+                          ? isCorrect ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20" : "border-red-500 bg-red-50 dark:bg-red-900/20"
                           : selectedAnswer !== null && index === quizQuestions[currentQuestion].answer
-                            ? "border-emerald-500 bg-emerald-50"
-                            : "border-gray-200 hover:border-amber-300 hover:bg-amber-50"
+                            ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20"
+                            : "border-gray-200 dark:border-gray-700 hover:border-amber-300 hover:bg-amber-50 dark:hover:bg-amber-900/20"
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-medium">{option}</span>
+                        <span className="font-medium text-gray-900 dark:text-white">{option}</span>
                         {selectedAnswer === index && (isCorrect ? <CheckCircle2 className="w-6 h-6 text-emerald-500" /> : <X className="w-6 h-6 text-red-500" />)}
                         {selectedAnswer !== null && index === quizQuestions[currentQuestion].answer && selectedAnswer !== index && <CheckCircle2 className="w-6 h-6 text-emerald-500" />}
                       </div>
@@ -467,13 +465,13 @@ export default function CantoneseLearn() {
                 </div>
               </motion.div>
             ) : (
-              <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="bg-white rounded-3xl shadow-xl p-8 text-center">
-                <div className="w-24 h-24 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 text-center border border-gray-100 dark:border-gray-800">
+                <div className="w-24 h-24 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Trophy className="w-12 h-12 text-amber-500" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">測驗完成！</h2>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">測驗完成！</h2>
                 <p className="text-6xl font-bold text-amber-500 mb-2">{score}/{quizQuestions.length}</p>
-                <p className="text-gray-600 mb-8">
+                <p className="text-gray-600 dark:text-gray-300 mb-8">
                   {score === quizQuestions.length ? "太厲害了！滿分！繼續練習情景對話吧！" : score >= quizQuestions.length / 2 ? "做得好！繼續努力！" : "加油！多練習幾次！"}
                 </p>
                 <Button onClick={resetQuiz} className="bg-amber-500 hover:bg-amber-600 px-8 py-6 text-lg">

@@ -15,7 +15,7 @@ export default function Home() {
   };
   return (
     <PullToRefresh onRefresh={handleRefresh}>
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-gray-950">
       {/* 即時天氣資訊 */}
       <section className="pt-4">
         <div className="container mx-auto px-6 max-w-5xl">
@@ -37,7 +37,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-gray-500 mb-8">主辦單位</p>
+            <p className="text-gray-500 dark:text-gray-400 mb-8">主辦單位</p>
             <div className="flex justify-center items-center">
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695e4e0ab89cc0629600e4ef/8e8e83540_image.png"

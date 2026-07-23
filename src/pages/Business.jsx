@@ -37,7 +37,7 @@ const taxes = [
 
 export default function Business() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <div className="bg-gradient-to-r from-slate-700 via-slate-600 to-gray-700 py-20">
         <div className="container mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -53,16 +53,16 @@ export default function Business() {
       <div className="container mx-auto px-6 py-16">
         {/* Business Types */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">商業組織形式</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">商業組織形式</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {businessTypes.map((b, i) => (
-              <div key={b.type} className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+              <div key={b.type} className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md border border-gray-100 dark:border-gray-800">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-3xl">{b.icon}</span>
-                  <h3 className="font-bold text-gray-900 text-lg">{b.type}</h3>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-lg">{b.type}</h3>
                 </div>
-                <p className="text-gray-600 mb-3">{b.desc}</p>
-                <p className="text-sm text-slate-600 bg-slate-50 rounded-lg px-3 py-2">
+                <p className="text-gray-600 dark:text-gray-300 mb-3">{b.desc}</p>
+                <p className="text-sm text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-900/40 rounded-lg px-3 py-2">
                   <span className="font-medium">適合：</span>{b.suitable}
                 </p>
               </div>
@@ -72,17 +72,17 @@ export default function Business() {
 
         {/* Registration Steps */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">公司登記步驟</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">公司登記步驟</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             {registrationSteps.map((s, i) => (
               <div key={i} className="flex gap-4">
-                <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-slate-600">{s.step}</div>
-                <div className="bg-white rounded-2xl p-5 shadow-md flex-1 border border-gray-100">
-                  <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
-                  <p className="text-gray-600 text-sm mb-2">{s.desc}</p>
+                <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-slate-600 dark:text-slate-300">{s.step}</div>
+                <div className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-md flex-1 border border-gray-100 dark:border-gray-800">
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-1">{s.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">{s.desc}</p>
                   {s.link && (
                     <a href={s.link} target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-slate-600 text-xs hover:text-slate-800">
+                      className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-300 text-xs hover:text-slate-800 dark:hover:text-slate-100">
                       前往官網 <ExternalLink className="w-3 h-3" />
                     </a>
                   )}
@@ -94,17 +94,17 @@ export default function Business() {
 
         {/* Support Organizations */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">企業支援機構</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">企業支援機構</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {supportOrgs.map((o, i) => (
               <a key={o.name} href={o.url} target="_blank" rel="noopener noreferrer"
-                className="bg-white rounded-2xl p-5 shadow-md border border-gray-100 hover:shadow-xl transition-all group">
+                className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-md border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group">
                 <div className="flex justify-between items-start mb-3">
-                  <span className="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-full">{o.tag}</span>
-                  <ExternalLink className="w-3 h-3 text-gray-400 group-hover:text-slate-600" />
+                  <span className="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full">{o.tag}</span>
+                  <ExternalLink className="w-3 h-3 text-gray-400 dark:text-gray-500 group-hover:text-slate-600 dark:group-hover:text-slate-300" />
                 </div>
-                <h3 className="font-semibold text-gray-900 text-sm mb-2 group-hover:text-slate-700">{o.name}</h3>
-                <p className="text-gray-500 text-xs">{o.desc}</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white text-sm mb-2 group-hover:text-slate-700 dark:group-hover:text-slate-200">{o.name}</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-xs">{o.desc}</p>
               </a>
             ))}
           </div>
@@ -112,20 +112,20 @@ export default function Business() {
 
         {/* Tax Overview */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">香港稅制概覽</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">香港稅制概覽</h2>
           <div className="max-w-3xl mx-auto space-y-4">
-            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 flex items-start gap-3">
-              <Lightbulb className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-              <p className="text-amber-800 text-sm">香港採用地域來源徵稅原則，只對香港境內產生的利潤徵稅，沒有增值稅或資產增值稅，稅制簡單。</p>
+            <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-4 flex items-start gap-3">
+              <Lightbulb className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+              <p className="text-amber-800 dark:text-amber-300 text-sm">香港採用地域來源徵稅原則，只對香港境內產生的利潤徵稅，沒有增值稅或資產增值稅，稅制簡單。</p>
             </div>
             {taxes.map((t, i) => (
-              <div key={i} className="bg-white rounded-2xl p-5 shadow-md border border-gray-100">
+              <div key={i} className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-md border border-gray-100 dark:border-gray-800">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">{t.type}</h3>
-                    <p className="text-slate-600 font-medium text-sm">{t.rate}</p>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-1">{t.type}</h3>
+                    <p className="text-slate-600 dark:text-slate-300 font-medium text-sm">{t.rate}</p>
                   </div>
-                  <span className="text-xs text-gray-500 text-right max-w-[200px]">{t.note}</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400 text-right max-w-[200px]">{t.note}</span>
                 </div>
               </div>
             ))}

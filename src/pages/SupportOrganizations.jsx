@@ -89,7 +89,7 @@ const supportPrograms = [
 
 export default function SupportOrganizations() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 py-20">
         <div className="container mx-auto px-6 text-center">
@@ -105,7 +105,7 @@ export default function SupportOrganizations() {
 
       <div className="container mx-auto px-6 py-16">
         {/* Organizations */}
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">支援機構</h2>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">支援機構</h2>
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           {organizations.map((org, index) => (
             <motion.div
@@ -126,13 +126,13 @@ export default function SupportOrganizations() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <p className="text-gray-600 mb-6">{org.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6">{org.description}</p>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3">提供服務</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">提供服務</h4>
                     <div className="grid grid-cols-2 gap-2">
                       {org.services.map((service, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                        <div key={i} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200">
                           <Heart className="w-4 h-4 text-rose-500" />
                           {service}
                         </div>
@@ -142,25 +142,25 @@ export default function SupportOrganizations() {
 
                   <div className="space-y-2 text-sm">
                     {org.contact.phone && (
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                         <Phone className="w-4 h-4" />
                         {org.contact.phone}
                       </div>
                     )}
                     {org.contact.email && (
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                         <Mail className="w-4 h-4" />
                         {org.contact.email}
                       </div>
                     )}
                     {org.contact.wechat && (
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                         <Users className="w-4 h-4" />
                         微信：{org.contact.wechat}
                       </div>
                     )}
                     {org.contact.note && (
-                      <p className="text-gray-600 italic">{org.contact.note}</p>
+                      <p className="text-gray-600 dark:text-gray-300 italic">{org.contact.note}</p>
                     )}
                   </div>
                 </CardContent>
@@ -170,7 +170,7 @@ export default function SupportOrganizations() {
         </div>
 
         {/* Support Programs */}
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">支援計劃</h2>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">支援計劃</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {supportPrograms.map((category, index) => (
             <motion.div
@@ -187,9 +187,9 @@ export default function SupportOrganizations() {
                 <CardContent>
                   <div className="space-y-4">
                     {category.programs.map((program, i) => (
-                      <div key={i} className="p-4 bg-gray-50 rounded-xl">
-                        <p className="font-medium text-gray-900 mb-1">{program.name}</p>
-                        <p className="text-sm text-gray-600">{program.desc}</p>
+                      <div key={i} className="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
+                        <p className="font-medium text-gray-900 dark:text-white mb-1">{program.name}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">{program.desc}</p>
                       </div>
                     ))}
                   </div>
