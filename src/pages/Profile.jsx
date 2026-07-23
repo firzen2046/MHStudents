@@ -1,8 +1,21 @@
 import React from 'react';
-import { User, Calendar, Award, Settings, Bell } from 'lucide-react';
+import { User, Calendar, Award, Settings, Bell, Trash2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogCancel,
+  AlertDialogAction,
+} from '@/components/ui/alert-dialog';
+import { useToast } from '@/components/ui/use-toast';
 
 export default function Profile() {
+  const { toast } = useToast();
   const stats = [
     { label: '已報名活動', value: '3', icon: Calendar, color: 'from-purple-500 to-indigo-500' },
     { label: '已完成活動', value: '1', icon: Award, color: 'from-emerald-500 to-teal-500' },
@@ -58,6 +71,42 @@ export default function Profile() {
               </div>
             </button>
           ))}
+        </div>
+
+        {/* Delete Account */}
+        <div className="mt-8 bg-red-50 dark:bg-red-950/30 rounded-2xl p-6 border border-red-100 dark:border-red-900">
+          <h3 className="font-semibold text-red-700 dark:text-red-400 mb-2">刪除帳戶</h3>
+          <p className="text-sm text-red-600/80 dark:text-red-300/80 mb-4">
+            刪除後將永久移除你的個人資料、活動報名紀錄及論壇帖文，且無法恢復。請謹慎考慮後再操作。
+          </p>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <button className="select-none inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-red-700 transition-colors">
+                <Trash2 className="w-4 h-4" /> 申請刪除帳戶
+              </button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>確認刪除帳戶？</AlertDialogTitle>
+                <AlertDialogDescription>
+                  此操作將永久刪除你的帳戶及所有相關資料，包括：個人資料、已報名活動、論壇帖文與留言。刪除後無法恢復。確認後我們將為你登出並轉交支援團隊處理。
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>取消</AlertDialogCancel>
+                <AlertDialogAction
+                  onClick={() => {
+                    toast({
+                      title: '已收到刪除申請',
+                      description: '請聯繫支援團隊完成帳戶刪除。',
+                    });
+                  }}
+                >
+                  確認刪除
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </div>
     </div>

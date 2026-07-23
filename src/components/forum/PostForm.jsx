@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { ImagePlus, Loader2, Send } from 'lucide-react';
+import MobileSelect from '@/components/MobileSelect';
 
 const categories = ['求職', '交友', '租房', '生活', '其他'];
 
@@ -84,18 +85,7 @@ export default function PostForm({ onCreated }) {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <Label htmlFor="post-category">分類標籤</Label>
-          <select
-            id="post-category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="w-full rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm"
-          >
-            {categories.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
+          <MobileSelect id="post-category" value={category} onChange={setCategory} options={categories} />
         </div>
         <div>
           <Label htmlFor="post-author">署名</Label>

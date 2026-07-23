@@ -6,10 +6,15 @@ import RegistrationCTA from "@/components/home/RegistrationCTA";
 import ContactSection from "@/components/home/ContactSection";
 import WeatherWidget from "@/components/home/WeatherWidget";
 import IconGrid from "@/components/home/IconGrid";
+import PullToRefresh from "@/components/PullToRefresh";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const handleRefresh = async () => {
+    await new Promise((r) => setTimeout(r, 600));
+  };
   return (
+    <PullToRefresh onRefresh={handleRefresh}>
     <div className="min-h-screen">
       {/* 即時天氣資訊 */}
       <section className="pt-4">
@@ -49,5 +54,6 @@ export default function Home() {
       <RegistrationCTA />
       <ContactSection />
     </div>
+    </PullToRefresh>
   );
 }

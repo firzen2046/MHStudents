@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Loader2, Send } from 'lucide-react';
+import MobileSelect from '@/components/MobileSelect';
 
 const areas = [
   '中環', '灣仔', '銅鑼灣', '北角', '將軍澳', '旺角', '太子', '深水埗',
@@ -55,29 +56,17 @@ export default function PeerMatchForm({ onCreated }) {
         </div>
         <div>
           <Label htmlFor="pm-gender">性別</Label>
-          <select id="pm-gender" value={gender} onChange={(e) => setGender(e.target.value)}
-            className="w-full rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm">
-            <option value="男">男</option>
-            <option value="女">女</option>
-            <option value="其他">其他</option>
-          </select>
+          <MobileSelect id="pm-gender" value={gender} onChange={setGender} options={['男', '女', '其他']} />
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
           <Label htmlFor="pm-type">需求類型</Label>
-          <select id="pm-type" value={type} onChange={(e) => setType(e.target.value)}
-            className="w-full rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm">
-            <option value="找室友">找室友</option>
-            <option value="找同行">找同行</option>
-          </select>
+          <MobileSelect id="pm-type" value={type} onChange={setType} options={['找室友', '找同行']} />
         </div>
         <div>
           <Label htmlFor="pm-area">目標區域</Label>
-          <select id="pm-area" value={targetArea} onChange={(e) => setTargetArea(e.target.value)}
-            className="w-full rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm">
-            {areas.map((a) => <option key={a} value={a}>{a}</option>)}
-          </select>
+          <MobileSelect id="pm-area" value={targetArea} onChange={setTargetArea} options={areas} />
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">

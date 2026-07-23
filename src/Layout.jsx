@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import {
   Menu,
@@ -23,7 +23,8 @@ import {
   Sun,
   FileText,
   ClipboardCheck,
-  UserPlus as UserPlusIcon } from 'lucide-react';
+  UserPlus as UserPlusIcon,
+  ChevronLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '@/lib/ThemeContext';
 import BottomNav from '@/components/BottomNav';
@@ -76,6 +77,8 @@ function Layout({ children, currentPageName }) {
   const [lang, setLang] = useState('zh_TW');
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
+  const isChildScreen = !['Home', 'Activities', 'Forum', 'Profile'].includes(currentPageName);
 
   const isActive = (pageName) => {
     return currentPageName === pageName;
@@ -132,7 +135,7 @@ function Layout({ children, currentPageName }) {
     <LanguageContext.Provider value={{ lang, setLang }}>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors">
         {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm safe-area-top select-none">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
@@ -147,6 +150,17 @@ function Layout({ children, currentPageName }) {
                 <p className="text-xs text-gray-500">港漂夥伴計劃</p>
               </div>
             </Link>
+
+            {/* Back button for child screens */}
+            {isChildScreen && (
+              <button
+                onClick={() => navigate(-1)}
+                className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-all"
+              >
+                <ChevronLeft className="w-5 h-5" />
+                <span className="hidden sm:inline">返回</span>
+              </button>
+            )}
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">

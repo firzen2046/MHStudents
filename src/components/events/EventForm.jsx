@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { ImagePlus, Loader2, CalendarPlus } from 'lucide-react';
+import MobileSelect from '@/components/MobileSelect';
 
 const categories = ['社交', '學習', '運動', '其他'];
 
@@ -132,18 +133,7 @@ export default function EventForm({ onCreated }) {
       </div>
       <div>
         <Label htmlFor="evt-category">活動分類</Label>
-        <select
-          id="evt-category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="w-full rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm"
-        >
-          {categories.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
+        <MobileSelect id="evt-category" value={category} onChange={setCategory} options={categories} />
       </div>
       <div>
         <Label>活動圖片（選填）</Label>

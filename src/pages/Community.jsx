@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Plus, Loader2, MessageCircle } from 'lucide-react';
 import PostForm from '@/components/forum/PostForm';
 import PostCard from '@/components/forum/PostCard';
+import PullToRefresh from '@/components/PullToRefresh';
 
 const onlineCommunities = [
   { platform: '小紅書', icon: '📕', groups: ['香港港漂生活', '香港打工仔', '香港生活攻略', '香港租房'], desc: '最多港漂使用的平台，生活資訊分享、問答互動活躍', url: 'https://www.xiaohongshu.com' },
@@ -46,6 +47,7 @@ export default function Community() {
     activeCategory === '全部' ? posts : posts.filter((p) => p.category === activeCategory);
 
   return (
+    <PullToRefresh onRefresh={loadPosts}>
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <div className="bg-gradient-to-r from-teal-700 via-teal-600 to-cyan-700 py-16">
         <div className="container mx-auto px-6 text-center">
@@ -165,5 +167,6 @@ export default function Community() {
         </motion.div>
       </div>
     </div>
+    </PullToRefresh>
   );
 }
