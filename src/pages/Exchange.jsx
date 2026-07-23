@@ -99,7 +99,7 @@ export default function Exchange() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 py-20">
         <div className="container mx-auto px-6 text-center">
@@ -132,8 +132,8 @@ export default function Exchange() {
               animate={{ opacity: 1 }}
             >
               <div className="text-center mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">內地與香港潮語對照表</h2>
-                <p className="text-gray-600">了解兩地年輕人常用的流行用語</p>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">內地與香港潮語對照表</h2>
+                <p className="text-gray-600 dark:text-gray-300">了解兩地年輕人常用的流行用語</p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
@@ -148,20 +148,20 @@ export default function Exchange() {
                     <Card className="hover:shadow-lg transition-shadow h-full">
                       <CardContent className="p-6">
                         <div className="grid grid-cols-2 gap-4 mb-4">
-                          <div className="text-center p-4 bg-red-50 rounded-xl">
-                            <p className="text-xs text-red-600 mb-2">內地</p>
-                            <p className="text-2xl font-bold text-red-700">{pair.mainland}</p>
+                          <div className="text-center p-4 bg-red-50 dark:bg-red-900/20 rounded-xl">
+                            <p className="text-xs text-red-600 dark:text-red-400 mb-2">內地</p>
+                            <p className="text-2xl font-bold text-red-700 dark:text-red-300">{pair.mainland}</p>
                           </div>
-                          <div className="text-center p-4 bg-blue-50 rounded-xl">
-                            <p className="text-xs text-blue-600 mb-2">香港</p>
-                            <p className="text-2xl font-bold text-blue-700">{pair.hk}</p>
+                          <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                            <p className="text-xs text-blue-600 dark:text-blue-400 mb-2">香港</p>
+                            <p className="text-2xl font-bold text-blue-700 dark:text-blue-300">{pair.hk}</p>
                           </div>
                         </div>
                         <div className="space-y-2">
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-600 dark:text-gray-300">
                             <span className="font-medium">意思：</span>{pair.meaning}
                           </p>
-                          <p className="text-sm text-gray-500 italic">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 italic">
                             {pair.example}
                           </p>
                         </div>
@@ -179,8 +179,8 @@ export default function Exchange() {
               animate={{ opacity: 1 }}
             >
               <div className="text-center mb-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">兩地文化差異</h2>
-                <p className="text-gray-600">了解香港與內地的生活文化差異</p>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">兩地文化差異</h2>
+                <p className="text-gray-600 dark:text-gray-300">了解香港與內地的生活文化差異</p>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -200,13 +200,13 @@ export default function Exchange() {
                         </CardTitle>
                       </CardHeader>
                       <CardContent className="space-y-4">
-                        <div className="p-4 bg-blue-50 rounded-xl">
-                          <p className="text-xs text-blue-600 font-medium mb-2">🇭🇰 香港</p>
-                          <p className="text-sm text-gray-700">{fact.hk}</p>
+                        <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                          <p className="text-xs text-blue-600 dark:text-blue-400 font-medium mb-2">🇭🇰 香港</p>
+                          <p className="text-sm text-gray-700 dark:text-gray-300">{fact.hk}</p>
                         </div>
-                        <div className="p-4 bg-red-50 rounded-xl">
-                          <p className="text-xs text-red-600 font-medium mb-2">🇨🇳 內地</p>
-                          <p className="text-sm text-gray-700">{fact.mainland}</p>
+                        <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-xl">
+                          <p className="text-xs text-red-600 dark:text-red-400 font-medium mb-2">🇨🇳 內地</p>
+                          <p className="text-sm text-gray-700 dark:text-gray-300">{fact.mainland}</p>
                         </div>
                       </CardContent>
                     </Card>
@@ -223,12 +223,12 @@ export default function Exchange() {
               className="max-w-2xl mx-auto"
             >
               {!quizStarted ? (
-                <div className="text-center bg-white rounded-3xl shadow-xl p-12">
-                  <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Lightbulb className="w-12 h-12 text-blue-500" />
+                <div className="text-center bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-12 border border-gray-100 dark:border-gray-800">
+                  <div className="w-24 h-24 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Lightbulb className="w-12 h-12 text-blue-500 dark:text-blue-400" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">文化交流小測驗</h2>
-                  <p className="text-gray-600 mb-8">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">文化交流小測驗</h2>
+                  <p className="text-gray-600 dark:text-gray-300 mb-8">
                     測試一下你對香港和內地文化的了解程度！
                   </p>
                   <Button 
@@ -243,25 +243,25 @@ export default function Exchange() {
                   key={currentQuestion}
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  className="bg-white rounded-3xl shadow-xl p-8"
+                  className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 border border-gray-100 dark:border-gray-800"
                 >
                   <div className="flex justify-between items-center mb-8">
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
                       問題 {currentQuestion + 1} / {quizQuestions.length}
                     </span>
-                    <span className="text-sm font-medium text-blue-600">
+                    <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
                       得分：{score}
                     </span>
                   </div>
 
-                  <div className="w-full bg-gray-100 rounded-full h-2 mb-8">
+                  <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2 mb-8">
                     <div 
                       className="bg-blue-500 h-2 rounded-full transition-all"
                       style={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }}
                     />
                   </div>
 
-                  <h2 className="text-2xl font-bold text-gray-900 mb-8">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
                     {quizQuestions[currentQuestion].question}
                   </h2>
 
@@ -274,15 +274,15 @@ export default function Exchange() {
                         className={`w-full p-4 text-left rounded-xl border-2 transition-all ${
                           selectedAnswer === index
                             ? isCorrect
-                              ? "border-emerald-500 bg-emerald-50"
-                              : "border-red-500 bg-red-50"
+                              ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20"
+                              : "border-red-500 bg-red-50 dark:bg-red-900/20"
                             : selectedAnswer !== null && index === quizQuestions[currentQuestion].answer
-                              ? "border-emerald-500 bg-emerald-50"
-                              : "border-gray-200 hover:border-blue-300 hover:bg-blue-50"
+                              ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20"
+                              : "border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/20"
                         }`}
                       >
                         <div className="flex items-center justify-between">
-                          <span className="font-medium">{option}</span>
+                          <span className="font-medium text-gray-900 dark:text-white">{option}</span>
                           {selectedAnswer === index && (
                             isCorrect 
                               ? <CheckCircle2 className="w-6 h-6 text-emerald-500" />
@@ -300,20 +300,20 @@ export default function Exchange() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-white rounded-3xl shadow-xl p-8 text-center"
+                  className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 text-center border border-gray-100 dark:border-gray-800"
                 >
-                  <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Globe className="w-12 h-12 text-blue-500" />
+                  <div className="w-24 h-24 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Globe className="w-12 h-12 text-blue-500 dark:text-blue-400" />
                   </div>
                   
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                     測驗完成！
                   </h2>
                   
-                  <p className="text-6xl font-bold text-blue-500 mb-2">
+                  <p className="text-6xl font-bold text-blue-500 dark:text-blue-400 mb-2">
                     {score}/{quizQuestions.length}
                   </p>
-                  <p className="text-gray-600 mb-8">
+                  <p className="text-gray-600 dark:text-gray-300 mb-8">
                     {score === quizQuestions.length 
                       ? "太棒了！你對兩地文化非常了解！" 
                       : score >= quizQuestions.length / 2 

@@ -183,7 +183,7 @@ const pitfallGuide = [
 
 export default function LivingInfo() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Header */}
       <div className="bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 py-20">
         <div className="container mx-auto px-6 text-center">
@@ -210,7 +210,7 @@ export default function LivingInfo() {
           {/* 住宿 */}
           <TabsContent value="housing">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">住宿選擇</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">住宿選擇</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {housingOptions.map((option, index) => (
                   <motion.div
@@ -223,16 +223,16 @@ export default function LivingInfo() {
                       <CardHeader>
                         <CardTitle className="flex items-center justify-between">
                           <span>{option.type}</span>
-                          <span className="text-lg text-teal-600">{option.price}</span>
+                          <span className="text-lg text-teal-600 dark:text-teal-400">{option.price}</span>
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
                           <div>
-                            <p className="text-sm font-semibold text-emerald-700 mb-2">✓ 優點</p>
+                            <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 mb-2">✓ 優點</p>
                             <ul className="space-y-1">
                               {option.pros.map((pro, i) => (
-                                <li key={i} className="text-sm text-gray-600 flex items-center gap-2">
+                                <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-center gap-2">
                                   <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
                                   {pro}
                                 </li>
@@ -240,18 +240,18 @@ export default function LivingInfo() {
                             </ul>
                           </div>
                           <div>
-                            <p className="text-sm font-semibold text-rose-700 mb-2">✗ 缺點</p>
+                            <p className="text-sm font-semibold text-rose-700 dark:text-rose-400 mb-2">✗ 缺點</p>
                             <ul className="space-y-1">
                               {option.cons.map((con, i) => (
-                                <li key={i} className="text-sm text-gray-600 flex items-center gap-2">
+                                <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-center gap-2">
                                   <div className="w-1.5 h-1.5 bg-rose-500 rounded-full" />
                                   {con}
                                 </li>
                               ))}
                             </ul>
                           </div>
-                          <div className="bg-teal-50 rounded-lg p-3">
-                            <p className="text-sm text-teal-800">
+                          <div className="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-3">
+                            <p className="text-sm text-teal-800 dark:text-teal-300">
                               <strong>💡 貼士：</strong>{option.tips}
                             </p>
                           </div>
@@ -262,13 +262,13 @@ export default function LivingInfo() {
                 ))}
               </div>
 
-              <Card className="mt-8 bg-blue-50">
+              <Card className="mt-8 bg-blue-50 dark:bg-blue-900/20 border-blue-100 dark:border-blue-900">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3">
-                    <AlertCircle className="w-5 h-5 text-blue-600 mt-1" />
+                    <AlertCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-1" />
                     <div>
-                      <p className="font-semibold text-blue-900 mb-2">租房注意事項</p>
-                      <ul className="text-sm text-blue-800 space-y-1">
+                      <p className="font-semibold text-blue-900 dark:text-blue-300 mb-2">租房注意事項</p>
+                      <ul className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
                         <li>• 簽約前仔細閱讀合約條款</li>
                         <li>• 檢查單位設施是否完好</li>
                         <li>• 了解水電煤費用分擔方式</li>
@@ -285,20 +285,20 @@ export default function LivingInfo() {
           {/* 交通 */}
           <TabsContent value="transport">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">交通指南</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">交通指南</h2>
               
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 {transportInfo.map((transport, index) => (
                   <Card key={transport.name}>
                     <CardHeader>
                       <CardTitle>{transport.name}</CardTitle>
-                      <p className="text-sm text-gray-600">{transport.desc}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{transport.desc}</p>
                     </CardHeader>
                     <CardContent>
-                      <p className="font-semibold text-teal-600 mb-4">{transport.cost}</p>
+                      <p className="font-semibold text-teal-600 dark:text-teal-400 mb-4">{transport.cost}</p>
                       <ul className="space-y-2">
                         {transport.tips.map((tip, i) => (
-                          <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
+                          <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-start gap-2">
                             <CheckCircle2 className="w-4 h-4 text-teal-500 mt-0.5 flex-shrink-0" />
                             {tip}
                           </li>
@@ -316,8 +316,8 @@ export default function LivingInfo() {
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-semibold mb-3">港鐵 (MTR)</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
+                      <h4 className="font-semibold mb-3 text-gray-900 dark:text-white">港鐵 (MTR)</h4>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                         <li>• 最常用交通工具，覆蓋全港</li>
                         <li>• 學生享半價優惠</li>
                         <li>• 班次頻密，準時可靠</li>
@@ -325,8 +325,8 @@ export default function LivingInfo() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-3">巴士</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
+                      <h4 className="font-semibold mb-3 text-gray-900 dark:text-white">巴士</h4>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                         <li>• 路線覆蓋廣泛</li>
                         <li>• 價格相對便宜</li>
                         <li>• 可到達地鐵未覆蓋地區</li>
@@ -334,8 +334,8 @@ export default function LivingInfo() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-3">小巴</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
+                      <h4 className="font-semibold mb-3 text-gray-900 dark:text-white">小巴</h4>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                         <li>• 靈活快捷</li>
                         <li>• 路線固定但站點靈活</li>
                         <li>• 部分線路可用八達通</li>
@@ -343,8 +343,8 @@ export default function LivingInfo() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-3">的士</h4>
-                      <ul className="space-y-2 text-sm text-gray-600">
+                      <h4 className="font-semibold mb-3 text-gray-900 dark:text-white">的士</h4>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                         <li>• 分紅、綠、藍三種</li>
                         <li>• 24小時服務</li>
                         <li>• 價格較貴但便捷</li>
@@ -360,7 +360,7 @@ export default function LivingInfo() {
           {/* 飲食 */}
           <TabsContent value="food">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">飲食指南</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">飲食指南</h2>
               
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 {foodOptions.map((option, index) => (
@@ -368,13 +368,13 @@ export default function LivingInfo() {
                     <CardHeader>
                       <CardTitle className="flex items-center justify-between">
                         <span>{option.name}</span>
-                        <span className="text-teal-600">{option.price}</span>
+                        <span className="text-teal-600 dark:text-teal-400">{option.price}</span>
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="flex flex-wrap gap-2">
                         {option.features.map((feature, i) => (
-                          <span key={i} className="bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-sm">
+                          <span key={i} className="bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 px-3 py-1 rounded-full text-sm">
                             {feature}
                           </span>
                         ))}
@@ -384,21 +384,21 @@ export default function LivingInfo() {
                 ))}
               </div>
 
-              <Card className="bg-amber-50">
+              <Card className="bg-amber-50 dark:bg-amber-900/20 border-amber-100 dark:border-amber-900">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-amber-900 mb-4">每月飲食預算參考</h3>
+                  <h3 className="font-semibold text-amber-900 dark:text-amber-300 mb-4">每月飲食預算參考</h3>
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                      <span className="text-gray-700">節儉型（主要學校飯堂 + 自煮）</span>
-                      <span className="font-bold text-emerald-600">$2,500-$3,500/月</span>
+                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg">
+                      <span className="text-gray-700 dark:text-gray-200">節儉型（主要學校飯堂 + 自煮）</span>
+                      <span className="font-bold text-emerald-600 dark:text-emerald-400">$2,500-$3,500/月</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                      <span className="text-gray-700">一般型（飯堂 + 外出用餐）</span>
-                      <span className="font-bold text-blue-600">$3,500-$5,000/月</span>
+                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg">
+                      <span className="text-gray-700 dark:text-gray-200">一般型（飯堂 + 外出用餐）</span>
+                      <span className="font-bold text-blue-600 dark:text-blue-400">$3,500-$5,000/月</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                      <span className="text-gray-700">豐富型（經常外出用餐）</span>
-                      <span className="font-bold text-amber-600">$5,000-$7,000/月</span>
+                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg">
+                      <span className="text-gray-700 dark:text-gray-200">豐富型（經常外出用餐）</span>
+                      <span className="font-bold text-amber-600 dark:text-amber-400">$5,000-$7,000/月</span>
                     </div>
                   </div>
                 </CardContent>
@@ -409,7 +409,7 @@ export default function LivingInfo() {
           {/* 生活必備 */}
           <TabsContent value="essentials">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">生活必備資訊</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">生活必備資訊</h2>
 
               {/* 支付方式 */}
               <Card className="mb-8">
@@ -419,17 +419,17 @@ export default function LivingInfo() {
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-4">
                     {paymentMethods.map((method, index) => (
-                      <div key={method.name} className="p-4 bg-gray-50 rounded-xl">
+                      <div key={method.name} className="p-4 bg-gray-50 dark:bg-gray-800/60 rounded-xl">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
-                            <method.icon className="w-5 h-5 text-teal-600" />
+                          <div className="w-10 h-10 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center">
+                            <method.icon className="w-5 h-5 text-teal-600 dark:text-teal-400" />
                           </div>
-                          <h4 className="font-semibold text-gray-900">{method.name}</h4>
+                          <h4 className="font-semibold text-gray-900 dark:text-white">{method.name}</h4>
                         </div>
-                        <p className="text-sm text-gray-600 mb-2">
+                        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
                           <strong>適用：</strong>{method.usage}
                         </p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-gray-500 dark:text-gray-400">
                           {method.setup}
                         </p>
                       </div>
@@ -439,7 +439,7 @@ export default function LivingInfo() {
               </Card>
 
               {/* 必備事項 */}
-              <h3 className="text-xl font-bold text-gray-900 mb-6">抵港必辦事項</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">抵港必辦事項</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {essentialTips.map((section, index) => (
                   <Card key={section.category}>
@@ -451,7 +451,7 @@ export default function LivingInfo() {
                         {section.tips.map((tip, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <CheckCircle2 className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700 text-sm">{tip}</span>
+                            <span className="text-gray-700 dark:text-gray-200 text-sm">{tip}</span>
                           </li>
                         ))}
                       </ul>
@@ -461,31 +461,31 @@ export default function LivingInfo() {
               </div>
 
               {/* 每月開支預算 */}
-              <Card className="mt-8 bg-gradient-to-r from-teal-50 to-cyan-50">
+              <Card className="mt-8 bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 border-teal-100 dark:border-teal-900">
                 <CardHeader>
                   <CardTitle>每月生活開支預算</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                      <span className="text-gray-700">住宿</span>
-                      <span className="font-semibold">$3,000-$8,000</span>
+                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg">
+                      <span className="text-gray-700 dark:text-gray-200">住宿</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">$3,000-$8,000</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                      <span className="text-gray-700">飲食</span>
-                      <span className="font-semibold">$2,500-$5,000</span>
+                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg">
+                      <span className="text-gray-700 dark:text-gray-200">飲食</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">$2,500-$5,000</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                      <span className="text-gray-700">交通</span>
-                      <span className="font-semibold">$400-$800</span>
+                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg">
+                      <span className="text-gray-700 dark:text-gray-200">交通</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">$400-$800</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                      <span className="text-gray-700">雜費（通訊、娛樂等）</span>
-                      <span className="font-semibold">$500-$1,500</span>
+                    <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg">
+                      <span className="text-gray-700 dark:text-gray-200">雜費（通訊、娛樂等）</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">$500-$1,500</span>
                     </div>
-                    <div className="flex items-center justify-between p-4 bg-teal-100 rounded-lg border-2 border-teal-300">
-                      <span className="font-bold text-gray-900">總計</span>
-                      <span className="text-2xl font-bold text-teal-600">$6,400-$15,300</span>
+                    <div className="flex items-center justify-between p-4 bg-teal-100 dark:bg-teal-900/30 rounded-lg border-2 border-teal-300 dark:border-teal-700">
+                      <span className="font-bold text-gray-900 dark:text-white">總計</span>
+                      <span className="text-2xl font-bold text-teal-600 dark:text-teal-400">$6,400-$15,300</span>
                     </div>
                   </div>
                 </CardContent>
@@ -496,24 +496,24 @@ export default function LivingInfo() {
           {/* 生活避坑指南 */}
           <TabsContent value="pitfalls">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">生活避坑指南</h2>
-              <p className="text-gray-500 mb-8">港漂實戰經驗分享，避開常見生活陷阱</p>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">生活避坑指南</h2>
+              <p className="text-gray-500 dark:text-gray-400 mb-8">港漂實戰經驗分享，避開常見生活陷阱</p>
               <div className="space-y-10">
                 {pitfallGuide.map((section) => (
                   <div key={section.category}>
                     <div className="flex items-center gap-2 mb-5">
-                      <section.icon className="w-5 h-5 text-teal-600" />
-                      <h3 className="text-xl font-bold text-gray-900">{section.category}</h3>
+                      <section.icon className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">{section.category}</h3>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       {section.pitfalls.map((p, i) => (
-                        <Card key={i} className="border-l-4 border-l-rose-400">
+                        <Card key={i} className="border-l-4 border-l-rose-400 dark:border-l-rose-500">
                           <CardContent className="p-5">
-                            <h4 className="font-bold text-gray-900 mb-2">{p.title}</h4>
-                            <p className="text-sm text-gray-600 mb-3">{p.desc}</p>
-                            <div className="bg-emerald-50 rounded-lg p-3 flex items-start gap-2">
-                              <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                              <p className="text-sm text-emerald-800">{p.tip}</p>
+                            <h4 className="font-bold text-gray-900 dark:text-white mb-2">{p.title}</h4>
+                            <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{p.desc}</p>
+                            <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-3 flex items-start gap-2">
+                              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 mt-0.5 flex-shrink-0" />
+                              <p className="text-sm text-emerald-800 dark:text-emerald-300">{p.tip}</p>
                             </div>
                           </CardContent>
                         </Card>

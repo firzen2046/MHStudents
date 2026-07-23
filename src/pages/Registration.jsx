@@ -24,7 +24,7 @@ export default function Registration() {
   useEffect(() => { loadEvents(); }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-900 via-purple-800 to-indigo-900 py-20">
         <div className="container mx-auto px-6 text-center">
@@ -51,27 +51,27 @@ export default function Registration() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto mb-16"
         >
-          <div className="bg-white rounded-2xl shadow-lg p-8 grid md:grid-cols-3 gap-8">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 grid md:grid-cols-3 gap-8 border border-gray-100 dark:border-gray-800">
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Calendar className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Calendar className="w-8 h-8 text-purple-600 dark:text-purple-400" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">截止日期</h3>
-              <p className="text-2xl font-bold text-purple-600">2026年3月22日</p>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">截止日期</h3>
+              <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">2026年3月22日</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Gift className="w-8 h-8 text-amber-600" />
+              <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Gift className="w-8 h-8 text-amber-600 dark:text-amber-400" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">費用</h3>
-              <p className="text-2xl font-bold text-amber-600">全免</p>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">費用</h3>
+              <p className="text-2xl font-bold text-amber-600 dark:text-amber-400">全免</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-emerald-600" />
+              <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">對象</h3>
-              <p className="text-2xl font-bold text-emerald-600">18-40歲青年</p>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">對象</h3>
+              <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">18-40歲青年</p>
             </div>
           </div>
         </motion.div>
@@ -83,7 +83,7 @@ export default function Registration() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl shadow-xl overflow-hidden"
+            className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800"
           >
             <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-8">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
@@ -96,45 +96,45 @@ export default function Registration() {
             </div>
             
             <div className="p-8">
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
                 加入「聽見・漂行」港漂夥伴計劃，透過遊戲破冰、結伴同行、學習香港文化，幫助你一步步找回歸屬感。
               </p>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-purple-600" />
+                  <div className="w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">2026年3月22日</p>
-                    <p className="text-gray-600 text-sm">破冰啟航活動：認識第一批本地朋友</p>
+                    <p className="font-medium text-gray-900 dark:text-white">2026年3月22日</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">破冰啟航活動：認識第一批本地朋友</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-purple-600" />
+                  <div className="w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">計劃期間</p>
-                    <p className="text-gray-600 text-sm">粵語學習工作坊</p>
+                    <p className="font-medium text-gray-900 dark:text-white">計劃期間</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">粵語學習工作坊</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-purple-600" />
+                  <div className="w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">計劃期間</p>
-                    <p className="text-gray-600 text-sm">社區服務體驗</p>
+                    <p className="font-medium text-gray-900 dark:text-white">計劃期間</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">社區服務體驗</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-purple-600" />
+                  <div className="w-6 h-6 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">計劃期間</p>
-                    <p className="text-gray-600 text-sm">中港兩地回饋項目 + 頒發活動策劃證書</p>
+                    <p className="font-medium text-gray-900 dark:text-white">計劃期間</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">中港兩地回饋項目 + 頒發活動策劃證書</p>
                   </div>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export default function Registration() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl shadow-xl overflow-hidden"
+            className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800"
           >
             <div className="bg-gradient-to-r from-amber-500 to-amber-600 p-8">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
@@ -171,36 +171,36 @@ export default function Registration() {
             </div>
             
             <div className="p-8">
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
                 想深入了解「聽見・漂行」計劃的完整內容、時間表及參與方式，請查閱計劃詳情。
               </p>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-600" />
+                  <div className="w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">計劃完整時間表</p>
-                    <p className="text-gray-600 text-sm">從破冰到深度連結的全程活動安排</p>
+                    <p className="font-medium text-gray-900 dark:text-white">計劃完整時間表</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">從破冰到深度連結的全程活動安排</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-600" />
+                  <div className="w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">如何幫助港漂克服困境</p>
-                    <p className="text-gray-600 text-sm">語言、文化、社交三大挑戰解決方案</p>
+                    <p className="font-medium text-gray-900 dark:text-white">如何幫助港漂克服困境</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">語言、文化、社交三大挑戰解決方案</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-600" />
+                  <div className="w-6 h-6 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">活動策劃證書詳情</p>
-                    <p className="text-gray-600 text-sm">主辦機構：半島青年商會</p>
+                    <p className="font-medium text-gray-900 dark:text-white">活動策劃證書詳情</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">主辦機構：半島青年商會</p>
                   </div>
                 </div>
               </div>
@@ -227,8 +227,8 @@ export default function Registration() {
                   viewport={{ once: true }}
                   className="max-w-5xl mx-auto mt-16"
                   >
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">四大系列活動</h2>
-                  <p className="text-center text-gray-500 mb-10">報名後即可參與以下所有活動，全程免費</p>
+                  <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center">四大系列活動</h2>
+                  <p className="text-center text-gray-500 dark:text-gray-400 mb-10">報名後即可參與以下所有活動，全程免費</p>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
                       { icon: Users, color: 'purple', title: '破冰啟航活動', date: '2026年3月22日', participants: '港漂青年', desc: '首次破冰活動，透過遊戲互動認識彼此，建立第一個本地朋友圈。' },
@@ -238,24 +238,24 @@ export default function Registration() {
                       { icon: Calendar, color: 'rose', title: '中港兩地回饋項目', date: '計劃期間', participants: '港漂青年', desc: '參與跨境交流項目，獲頒活動策劃證書，成為更有影響力的青年領袖。' },
                     ].map((act, i) => {
                       const colorMap = {
-                        purple: 'bg-purple-100 text-purple-600',
-                        blue: 'bg-blue-100 text-blue-600',
-                        emerald: 'bg-emerald-100 text-emerald-600',
-                        amber: 'bg-amber-100 text-amber-600',
-                        rose: 'bg-rose-100 text-rose-600',
+                        purple: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
+                        blue: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400',
+                        emerald: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400',
+                        amber: 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400',
+                        rose: 'bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400',
                       };
                       return (
                         <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                          className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+                          className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-md border border-gray-100 dark:border-gray-800">
                           <div className={`w-12 h-12 ${colorMap[act.color]} rounded-xl flex items-center justify-center mb-4`}>
                             <act.icon className="w-6 h-6" />
                           </div>
                           <div className="flex gap-2 mb-3">
-                            <span className="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full">{act.date}</span>
-                            <span className="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full">{act.participants}</span>
+                            <span className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-1 rounded-full">{act.date}</span>
+                            <span className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-1 rounded-full">{act.participants}</span>
                           </div>
-                          <h3 className="font-bold text-gray-900 mb-2">{act.title}</h3>
-                          <p className="text-gray-500 text-sm">{act.desc}</p>
+                          <h3 className="font-bold text-gray-900 dark:text-white mb-2">{act.title}</h3>
+                          <p className="text-gray-500 dark:text-gray-400 text-sm">{act.desc}</p>
                         </motion.div>
                       );
                     })}
@@ -269,12 +269,12 @@ export default function Registration() {
                   viewport={{ once: true }}
                   className="max-w-3xl mx-auto mt-16 text-center"
                   >
-                  <div className="bg-purple-50 rounded-2xl p-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">關於「聽見・漂行」港漂夥伴計劃</h3>
-                  <p className="text-gray-600 mb-4">
+                  <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-8 border border-purple-100 dark:border-purple-900">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">關於「聽見・漂行」港漂夥伴計劃</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
                   完成計劃的參加者將獲得<strong>活動策劃證書</strong>，成為更有影響力的青年領袖。
                   </p>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">
                   如有任何查詢，請聯絡駮先生：5409 6712 或電郵至 rio_fung@hkpjc.org
                   </p>
                   </div>
@@ -284,8 +284,8 @@ export default function Registration() {
                   <div className="max-w-5xl mx-auto mt-16">
                     <div className="flex items-center justify-between mb-6">
                       <div>
-                        <h2 className="text-3xl font-bold text-gray-900 mb-2">社區活動廣場</h2>
-                        <p className="text-gray-500">發佈你的活動，管理報名名單</p>
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">社區活動廣場</h2>
+                        <p className="text-gray-500 dark:text-gray-400">發佈你的活動，管理報名名單</p>
                       </div>
                       <Button onClick={() => setShowEventForm(!showEventForm)} className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white">
                         <Plus className="w-4 h-4 mr-2" />
@@ -300,11 +300,11 @@ export default function Registration() {
                     )}
 
                     {loadingEvents ? (
-                      <p className="text-center text-gray-500 py-8">載入中...</p>
+                      <p className="text-center text-gray-500 dark:text-gray-400 py-8">載入中...</p>
                     ) : userEvents.length === 0 ? (
-                      <div className="bg-white rounded-2xl p-12 text-center shadow-md border border-gray-100">
-                        <p className="text-gray-500 mb-2">暫時沒有社區活動</p>
-                        <p className="text-gray-400 text-sm">點擊「發佈活動」建立第一個活動吧！</p>
+                      <div className="bg-white dark:bg-gray-900 rounded-2xl p-12 text-center shadow-md border border-gray-100 dark:border-gray-800">
+                        <p className="text-gray-500 dark:text-gray-400 mb-2">暫時沒有社區活動</p>
+                        <p className="text-gray-400 dark:text-gray-500 text-sm">點擊「發佈活動」建立第一個活動吧！</p>
                       </div>
                     ) : (
                       <div className="grid md:grid-cols-2 gap-6">
