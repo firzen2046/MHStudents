@@ -47,7 +47,7 @@ const activities = [
   date: "2025年8月",
   icon: Calendar,
   color: "from-rose-500 to-rose-600",
-  participants: "70>\u4EBA",
+  participants: "80\u4EBA",
   description: "\u51DD\u805A\u300C\u653F\u3001\u5546\u3001\u5B78\u3001\u793E\u300D\u591A\u65B9\u529B\u91CF\uFF0C\u651C\u624B\u63A2\u8A0E\u4E26\u652F\u63F4\u6E2F\u6F02\u9752\u5E74\u7684\u767C\u5C55\uFF0C\u5171\u5EFA\u591A\u5143\u5171\u878D\u7684\u793E\u5340\uFF01"
 }];
 
