@@ -23,6 +23,18 @@ const organizations = [
 
 const categories = ['全部', '求職', '交友', '租房', '生活', '其他'];
 
+// 前端示範帖文（__mock 標記，與資料庫帖文合併顯示，不寫入資料庫）
+const mockPosts = [
+  { id: 'mock-1', __mock: true, title: '港大圖書館深夜自習室開放時間？', content: '準備緊期末，想知道港大主圖書館深夜自習室幾點關？要唔要預約？', category: '生活', author_name: '阿傑', likes: 6, image_url: null, created_date: new Date(Date.now() - 25 * 60000).toISOString() },
+  { id: 'mock-2', __mock: true, title: '有人一齊報名半島青年商會嘅破冰活動嗎？', content: '見到「聽見·漂行」嘅破冰配對活動，想搵人一齊報名，互相有個照應。', category: '交友', author_name: '小敏', likes: 11, image_url: null, created_date: new Date(Date.now() - 3 * 3600000).toISOString() },
+  { id: 'mock-3', __mock: true, title: '中環返工午餐推介：$50以下有好嘢食？', content: '中環食晏貴到喊，求$50以下午餐推介，最好快又飽。', category: '生活', author_name: 'Chloe', likes: 9, image_url: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80', created_date: new Date(Date.now() - 8 * 3600000).toISOString() },
+  { id: 'mock-4', __mock: true, title: '租約快到期，續租好定搬好？', content: '業主話續租加8%，依家市道係咪真係要加咁多？定係搬去新地方抵啲？', category: '租房', author_name: '阿偉', likes: 14, image_url: null, created_date: new Date(Date.now() - 14 * 3600000).toISOString() },
+  { id: 'mock-5', __mock: true, title: '面試穿搭：金融行業一定要西裝嗎？', content: '第一次面試中資銀行，唔知要唔要全套西裝。有冇人分享下？', category: '求職', author_name: 'Eric', likes: 7, image_url: null, created_date: new Date(Date.now() - 22 * 3600000).toISOString() },
+  { id: 'mock-6', __mock: true, title: '想學冲港式奶茶，有冇新手教學？', content: '飲慣茶餐廳奶茶，想自己冲。絲襪冲茶法點學？茶葉邊度買？', category: '生活', author_name: '肥波', likes: 13, image_url: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80', created_date: new Date(Date.now() - 30 * 3600000).toISOString() },
+  { id: 'mock-7', __mock: true, title: '有冇人一齊去深圳食宵夜？周末即日來回', content: '想去深圳食宵夜，即日來回。羅湖定福田口岸方便啲？求同行。', category: '交友', author_name: '阿俊', likes: 5, image_url: null, created_date: new Date(Date.now() - 40 * 3600000).toISOString() },
+  { id: 'mock-8', __mock: true, title: '強積金想轉基金，手續繁唔繁？', content: 'MPF預設基金回報差，想轉去股票基金。要唔要親身去辦理？', category: '其他', author_name: 'Kevin', likes: 4, image_url: null, created_date: new Date(Date.now() - 50 * 3600000).toISOString() },
+];
+
 export default function Community() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -43,8 +55,11 @@ export default function Community() {
     loadPosts();
   }, []);
 
+  const allPosts = [...posts, ...mockPosts].sort(
+    (a, b) => new Date(b.created_date) - new Date(a.created_date)
+  );
   const filteredPosts =
-    activeCategory === '全部' ? posts : posts.filter((p) => p.category === activeCategory);
+    activeCategory === '全部' ? allPosts : allPosts.filter((p) => p.category === activeCategory);
 
   return (
     <PullToRefresh onRefresh={loadPosts}>

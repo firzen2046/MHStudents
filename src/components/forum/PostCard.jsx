@@ -35,19 +35,19 @@ export default function PostCard({ post, onDelete }) {
       setLikeCount(likeCount - 1);
       setLiked(false);
       localStorage.setItem('likedPosts', JSON.stringify(arr.filter((id) => id !== post.id)));
-      await base44.entities.ForumPost.update(post.id, { likes: Math.max(0, likeCount - 1) });
+      if (!post.__mock) await base44.entities.ForumPost.update(post.id, { likes: Math.max(0, likeCount - 1) });
     } else {
       setLikeCount(likeCount + 1);
       setLiked(true);
       localStorage.setItem('likedPosts', JSON.stringify([...arr, post.id]));
-      await base44.entities.ForumPost.update(post.id, { likes: likeCount + 1 });
+      if (!post.__mock) await base44.entities.ForumPost.update(post.id, { likes: likeCount + 1 });
     }
   };
 
   const handleDelete = async () => {
     if (!confirm('確定刪除此帖文？')) return;
     try {
-      await base44.entities.ForumPost.delete(post.id);
+      if (!post.__mock) await base44.entities.ForumPost.delete(post.id);
       onDelete?.();
     } catch (e) {
       console.error(e);
@@ -71,9 +71,14 @@ export default function PostCard({ post, onDelete }) {
         >
           {post.category}
         </span>
-        <button onClick={handleDelete} className="text-gray-400 hover:text-red-500 transition-colors">
-          <Trash2 className="w-4 h-4" />
-        </button>
+        {post.__mock && (
+          <span className="text-[10px] px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-400">示範</span>
+        )}
+        {!post.__mock && (
+          <button onClick={handleDelete} className="text-gray-400 hover:text-red-500 transition-colors">
+            <Trash2 className="w-4 h-4" />
+          </button>
+        )}
       </div>
       <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{post.title}</h3>
       <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 whitespace-pre-wrap">{post.content}</p>
@@ -96,16 +101,18 @@ export default function PostCard({ post, onDelete }) {
           <Heart className={`w-4 h-4 ${liked ? 'fill-rose-500' : ''}`} />
           {likeCount}
         </button>
-        <button
-          onClick={() => setShowComments(!showComments)}
-          className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-teal-500 transition-colors"
-        >
-          <MessageSquare className="w-4 h-4" />
-          留言
-        </button>
+        {!post.__mock && (
+          <button
+            onClick={() => setShowComments(!showComments)}
+            className="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-teal-500 transition-colors"
+          >
+            <MessageSquare className="w-4 h-4" />
+            留言
+          </button>
+        )}
       </div>
       <AnimatePresence>
-        {showComments && (
+        {showComments && !post.__mock && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
