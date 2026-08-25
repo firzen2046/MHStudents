@@ -11,7 +11,7 @@ const activities = [
   date: "2026年3月22日",
   icon: Users,
   color: "from-purple-500 to-purple-600",
-  participants: "40\u4EBA",
+  participants: "60\u4EBA",
   description: "認識彼此，結伴同行 - 透過配對活動讓港青與港漂建立聯繫"
 },
 {
@@ -20,7 +20,7 @@ const activities = [
   date: "2026年4月26日",
   icon: Presentation,
   color: "from-blue-500 to-blue-600",
-  participants: "40\u4EBA",
+  participants: "60\u4EBA",
   description: "教授廣東話，及進行城市定向，認識香港"
 },
 {
@@ -29,7 +29,7 @@ const activities = [
   date: "2025年5月2日",
   icon: Award,
   color: "from-emerald-500 to-emerald-600",
-  participants: "100人",
+  participants: "120\u4EBA",
   description: "服務社會，訓練自己 - 參與社區服務，培養社會責任感"
 },
 {
@@ -38,7 +38,7 @@ const activities = [
   date: "2025年6月20日",
   icon: MapPin,
   color: "from-amber-500 to-amber-600",
-  participants: "30人",
+  participants: "70\u4EBA",
   description: "探訪深圳最新的科技，同時在內地舉辦閉幕禮，嘉許活動參與者，頒發嘉許證書。"
 },
 {
@@ -47,7 +47,7 @@ const activities = [
   date: "2025年8月",
   icon: Calendar,
   color: "from-rose-500 to-rose-600",
-  participants: "700\u4EBA",
+  participants: "70>\u4EBA",
   description: "\u51DD\u805A\u300C\u653F\u3001\u5546\u3001\u5B78\u3001\u793E\u300D\u591A\u65B9\u529B\u91CF\uFF0C\u651C\u624B\u63A2\u8A0E\u4E26\u652F\u63F4\u6E2F\u6F02\u9752\u5E74\u7684\u767C\u5C55\uFF0C\u5171\u5EFA\u591A\u5143\u5171\u878D\u7684\u793E\u5340\uFF01"
 }];
 
