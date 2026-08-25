@@ -320,7 +320,7 @@ function Layout({ children, currentPageName }) {
               <div className="flex items-center gap-3 mb-4">
                 <img src="https://media.base44.com/images/public/695e4e0ab89cc0629600e4ef/cd06f3213___________3_.png"
 
-                  alt="中港同窗築夢同行" className="h-16 w-auto" />
+                  alt="「聽見．漂行」" className="h-16 w-auto" />
 
                   
                 <div>
