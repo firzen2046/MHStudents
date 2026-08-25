@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import {
@@ -29,6 +29,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '@/lib/ThemeContext';
 import BottomNav from '@/components/BottomNav';
 import BackToTop from '@/components/BackToTop';
+import TextConverter from '@/components/TextConverter';
 
 // 创建语言上下文
 export const LanguageContext = createContext();
@@ -74,8 +75,17 @@ const navGroups = {
 
 function Layout({ children, currentPageName }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [lang, setLang] = useState('zh_TW');
+  const [lang, setLang] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('app_lang') || 'zh_CN';
+    }
+    return 'zh_CN';
+  });
   const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') localStorage.setItem('app_lang', lang);
+  }, [lang]);
   const location = useLocation();
   const navigate = useNavigate();
   const isChildScreen = !['Home', 'Activities', 'Forum', 'Profile'].includes(currentPageName);
@@ -133,6 +143,7 @@ function Layout({ children, currentPageName }) {
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
+      <TextConverter lang={lang} />
       <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors">
         {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm safe-area-top select-none">
