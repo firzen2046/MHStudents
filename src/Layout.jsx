@@ -382,9 +382,11 @@ function Layout({ children, currentPageName }) {
           </div>
 
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">
-              © 2025 JCI Peninsula. 版權所有。
-            </p>
+            <div className="flex items-center gap-6">
+              <p className="text-gray-500 text-sm">© 2025 JCI Peninsula. 版權所有。</p>
+              <Link to={createPageUrl('About')} className="text-gray-400 hover:text-white transition-colors text-sm">關於我們</Link>
+              <Link to={createPageUrl('Contact')} className="text-gray-400 hover:text-white transition-colors text-sm">聯絡我們</Link>
+            </div>
             <p className="text-gray-500 text-sm">
               「聽見・漂行」港漂夥伴計劃
             </p>
