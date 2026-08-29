@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { Bus, Utensils, CloudSun, MessageCircle, Map, CalendarDays, CircleHelp, UsersRound } from 'lucide-react';
+import { Bus, Utensils, CloudSun, MessageCircle, Map, CalendarDays, CircleHelp, UsersRound, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const icons = [
@@ -13,13 +13,14 @@ const icons = [
   { name: '活動大廳', page: 'Activities', icon: CalendarDays, color: 'from-rose-500 to-pink-500' },
   { name: '新手答疑', page: 'PreArrivalQA', icon: CircleHelp, color: 'from-amber-500 to-orange-500' },
   { name: '找室友/搭檔', page: 'PeerMatch', icon: UsersRound, color: 'from-emerald-500 to-teal-500' },
+  { name: '下載APP', page: 'Download', icon: Download, color: 'from-violet-500 to-purple-600' },
 ];
 
 export default function IconGrid() {
   return (
     <section className="py-6">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-4 gap-3 max-w-2xl mx-auto">
+        <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
           {icons.map((item, i) => (
             <motion.div
               key={item.page}
