@@ -35,7 +35,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center space-y-12"
           >
             <p className="text-gray-500 dark:text-gray-400 mb-8">主辦單位</p>
             <div className="flex justify-center items-center">
@@ -44,6 +44,41 @@ export default function Home() {
                 alt="JCI Peninsula"
                 className="h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
               />
+            </div>
+                      <div>
+              <p className="text-gray-500 dark:text-gray-400 mb-6">合辦單位</p>
+              <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-12 gap-y-8">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663032592579/wqrwMjJfeXdACfYK.png"
+                  alt="Vision Foundation Limited"
+                  className="h-16 w-auto max-w-[min(20rem,80vw)] object-contain"
+                  loading="lazy"
+                />
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663032592579/WEefHNdatIItVhLk.png"
+                  alt="Social Innovation Service Competition 2026"
+                  className="h-24 w-auto max-w-[min(16rem,70vw)] object-contain"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div>
+              <p className="text-gray-500 dark:text-gray-400 mb-6">支持單位</p>
+              <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-12 gap-y-8">
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663032592579/nVWRhxGyeSEqUzBD.png"
+                  alt="Home and Youth Affairs Bureau and Sham Shui Po District Office"
+                  className="h-14 w-auto max-w-[min(22rem,85vw)] object-contain"
+                  loading="lazy"
+                />
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663032592579/vbdEIlhILXCipDKu.png"
+                  alt="Government Funding Scheme"
+                  className="h-20 w-auto max-w-[min(24rem,85vw)] object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </motion.div>
         </div>
