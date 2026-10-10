@@ -29,7 +29,7 @@ const activities = [
   date: "2025年5月2日",
   icon: Award,
   color: "from-emerald-500 to-emerald-600",
-  participants: "120\u4EBA",
+  participants: "200\u4EBA",
   description: "服務社會，訓練自己 - 參與社區服務，培養社會責任感"
 },
 {
@@ -38,7 +38,7 @@ const activities = [
   date: "2025年6月20日",
   icon: MapPin,
   color: "from-amber-500 to-amber-600",
-  participants: "70\u4EBA",
+  participants: "100\u4EBA",
   description: "探訪深圳最新的科技，同時在內地舉辦閉幕禮，嘉許活動參與者，頒發嘉許證書。"
 },
 {
@@ -64,7 +64,7 @@ export default function ActivityHighlights() {
           
           <span className="text-purple-600 font-medium mb-4 block">精彩活動</span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            五大重點活動
+            四大重點活動
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             透過多元化活動促進香港與內地青年深入交流
@@ -72,7 +72,7 @@ export default function ActivityHighlights() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {activities.map((activity, index) =>
+          {activities.slice(1).map((activity, index) =>
           <motion.div
             key={activity.id}
             initial={{ opacity: 0, y: 30 }}
